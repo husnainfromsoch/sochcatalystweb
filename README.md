@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Soch Catalyst — Website
 
-## Getting Started
+Marketing site for **Soch Catalyst**, a LinkedIn growth agency for B2B founders & CEOs.
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Motion.
+
+> ⚠️ This uses **Next.js 16**, which has breaking changes vs. older versions you may
+> know. If you (or an AI assistant) get stuck on framework APIs, check the bundled
+> docs in `node_modules/next/dist/docs/` rather than guessing. See `AGENTS.md`.
+
+---
+
+## Prerequisites
+
+- **Node.js 20+** and npm
+- That's it — no database, no API keys required to run locally.
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install      # install dependencies (first time only)
+npm run dev      # start dev server → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build
+npm start        # serve the production build (run build first)
+npm run lint     # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The dev server hot-reloads on save.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/                 # routes (App Router) — one folder per page
+  layout.tsx         # root layout: fonts, <Header/> + <Footer/>, site metadata
+  page.tsx           # home page (composes the section components)
+  globals.css        # Tailwind import + design tokens (@theme block)
+  about/  audit/  book/  services/   # the other routes
+components/          # React components
+  ui/                # small primitives (Button, Section, Reveal)
+  Icons.tsx          # inline SVG icon set (Icon name="...")
+  *.tsx              # page sections (Hero, ServicesGrid, Testimonials, ...)
+lib/
+  content.ts         # ⭐ ALL site copy, services, stats, testimonials, config
+public/              # static assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Pages
 
-## Deploy on Vercel
+| Route       | Purpose                                                       |
+| ----------- | ------------------------------------------------------------- |
+| `/`         | Home — hero, positioning, services, how-we-work, proof, CTA   |
+| `/services` | All six services in detail                                    |
+| `/about`    | Who we are & what we believe                                  |
+| `/book`     | **Book a Discovery Call** (primary CTA)                       |
+| `/audit`    | **Get a Free LinkedIn Audit** (secondary CTA)                 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How to edit the app
+
+Most changes need only **one file**:
+
+| I want to change…                          | Edit this                                            |
+| ------------------------------------------ | ---------------------------------------------------- |
+| Copy, services, stats, testimonials, nav   | `lib/content.ts`                                     |
+| The booking calendar (Calendly/TidyCal)    | Set `NEXT_PUBLIC_SCHEDULER_URL` (see below)          |
+| Brand colours & shadows                    | `app/globals.css` → the `@theme` block               |
+| Fonts                                      | `next/font` imports in `app/layout.tsx` (Inter + Fraunces) |
+| Logo                                       | `components/Logo.tsx` (placeholder wordmark + mark)  |
+| Page layout / section order                | the relevant `app/*/page.tsx`                         |
+| A section's markup                         | the matching component in `components/`              |
+| Icons                                      | `components/Icons.tsx`                               |
+
+### Connecting the booking calendar
+
+The booking pages embed a scheduler when `NEXT_PUBLIC_SCHEDULER_URL` is set; until
+then they show a styled fallback card. Create a `.env.local` in the project root:
+
+```bash
+# .env.local
+NEXT_PUBLIC_SCHEDULER_URL=https://calendly.com/your-handle/discovery-call
+```
+
+Restart `npm run dev` after adding it. Works with Calendly, TidyCal, or any
+embeddable scheduler URL.
+
+### Styling
+
+Tailwind CSS v4 — utility classes in JSX. Custom colours/tokens (e.g. `bg-brand`,
+`text-ink`, `bg-mist`) are defined in the `@theme` block of `app/globals.css`, not
+in a `tailwind.config` file. Add a token there and it becomes a utility class.
+
+---
+
+## ⚠️ Before launch — placeholders to replace
+
+These are intentionally fake and must be swapped for real content:
+
+- **Testimonials**, **client logos**, and **stats** → `lib/content.ts`
+- **Logo** → `components/Logo.tsx`
+- **Brand colours/fonts** → currently HubSpot-inspired (orange + warm cream,
+  Inter + Fraunces); finalise in `app/globals.css` and `app/layout.tsx`.
+- **Contact email / LinkedIn URL** → `SITE` object in `lib/content.ts`
+
+---
+
+## Deploy
+
+Any Next.js host works (Vercel is the simplest — connect the repo and it builds
+automatically). Set `NEXT_PUBLIC_SCHEDULER_URL` in the host's environment
+variables. Otherwise: `npm run build` then `npm start` behind a reverse proxy.
