@@ -8,7 +8,7 @@ import { Icon, type IconName } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "About. Built for Founders Done Being Invisible",
   description:
-    "Soch Catalyst is a LinkedIn agency for B2B founders and CEOs. We run personal branding, content, outreach and profile management, so your LinkedIn brings you work.",
+    "Soch Catalyst is a LinkedIn agency for founders and senior executives. We run personal branding, content, outreach and profile management, so your LinkedIn brings you work.",
 };
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [

@@ -67,7 +67,7 @@ export default function BookPage() {
             <div className="mt-10 rounded-2xl border border-line bg-cream p-6">
               <p className="text-sm font-semibold text-ink">Who it&apos;s for</p>
               <p className="mt-2 text-sm leading-relaxed text-slate">
-                B2B founders, CEOs and executives who want LinkedIn to build authority
+                Founders and senior executives who want LinkedIn to build authority
                 and bring in booked calls, without turning into a full-time content
                 creator.
               </p>

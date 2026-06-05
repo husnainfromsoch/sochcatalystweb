@@ -34,7 +34,7 @@ export function Footer() {
           <div className="max-w-xs">
             <Logo variant="light" />
             <p className="mt-4 text-sm leading-relaxed text-white/60">
-              A LinkedIn agency for B2B founders and CEOs. We run your profile,
+              A LinkedIn agency for founders and senior executives. We run your profile,
               content and outreach, so the platform brings you work.
             </p>
           </div>
@@ -45,7 +45,6 @@ export function Footer() {
                 {n.label}
               </FooterLink>
             ))}
-            <FooterLink href="/about">About</FooterLink>
           </FooterCol>
 
           <FooterCol title="Services">

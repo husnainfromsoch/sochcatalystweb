@@ -19,7 +19,7 @@ export function Hero() {
           </h1>
 
           <p className="lead mt-6 animate-fade-up [animation-delay:160ms]">
-            Soch Catalyst is a LinkedIn agency for B2B founders and CEOs. We handle
+            Soch Catalyst is a LinkedIn agency for founders and senior executives. We handle
             your profile, content and outreach, so you get inbound, booked calls, and
             a name people trust. We do the work. You approve it.
           </p>

@@ -7,7 +7,7 @@ import { CTAS } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services. LinkedIn Growth, End to End",
   description:
-    "Profile optimisation, content, lead generation, personal branding, coaching and audits. The full Soch Catalyst LinkedIn system for B2B founders and CEOs.",
+    "Profile optimisation, content, lead generation, personal branding, coaching and audits. The full Soch Catalyst LinkedIn system for founders and senior executives.",
 };
 
 export default function ServicesPage() {

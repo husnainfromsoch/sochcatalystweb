@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { CASE_STUDIES, type CaseStudy } from "@/lib/content";
 
@@ -47,6 +48,14 @@ export function Testimonials() {
           </span>
         </div>
 
+        <div className="mt-6 text-center">
+          <Link
+            href="/case-studies"
+            className="text-sm text-muted underline-offset-4 hover:underline"
+          >
+            View all case studies →
+          </Link>
+        </div>
 
       </div>
     </section>

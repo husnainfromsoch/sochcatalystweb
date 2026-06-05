@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     template: "%s · Soch Catalyst",
   },
   description:
-    "Soch Catalyst is a LinkedIn agency for B2B founders and CEOs. We run your profile, content and outreach, so you get inbound and booked calls and become the most trusted voice in your industry.",
+    "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
   keywords: [
     "LinkedIn growth agency",
     "personal branding for founders",
     "LinkedIn lead generation",
-    "B2B LinkedIn marketing",
+    "LinkedIn positioning for founders and executives",
     "LinkedIn profile optimisation",
   ],
   openGraph: {
     title: "Soch Catalyst: LinkedIn Growth for Founders & CEOs",
     description:
-      "Done-with-you LinkedIn growth: profile, content, lead generation and personal branding for B2B founders and CEOs.",
+      "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
     url: SITE_URL,
     siteName: "Soch Catalyst",
     type: "website",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Soch Catalyst: LinkedIn Growth for Founders & CEOs",
     description:
-      "Done-with-you LinkedIn growth for B2B founders and CEOs.",
+      "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
   },
 };
 
