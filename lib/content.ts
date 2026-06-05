@@ -35,6 +35,7 @@ export const CTAS = {
 export const NAV = [
   { label: "Services", href: "/services" },
   { label: "How we work", href: "/#how-we-work" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "About", href: "/about" },
 ];
 
@@ -54,11 +55,11 @@ export const SERVICES: Service[] = [
     title: "LinkedIn Profile Optimisation",
     hook: "Win the visitor in the first five seconds.",
     description:
-      "A prospect checks your profile before they reply. If it reads like a CV, you lose them. We rewrite your headline, about and banner so the right people see why you are worth a conversation.",
+      "A founder or executive checks your profile before they reply to anything. If it reads like a CV, you lose them before the conversation starts. We rebuild your headline, about section, and featured content so visitors understand immediately what you stand for and who you serve.",
     points: [
       "Conversion-led headline, about & banner",
       "Featured section that routes to your offer",
-      "Keyword strategy for search visibility",
+      "Positioning-led rewrite, not a cosmetic refresh",
     ],
   },
   {
@@ -67,7 +68,7 @@ export const SERVICES: Service[] = [
     title: "Content Writing & Posting",
     hook: "Post every week without writing a word.",
     description:
-      "You know what you want to say. You do not have the time to write it twice a week. We interview you, write in your voice, and post on a schedule. You approve, we publish.",
+      "You have opinions, expertise, and a point of view worth sharing. You do not have time to turn that into consistent, well-crafted LinkedIn content. We run a monthly interview, write in your voice, build the calendar, and publish. You spend less than two hours a month. The content compounds.",
     points: [
       "Founder-voice ghostwriting",
       "Editorial calendar & scheduling",
@@ -80,7 +81,7 @@ export const SERVICES: Service[] = [
     title: "Lead Generation & Outreach",
     hook: "Booked calls, not vanity connections.",
     description:
-      "Connections do not pay the bills. Booked calls do. We find the decision-makers you want, reach out as you, and hand you warm conversations to close.",
+      "We map your ICP, build the target list, write personalised outreach that sounds like you, and run the sequences. You receive warm conversations with qualified people already familiar with your positioning. No cold pitching on your end.",
     points: [
       "ICP targeting & list building",
       "Personalised multi-touch sequences",
@@ -93,7 +94,7 @@ export const SERVICES: Service[] = [
     title: "Personal Branding Strategy",
     hook: "Be the name your market already trusts.",
     description:
-      "Random posts build nothing. We give you one clear position and a point of view to own, so every post adds to the same reputation.",
+      "Before we write anything, we establish what you stand for and who needs to hear it. Your narrative strategy, content pillars, and messaging framework become the foundation that every post, outreach message, and conversation builds on. This is the work most services skip. It is the reason Soch results compound.",
     points: [
       "Positioning & messaging pillars",
       "A point of view you own",
@@ -117,9 +118,9 @@ export const SERVICES: Service[] = [
     slug: "growth-audit",
     icon: "audit",
     title: "LinkedIn Growth Audit",
-    hook: "Know exactly what's holding you back.",
+    hook: "Know exactly what is holding you back.",
     description:
-      "A straight read on your profile, content and outreach. We show you what is working, what is not, and the moves that matter most over the next 90 days.",
+      "A straight read on your profile, content and outreach. We show you what is working, what is not, and the moves that matter most over the next 90 days. Every engagement with Soch begins with a version of this audit.",
     points: [
       "Profile & content teardown",
       "Competitor & positioning gaps",
@@ -180,6 +181,61 @@ export type Testimonial = {
   initials: string;
   accent: string;
 };
+
+export type CaseStudy = {
+  company: string;
+  industry: string;
+  region: string;
+  duration: string;
+  scope: string;
+  metrics: { value: string; label: string }[];
+  quote: string;
+  author: string;
+  authorRole: string;
+  accent: string;
+  initials: string;
+};
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    company: "Byzantine",
+    industry: "Institutional Finance, Digital Assets",
+    region: "Europe",
+    duration: "5 months",
+    scope: "LinkedIn strategy & thought leadership",
+    metrics: [
+      { value: "32%", label: "Outreach reply rate" },
+      { value: "2,340+", label: "Followers (from 820)" },
+      { value: "2", label: "Converted clients" },
+      { value: "1.5 hrs", label: "Founder time on content/week (from 5)" },
+    ],
+    quote:
+      "Soch didn't just help us post more consistently — they helped us figure out what Byzantine actually stands for in the market.",
+    author: "Gaia Ferrero",
+    authorRole: "Founder & CEO, Byzantine",
+    accent: "#0a3d6b",
+    initials: "BZ",
+  },
+  {
+    company: "Cycle Together",
+    industry: "Social Enterprise, UK",
+    region: "United Kingdom",
+    duration: "6 weeks",
+    scope: "Go-to-market, positioning & outreach system",
+    metrics: [
+      { value: "46%", label: "Landing page conversion" },
+      { value: "29%", label: "Outreach response rate (from 8%)" },
+      { value: "4", label: "Tier-1 procurement meetings booked" },
+      { value: "6", label: "Formal proposals sent in 6 weeks" },
+    ],
+    quote:
+      "Before Soch, I was having a lot of conversations that went nowhere. Now every conversation starts from a position of credibility.",
+    author: "Biola Akinwande",
+    authorRole: "Founder & CEO, Cycle Together",
+    accent: "#1a6b3c",
+    initials: "CT",
+  },
+];
 
 // NOTE: Placeholder testimonials — replace with real client quotes & names.
 export const TESTIMONIALS: Testimonial[] = [
