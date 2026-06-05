@@ -4,30 +4,36 @@ import { Icon, type IconName } from "@/components/Icons";
 const PILLARS: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shield",
-    title: "Done-with-you, not DIY",
-    body: "A real team runs your profile, content and outreach with you. You are never left alone with a template.",
+    title: "Positioning before content",
+    body: "If you don't know what you stand for, no amount of posting will fix that. We start with the narrative before we write a single word.",
   },
   {
     icon: "chat",
-    title: "Your voice, not ours",
-    body: "We interview you and write in your voice. Every post sounds like you, and you approve it before it goes out.",
+    title: "Your voice. Your point of view.",
+    body: "We study how you think, how you talk, and what you believe. Then we write content that sounds like you, only sharper and more deliberate.",
   },
   {
     icon: "target",
-    title: "Built for booked calls",
-    body: "Everything points at one goal. More authority, more inbound, more calls on your calendar.",
+    title: "Pipeline, not applause",
+    body: "Follower counts don't pay the bills. We measure success by qualified conversations started, inbound leads generated, and opportunities created.",
   },
 ];
 
 export function Positioning() {
   return (
-    <section className="bg-cream py-20 sm:py-24 lg:py-28">
+    <section
+      className="py-20 sm:py-24 lg:py-28"
+      style={{
+        backgroundColor: "#fcded2",
+        backgroundImage:
+          "linear-gradient(257deg, hsla(18,84%,90%,0.3) -32.4%, rgba(255,165,129,0.3) -3.42%, rgba(255,73,0,0.3) 23.87%, rgba(251,223,223,0.3) 50.46%, rgba(253,191,219,0.3) 79.15%, rgba(249,57,166,0.3) 103.64%)",
+      }}
+    >
       <div className="container-x">
         <Reveal className="max-w-3xl">
           <span className="eyebrow">The Catalyst difference</span>
           <h2 className="text-h2 mt-6">
-            This isn&apos;t a course. It&apos;s not a template. It&apos;s a{" "}
-            <span className="italic text-brand">done-with-you system</span>.
+            Most LinkedIn services sell content. We build the system behind it.
           </h2>
           <p className="lead mt-5">
             Your buyers are already on LinkedIn. We handle the branding, content,
