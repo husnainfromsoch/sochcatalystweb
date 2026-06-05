@@ -6,6 +6,12 @@
 
 import type { IconName } from "@/components/Icons";
 
+export const HERO = {
+  eyebrow: "LinkedIn positioning system",
+  headline: "Your LinkedIn should be your most credible business asset.",
+  headlineEmphasis: "We build it that way.",
+};
+
 export const SITE = {
   name: "Soch Catalyst",
   tagline: "LinkedIn growth for B2B founders.",

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/Icons";
-import { CTAS } from "@/lib/content";
+import { CTAS, HERO } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -11,10 +11,11 @@ export function Hero() {
       <div className="container-x relative grid items-center gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
         {/* ---- copy ---- */}
         <div className="max-w-xl">
-          <span className="eyebrow animate-fade-up">LinkedIn growth for founders</span>
+          <span className="eyebrow animate-fade-up">{HERO.eyebrow}</span>
 
           <h1 className="text-display mt-6 animate-fade-up [animation-delay:80ms]">
-            Make LinkedIn work as hard as <span className="italic text-brand">you do</span>.
+            {HERO.headline}{" "}
+            <span className="italic text-brand">{HERO.headlineEmphasis}</span>
           </h1>
 
           <p className="lead mt-6 animate-fade-up [animation-delay:160ms]">
