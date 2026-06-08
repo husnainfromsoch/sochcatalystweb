@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
 import Script from "next/script";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -67,32 +67,6 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <head>
-        <Script
-          id="videoask-embed"
-          src="https://www.videoask.com/embed/embed.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="videoask-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.VideoAsk = window.VideoAsk || [];
-              window.VideoAsk.push({
-                kind: "widget",
-                url: "https://www.videoask.com/fbh8wkj96",
-                options: {
-                  widgetType: "VideoThumbnailExtraLarge",
-                  text: "",
-                  backgroundColor: "#e8633e",
-                  position: "bottom-left",
-                },
-              });
-            `,
-          }}
-        />
-      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-white">
         <AuditModalProvider>
           <BookingModalProvider>
@@ -103,6 +77,31 @@ export default function RootLayout({
             <BookingModal />
           </BookingModalProvider>
         </AuditModalProvider>
+        <Script
+          id="videoask-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.VIDEOASK_EMBED_CONFIG = {
+        "kind": "widget",
+        "url": "https://www.videoask.com/fbh8wkj96",
+        "options": {
+          "widgetType": "VideoThumbnailExtraLarge",
+          "text": "",
+          "backgroundColor": "#E8633E",
+          "position": "bottom-left",
+          "dismissible": false,
+          "videoPosition": "center center"
+        }
+      }
+    `,
+          }}
+        />
+        <Script
+          id="videoask-embed"
+          src="https://www.videoask.com/embed/embed.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
