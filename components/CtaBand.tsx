@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
+import { AuditButton } from "@/components/AuditButton";
 import { CTAS } from "@/lib/content";
 
 export function CtaBand({
@@ -20,12 +21,12 @@ export function CtaBand({
           <p className="lead mt-5 max-w-2xl text-white/75">{subtitle}</p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <Button href={CTAS.primary.href} variant="primary" size="lg">
+            <BookButton variant="primary" size="lg">
               {CTAS.primary.label}
-            </Button>
-            <Button href={CTAS.secondary.href} variant="light" size="lg">
+            </BookButton>
+            <AuditButton variant="light" size="lg">
               {CTAS.secondary.label}
-            </Button>
+            </AuditButton>
           </div>
         </div>
       </div>

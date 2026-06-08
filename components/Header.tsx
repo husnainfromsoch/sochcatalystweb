@@ -4,14 +4,16 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/Logo";
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { NAV, CTAS } from "@/lib/content";
+import { useAuditModal } from "@/context/AuditModalContext";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { openModal } = useAuditModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -47,15 +49,16 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href={CTAS.secondary.href}
+          <button
+            type="button"
+            onClick={openModal}
             className="text-[0.95rem] font-semibold text-ink underline-offset-4 hover:text-brand-dark hover:underline"
           >
             {CTAS.secondary.label}
-          </Link>
-          <Button href={CTAS.primary.href} variant="primary" size="md">
+          </button>
+          <BookButton variant="primary" size="md">
             {CTAS.primary.label}
-          </Button>
+          </BookButton>
         </div>
 
         {/* mobile toggle */}
@@ -87,12 +90,16 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-2 flex flex-col gap-2.5">
-            <Button href={CTAS.secondary.href} variant="secondary" size="lg" className="w-full">
+            <button
+              type="button"
+              onClick={() => { openModal(); setOpen(false); }}
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-base font-semibold text-ink ring-1 ring-ink/20 transition-colors duration-200 hover:ring-ink/45"
+            >
               {CTAS.secondary.label}
-            </Button>
-            <Button href={CTAS.primary.href} variant="primary" size="lg" className="w-full">
+            </button>
+            <BookButton variant="primary" size="lg" className="w-full">
               {CTAS.primary.label}
-            </Button>
+            </BookButton>
           </div>
         </div>
       </div>

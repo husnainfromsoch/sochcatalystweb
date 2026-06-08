@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { HowWeWorkChart } from "@/components/HowWeWorkChart";
 import { STEPS, CTAS } from "@/lib/content";
@@ -18,9 +18,9 @@ export function HowWeWork() {
             </p>
           </div>
           <div className="hidden shrink-0 lg:block">
-            <Button href={CTAS.primary.href} variant="primary" size="lg">
+            <BookButton variant="primary" size="lg">
               {CTAS.primary.label}
-            </Button>
+            </BookButton>
           </div>
         </div>
 
@@ -47,9 +47,9 @@ export function HowWeWork() {
         </div>
 
         <div className="mt-12 lg:hidden">
-          <Button href={CTAS.primary.href} variant="primary" size="lg" className="w-full">
+          <BookButton variant="primary" size="lg" className="w-full">
             {CTAS.primary.label}
-          </Button>
+          </BookButton>
         </div>
       </div>
     </section>

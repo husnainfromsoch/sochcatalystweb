@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { ServiceVisual } from "@/components/ServiceVisual";
 import { SERVICES, CTAS } from "@/lib/content";
@@ -93,9 +93,9 @@ export function ServicesShowcase() {
               })}
             </nav>
             <div className="mt-7">
-              <Button href={CTAS.primary.href} variant="dark" size="md" arrow>
+              <BookButton variant="dark" size="md" arrow>
                 {CTAS.primary.label}
-              </Button>
+              </BookButton>
             </div>
           </div>
         </aside>

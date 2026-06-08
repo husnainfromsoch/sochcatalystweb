@@ -3,6 +3,10 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AuditModalProvider } from "@/context/AuditModalContext";
+import { AuditModal } from "@/components/AuditModal";
+import { BookingModalProvider } from "@/context/BookingModalContext";
+import { BookingModal } from "@/components/BookingModal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -63,9 +67,15 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden bg-white">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuditModalProvider>
+          <BookingModalProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <AuditModal />
+            <BookingModal />
+          </BookingModalProvider>
+        </AuditModalProvider>
       </body>
     </html>
   );

@@ -1,34 +1,14 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/Icons";
-import { NAV, CTAS, SERVICES, SITE } from "@/lib/content";
+import { NAV, SERVICES, SITE } from "@/lib/content";
+import { AuditFooterLink } from "@/components/AuditFooterLink";
+import { BookFooterLink } from "@/components/BookFooterLink";
 
 export function Footer() {
   return (
     <footer className="bg-charcoal text-white/70">
       <div className="container-x">
-        {/* CTA strip */}
-        <div className="flex flex-col items-start gap-6 border-b border-white/10 py-14 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl">
-            <h2 className="text-h2 text-white">
-              Your audience is already on LinkedIn.
-            </h2>
-            <p className="mt-3 text-white/65">
-              Let&apos;s put you in front of them. Book a discovery call or get a
-              free audit. No pitch, just a clear plan.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Button href={CTAS.primary.href} variant="primary" size="lg">
-              {CTAS.primary.label}
-            </Button>
-            <Button href={CTAS.secondary.href} variant="light" size="lg">
-              {CTAS.secondary.label}
-            </Button>
-          </div>
-        </div>
-
         {/* link columns */}
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
@@ -56,8 +36,8 @@ export function Footer() {
           </FooterCol>
 
           <FooterCol title="Get started">
-            <FooterLink href={CTAS.primary.href}>Book a discovery call</FooterLink>
-            <FooterLink href={CTAS.secondary.href}>Free LinkedIn audit</FooterLink>
+            <BookFooterLink />
+            <AuditFooterLink />
             <FooterLink href={`mailto:${SITE.email}`}>{SITE.email}</FooterLink>
           </FooterCol>
         </div>

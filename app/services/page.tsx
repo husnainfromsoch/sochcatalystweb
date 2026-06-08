@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
+import { AuditButton } from "@/components/AuditButton";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { CTAS } from "@/lib/content";
 
@@ -19,12 +20,12 @@ export default function ServicesPage() {
         intro="Each service is built around one goal: making you the most credible voice in your space, in front of the people who matter most."
       >
         <div className="flex flex-wrap gap-3">
-          <Button href={CTAS.primary.href} variant="primary" size="lg">
+          <BookButton variant="primary" size="lg">
             {CTAS.primary.label}
-          </Button>
-          <Button href={CTAS.secondary.href} variant="secondary" size="lg">
+          </BookButton>
+          <AuditButton variant="secondary" size="lg">
             {CTAS.secondary.label}
-          </Button>
+          </AuditButton>
         </div>
       </PageHero>
 

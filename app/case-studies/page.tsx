@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/Reveal";
 import { StatCounter } from "@/components/StatCounter";
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
+import { AuditButton } from "@/components/AuditButton";
 import { CTAS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -868,12 +869,12 @@ export default function CaseStudiesPage() {
                 is achievable and how long it will take.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Button href={CTAS.primary.href} variant="primary" size="lg">
+                <BookButton variant="primary" size="lg">
                   {CTAS.primary.label}
-                </Button>
-                <Button href={CTAS.secondary.href} variant="secondary" size="lg">
+                </BookButton>
+                <AuditButton variant="secondary" size="lg">
                   {CTAS.secondary.label}
-                </Button>
+                </AuditButton>
               </div>
             </div>
           </Reveal>

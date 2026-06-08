@@ -83,7 +83,7 @@ const CSS = `
 .licard-pa{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:10px 4px;font-size:13px;font-weight:600;color:rgba(0,0,0,.6);cursor:pointer;border-radius:2px;transition:background .15s;white-space:nowrap}
 .licard-pa:hover{background:rgba(0,0,0,.05)}
 .licard-pa svg{width:16px;height:16px;flex-shrink:0;opacity:.7}
-.licard-notif{position:fixed;z-index:9999;pointer-events:none;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:9px;white-space:nowrap;opacity:0;box-shadow:0 4px 12px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.06);transform:translateY(8px) scale(.9);transition:opacity .38s ease,transform .38s cubic-bezier(.34,1.56,.64,1);font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.licard-notif{position:absolute;z-index:2;pointer-events:none;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:9px;white-space:nowrap;opacity:0;box-shadow:0 4px 12px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.06);transform:translateY(8px) scale(.9);transition:opacity .38s ease,transform .38s cubic-bezier(.34,1.56,.64,1);font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
 .licard-n-avatar{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
 .licard-n-title{font-size:12px;font-weight:700;color:rgba(0,0,0,.85);line-height:1.2}
 .licard-n-sub{font-size:11.5px;color:rgba(0,0,0,.55);line-height:1.3}
@@ -131,8 +131,8 @@ export default function LinkedInAnim() {
       NOTIF_DEFS.forEach((n) => {
         const el = document.createElement("div");
         el.className = "licard-notif";
-        el.style.left = cx + n.dx - 140 + "px";
-        el.style.top = cy + n.dy - 22 + "px";
+        el.style.left = cx + n.dx - 140 + window.pageXOffset + "px";
+        el.style.top = cy + n.dy - 22 + window.pageYOffset + "px";
 
         let lft = "";
         if (n.type === "person") {

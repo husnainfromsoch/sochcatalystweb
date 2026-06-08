@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/Button";
+import { BookButton } from "@/components/BookButton";
+import { AuditButton } from "@/components/AuditButton";
 import { CTAS, HERO } from "@/lib/content";
 import LinkedInAnim from "@/components/LinkedInAnim";
 
@@ -8,29 +9,29 @@ export function Hero() {
       {/* one soft, flat peach wash behind the visual — no glow blobs */}
       <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 bg-[radial-gradient(60%_60%_at_70%_35%,var(--color-peach),transparent_70%)] opacity-70 lg:block" />
 
-      <div className="container-x relative grid items-center gap-14 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
+      <div className="container-x relative grid items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-14">
         {/* ---- copy ---- */}
         <div className="max-w-xl">
           <span className="eyebrow animate-fade-up">{HERO.eyebrow}</span>
 
-          <h1 className="text-display mt-6 animate-fade-up [animation-delay:80ms]">
+          <h1 className="text-display text-[clamp(2rem,1.2rem+3vw,3.35rem)] mt-5 animate-fade-up [animation-delay:80ms]">
             {HERO.headline}{" "}
             <span className="italic text-brand">{HERO.headlineEmphasis}</span>
           </h1>
 
-          <p className="lead mt-6 animate-fade-up [animation-delay:160ms]">
+          <p className="lead text-[clamp(0.95rem,0.88rem+0.28vw,1.1rem)] mt-5 animate-fade-up [animation-delay:160ms]">
             Soch Catalyst is a LinkedIn agency for founders and senior executives. We handle
             your profile, content and outreach, so you get inbound, booked calls, and
             a name people trust. We do the work. You approve it.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:240ms]">
-            <Button href={CTAS.primary.href} variant="primary" size="lg">
+            <BookButton variant="primary" size="lg">
               {CTAS.primary.label}
-            </Button>
-            <Button href={CTAS.secondary.href} variant="secondary" size="lg">
+            </BookButton>
+            <AuditButton variant="secondary" size="lg">
               {CTAS.secondary.label}
-            </Button>
+            </AuditButton>
           </div>
 
           <div className="mt-9 flex items-center gap-4 animate-fade-up [animation-delay:340ms]">
@@ -58,7 +59,7 @@ export function Hero() {
         </div>
 
         {/* ---- product visual ---- */}
-        <div className="animate-pop lg:mx-0 lg:ml-auto">
+        <div className="animate-pop lg:mx-0 lg:ml-auto lg:scale-[0.88] lg:origin-top">
           <LinkedInAnim />
         </div>
       </div>
