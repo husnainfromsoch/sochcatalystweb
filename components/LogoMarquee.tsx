@@ -1,23 +1,30 @@
 import { CLIENT_LOGOS } from "@/lib/content";
 
-/** Trust strip — placeholder client wordmarks, gently scrolling. */
+/** Trust strip — real client logos, gently scrolling. */
 export function LogoMarquee() {
-  const row = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
+  const row = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
   return (
     <section className="border-b border-line bg-white py-10">
       <div className="container-x">
-        <p className="text-center text-[0.8rem] font-medium text-muted">
-          Trusted by founders &amp; operators building category authority
+        <p className="text-center text-[18px] font-medium text-muted">
+          Trusted by founders building category authority
         </p>
         <div className="relative mt-7 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-          <div className="flex w-max animate-marquee items-center gap-14 pr-14">
-            {row.map((name, i) => (
-              <span
+          <div className="flex w-max animate-marquee items-center gap-16 pr-16">
+            {row.map((logo, i) => (
+              <img
                 key={i}
-                className="select-none whitespace-nowrap text-lg font-bold uppercase tracking-tight text-ink/35 transition-colors hover:text-ink/60"
-              >
-                {name}
-              </span>
+                src={logo.src}
+                alt={logo.name}
+                style={{
+                  height: 56,
+                  width: "auto",
+                  maxWidth: 200,
+                  opacity: 0.55,
+                  filter: "grayscale(100%)",
+                  objectFit: "contain",
+                }}
+              />
             ))}
           </div>
         </div>

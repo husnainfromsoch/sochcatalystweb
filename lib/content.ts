@@ -265,14 +265,17 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-// Placeholder client wordmarks for the trust strip.
 export const CLIENT_LOGOS = [
-  "NORTHBOUND",
-  "Vantage",
-  "Clearpoint",
-  "HELIX",
-  "Brightline",
-  "Meridian",
+  { name: "Shaping Wealth", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe54f7a9ab1b2e4c3bd9_18.svg" },
+  { name: "Khudi Venture", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe3ec46f3a9e9e259a3e_8.svg" },
+  { name: "Byzantine", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe3892c495ac997efe11_2.svg" },
+  { name: "Cycle Together", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe3972236be60759d990_4.svg" },
+  { name: "Kuunda", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe477e5b22b14ccbd160_12.svg" },
+  { name: "Ncon", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe4cf7a9ab1b2e4c3ac3_14.svg" },
+  { name: "Pitch A Fete", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe5049702964722cd9e6_16.svg" },
+  { name: "Dil Ka Rishta", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe39fc110943b1dd59ca_6.svg" },
+  { name: "Milkar", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe416ca40486c190000d_10.svg" },
+  { name: "Rise", src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/68fcbe5611a327c280c59c95_19.svg" },
 ];
 
 export const FAQS = [
