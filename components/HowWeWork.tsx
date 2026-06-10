@@ -17,11 +17,6 @@ export function HowWeWork() {
               ignored to in demand.
             </p>
           </div>
-          <div className="hidden shrink-0 lg:block">
-            <BookButton variant="primary" size="lg">
-              {CTAS.primary.label}
-            </BookButton>
-          </div>
         </div>
 
         {/* Authority-over-90-days chart: steps plotted on a compounding curve, drawn in on scroll */}
@@ -46,8 +41,8 @@ export function HowWeWork() {
           ))}
         </div>
 
-        <div className="mt-12 lg:hidden">
-          <BookButton variant="primary" size="lg" className="w-full">
+        <div className="mt-12 flex justify-center">
+          <BookButton variant="primary" size="lg">
             {CTAS.primary.label}
           </BookButton>
         </div>

@@ -43,7 +43,7 @@ export function Positioning() {
         </Reveal>
 
         {/* pillars as an editorial row, divided by hairlines — not boxes */}
-        <div className="mt-14 grid gap-x-10 gap-y-10 border-t border-line pt-12 md:grid-cols-3">
+        <div className="mt-14 grid gap-x-10 gap-y-10 border-t border-[#1a1a1a]/15 pt-12 md:grid-cols-3">
           {PILLARS.map((p, i) => (
             <Reveal
               key={p.title}

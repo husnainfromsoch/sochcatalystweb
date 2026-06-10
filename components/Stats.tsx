@@ -3,7 +3,7 @@ import { STATS } from "@/lib/content";
 
 export function Stats() {
   return (
-    <section className="border-y border-line bg-white py-16 sm:py-20">
+    <section className="border-y border-line bg-white py-8 sm:py-10">
       <div className="container-x">
         <div className="grid grid-cols-2 gap-y-10 lg:grid-cols-4">
           {STATS.map((s, i) => (

@@ -12,8 +12,6 @@ export function Hero() {
       <div className="container-x relative grid items-start gap-10 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-14">
         {/* ---- copy ---- */}
         <div className="max-w-xl">
-          <span className="eyebrow animate-fade-up">{HERO.eyebrow}</span>
-
           <h1 className="text-display text-[clamp(2rem,1.2rem+3vw,3.35rem)] mt-5 animate-fade-up [animation-delay:80ms]">
             {HERO.headline}{" "}
             <span className="italic text-brand">{HERO.headlineEmphasis}</span>
@@ -35,20 +33,30 @@ export function Hero() {
           </div>
 
           <div className="mt-9 flex items-center gap-4 animate-fade-up [animation-delay:340ms]">
-            <div className="flex -space-x-2.5">
+            <div className="flex items-center">
               {[
-                { c: "#0a66c2", t: "AR" },
-                { c: "#ff5c35", t: "SM" },
-                { c: "#1f7a8c", t: "JO" },
-                { c: "#33403b", t: "+" },
-              ].map((a, i) => (
-                <span
+                "https://randomuser.me/api/portraits/men/32.jpg",
+                "https://randomuser.me/api/portraits/women/44.jpg",
+                "https://randomuser.me/api/portraits/men/67.jpg",
+                "https://randomuser.me/api/portraits/women/17.jpg",
+              ].map((src, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
                   key={i}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold text-white ring-2 ring-mist"
-                  style={{ background: a.c }}
-                >
-                  {a.t}
-                </span>
+                  src={src}
+                  alt=""
+                  width={40}
+                  height={40}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "2px solid white",
+                    marginLeft: i === 0 ? 0 : -8,
+                    display: "block",
+                  }}
+                />
               ))}
             </div>
             <p className="text-sm text-muted">

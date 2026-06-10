@@ -63,7 +63,6 @@ export function ServicesShowcase() {
         {/* sticky index rail (lg+) */}
         <aside className="hidden lg:block">
           <div className="sticky top-28 self-start">
-            <span className="eyebrow">Jump to a service</span>
             <nav className="mt-6 space-y-0.5">
               {SERVICES.map((s) => {
                 const isActive = active === s.slug;

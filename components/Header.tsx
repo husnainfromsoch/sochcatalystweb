@@ -7,13 +7,10 @@ import { Logo } from "@/components/Logo";
 import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { NAV, CTAS } from "@/lib/content";
-import { useAuditModal } from "@/context/AuditModalContext";
-
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const { openModal } = useAuditModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -49,13 +46,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <button
-            type="button"
-            onClick={openModal}
-            className="text-[0.95rem] font-semibold text-ink underline-offset-4 hover:text-brand-dark hover:underline"
-          >
-            {CTAS.secondary.label}
-          </button>
           <BookButton variant="primary" size="md">
             {CTAS.primary.label}
           </BookButton>
@@ -90,13 +80,6 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-2 flex flex-col gap-2.5">
-            <button
-              type="button"
-              onClick={() => { openModal(); setOpen(false); }}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-base font-semibold text-ink ring-1 ring-ink/20 transition-colors duration-200 hover:ring-ink/45"
-            >
-              {CTAS.secondary.label}
-            </button>
             <BookButton variant="primary" size="lg" className="w-full">
               {CTAS.primary.label}
             </BookButton>

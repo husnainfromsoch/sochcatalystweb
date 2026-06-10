@@ -8,7 +8,8 @@ import { CASE_STUDIES, type CaseStudy } from "@/lib/content";
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const count = CASE_STUDIES.length;
-  const next = () => setCurrent((c) => (c + 1) % count);
+  const next = () => setCurrent((c) => Math.min(c + 1, count - 1));
+  const prev = () => setCurrent((c) => Math.max(c - 1, 0));
 
   return (
     <section className="py-20 sm:py-24 lg:py-28" style={{ backgroundColor: "#f9f9f9" }}>
@@ -26,7 +27,14 @@ export function Testimonials() {
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {CASE_STUDIES.map((cs) => (
-              <Slide key={cs.company} study={cs} onNext={next} />
+              <Slide
+                key={cs.company}
+                study={cs}
+                onNext={next}
+                onPrev={prev}
+                isFirst={current === 0}
+                isLast={current === count - 1}
+              />
             ))}
           </div>
         </div>
@@ -62,9 +70,21 @@ export function Testimonials() {
   );
 }
 
-function Slide({ study, onNext }: { study: CaseStudy; onNext: () => void }) {
+function Slide({
+  study,
+  onNext,
+  onPrev,
+  isFirst,
+  isLast,
+}: {
+  study: CaseStudy;
+  onNext: () => void;
+  onPrev: () => void;
+  isFirst: boolean;
+  isLast: boolean;
+}) {
   return (
-    <div className="grid w-full flex-shrink-0 lg:grid-cols-[2fr_3fr]" style={{ minWidth: "100%" }}>
+    <div className="relative grid w-full flex-shrink-0 lg:grid-cols-[2fr_3fr]" style={{ minWidth: "100%" }}>
       {/* ── Left: brand panel ── */}
       <div
         className="relative flex min-h-[14rem] flex-col items-start justify-end p-8 lg:min-h-[28rem]"
@@ -131,8 +151,13 @@ function Slide({ study, onNext }: { study: CaseStudy; onNext: () => void }) {
         {/* ── Next arrow — vertically centred on right edge ── */}
         <button
           onClick={onNext}
+          disabled={isLast}
           aria-label="Next case study"
-          className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate shadow-[0_1px_6px_rgba(0,0,0,0.12)] ring-1 ring-black/8 transition hover:bg-mist hover:text-ink active:scale-95 lg:right-6"
+          className={`absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate shadow-[0_1px_6px_rgba(0,0,0,0.12)] ring-1 ring-black/8 transition lg:right-6 ${
+            isLast
+              ? "opacity-40 cursor-default"
+              : "hover:bg-mist hover:text-ink active:scale-95"
+          }`}
         >
           <svg
             className="h-5 w-5"
@@ -145,6 +170,28 @@ function Slide({ study, onNext }: { study: CaseStudy; onNext: () => void }) {
           </svg>
         </button>
       </div>
+
+      {/* ── Prev arrow — vertically centred on left edge ── */}
+      <button
+        onClick={onPrev}
+        disabled={isFirst}
+        aria-label="Previous case study"
+        className={`absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate shadow-[0_1px_6px_rgba(0,0,0,0.12)] ring-1 ring-black/8 transition lg:left-6 ${
+          isFirst
+            ? "opacity-40 cursor-default"
+            : "hover:bg-mist hover:text-ink active:scale-95"
+        }`}
+      >
+        <svg
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 20 20"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 4l-6 6 6 6" />
+        </svg>
+      </button>
     </div>
   );
 }

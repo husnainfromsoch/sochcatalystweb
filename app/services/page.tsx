@@ -15,7 +15,6 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our services"
         title="Every service Soch Catalyst offers. Take the full system or start with the piece you need most."
         intro="Each service is built around one goal: making you the most credible voice in your space, in front of the people who matter most."
       >

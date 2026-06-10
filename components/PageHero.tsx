@@ -4,7 +4,7 @@ export function PageHero({
   intro,
   children,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ export function PageHero({
     <section className="border-b border-line bg-mist">
       <div className="container-x py-16 sm:py-20 lg:py-24">
         <div className="max-w-3xl">
-          <span className="eyebrow">{eyebrow}</span>
+          {eyebrow && <span className="eyebrow">{eyebrow}</span>}
           <h1 className="text-display mt-6 text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
             {title}
           </h1>
