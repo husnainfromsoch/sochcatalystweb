@@ -195,6 +195,7 @@ export type CaseStudy = {
   accent: string;
   initials: string;
   image?: string;
+  href?: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -217,6 +218,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     accent: "#0a3d6b",
     initials: "BZ",
     image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png",
+    href: "/case-studies/gaia-antonescu",
   },
   {
     company: "Cycle Together",
@@ -237,6 +239,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     accent: "#1a6b3c",
     initials: "CT",
     image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png",
+    href: "/case-studies/biola-babawale",
   },
 ];
 
