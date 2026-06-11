@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { ServiceVisual } from "@/components/ServiceVisual";
-import { SERVICES, CTAS } from "@/lib/content";
+import { SERVICES } from "@/lib/content";
 
 // Short rail labels (the full titles are too long for the index).
 const LABELS: Record<string, string> = {
@@ -91,11 +90,7 @@ export function ServicesShowcase() {
                 );
               })}
             </nav>
-            <div className="mt-7">
-              <BookButton variant="dark" size="md" arrow>
-                {CTAS.primary.label}
-              </BookButton>
-            </div>
+
           </div>
         </aside>
 

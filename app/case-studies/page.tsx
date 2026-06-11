@@ -61,31 +61,26 @@ export default function CaseStudiesPage() {
 
       {/* ── Cards grid ── */}
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[75rem] px-6 lg:px-10">
-          <div className="grid gap-8 lg:grid-cols-2">
+        <div className="mx-auto max-w-[56.25rem] px-6 lg:px-10">
+          <div className="grid gap-8">
             {CARDS.map((card) => (
               <article
                 key={card.href}
                 className="group overflow-hidden rounded-xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_22px_48px_-22px_rgba(20,30,25,0.28)]"
               >
-                <div className="flex flex-col sm:flex-row">
+                <div className="flex flex-row">
 
                   {/* portrait placeholder */}
-                  <div className="h-52 sm:h-auto sm:w-[40%] sm:shrink-0 sm:self-stretch">
-                    <div className="flex h-full min-h-[18rem] items-center justify-center bg-cream grayscale">
-                      <div className="text-center">
-                        <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#888] text-xl font-bold text-white">
-                          {card.initials}
-                        </span>
-                        <p className="mt-2 text-[0.65rem] text-muted">
-                          Portrait placeholder
-                        </p>
-                      </div>
+                  <div className="w-[280px] shrink-0 self-stretch">
+                    <div className="flex h-full min-h-[320px] items-center justify-center bg-[#e8e1d3] grayscale">
+                      <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#888] text-xl font-bold text-white">
+                        {card.initials}
+                      </span>
                     </div>
                   </div>
 
                   {/* content */}
-                  <div className="flex flex-1 flex-col justify-between p-9">
+                  <div className="flex flex-1 flex-col justify-between p-10">
 
                     <div>
                       {/* category tags */}
@@ -110,17 +105,17 @@ export default function CaseStudiesPage() {
                     </div>
 
                     {/* stat boxes */}
-                    <div className="mt-6 grid grid-cols-2 gap-3">
+                    <div className="mt-6 grid grid-cols-3 gap-3">
                       {card.stats.map((s) => (
                         <div
                           key={s.label}
-                          className="rounded-lg border border-line p-4"
+                          className="rounded-lg border border-line px-4 py-3"
                         >
                           <p
                             className="leading-none text-ink"
                             style={{
                               fontFamily: "var(--font-display)",
-                              fontSize: "2rem",
+                              fontSize: "1.5rem",
                               fontWeight: 600,
                               letterSpacing: "-0.022em",
                             }}

@@ -9,7 +9,7 @@ import type { IconName } from "@/components/Icons";
 export const HERO = {
   eyebrow: "LinkedIn positioning system",
   headline: "Your LinkedIn should be your most credible business asset.",
-  headlineEmphasis: "We build it that way.",
+  headlineEmphasis: "We make it one.",
 };
 
 export const SITE = {

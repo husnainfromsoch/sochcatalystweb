@@ -1,4 +1,3 @@
-import { BookButton } from "@/components/BookButton";
 import { AuditButton } from "@/components/AuditButton";
 import { CTAS, HERO } from "@/lib/content";
 import LinkedInAnim from "@/components/LinkedInAnim";
@@ -24,10 +23,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:240ms]">
-            <BookButton variant="primary" size="lg">
-              {CTAS.primary.label}
-            </BookButton>
-            <AuditButton variant="secondary" size="lg">
+            <AuditButton variant="primary" size="lg">
               {CTAS.secondary.label}
             </AuditButton>
           </div>

@@ -38,7 +38,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Soch Catalyst"
         title="Built by a practitioner. Built for founders."
         intro="Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building."
       />
@@ -47,8 +46,7 @@ export default function AboutPage() {
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <span className="eyebrow">Why we exist</span>
-            <h2 className="text-h2 mt-6">The problem we kept seeing</h2>
+            <h2 className="text-h2">The problem we kept seeing</h2>
             <div className="mt-6 space-y-4 text-slate">
               <p>
                 Most LinkedIn services sell content. They write posts, schedule them,
@@ -103,8 +101,7 @@ export default function AboutPage() {
       <section className="bg-cream py-20 sm:py-24 lg:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
-            <span className="eyebrow">What we believe</span>
-            <h2 className="text-h2 mt-6">Principles that shape every account we run.</h2>
+            <h2 className="text-h2">Principles that shape every account we run.</h2>
           </div>
           <div className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2">
             {VALUES.map((v, i) => (
@@ -141,9 +138,7 @@ export default function AboutPage() {
 
           {/* text */}
           <Reveal delay={0.1} className="order-1 lg:order-2">
-            <span className="eyebrow">Who leads this</span>
-
-            <div className="mt-6 space-y-4 text-slate">
+            <div className="space-y-4 text-slate">
               <p>
                 Umair Shahzad is an award-winning LinkedIn creator recognised as a
                 LinkedIn Top Voice — ranked in the top 200 globally in Venture

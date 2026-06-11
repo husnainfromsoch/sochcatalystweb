@@ -1,5 +1,4 @@
 import { BookButton } from "@/components/BookButton";
-import { AuditButton } from "@/components/AuditButton";
 import { CTAS } from "@/lib/content";
 
 export function CtaBand({
@@ -13,20 +12,17 @@ export function CtaBand({
   return (
     <section className="bg-forest">
       <div className="container-x py-20 sm:py-24 lg:py-28">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-h2 text-white">
             {title}
             {accentDot && <span className="text-brand">.</span>}
           </h2>
-          <p className="lead mt-5 max-w-2xl text-white/75">{subtitle}</p>
+          <p className="lead mt-5 max-w-2xl mx-auto text-white/75">{subtitle}</p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-9 flex justify-center">
             <BookButton variant="primary" size="lg">
               {CTAS.primary.label}
             </BookButton>
-            <AuditButton variant="light" size="lg">
-              {CTAS.secondary.label}
-            </AuditButton>
           </div>
         </div>
       </div>

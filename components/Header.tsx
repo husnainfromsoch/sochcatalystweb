@@ -34,15 +34,22 @@ export function Header() {
         <Logo />
 
         <nav className="hidden items-center gap-1 md:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-[0.95rem] font-medium text-slate transition-colors hover:bg-mist hover:text-ink"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors ${
+                  active
+                    ? "bg-[#1a1a1a] text-white"
+                    : "text-slate hover:bg-mist hover:text-ink"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -70,15 +77,22 @@ export function Header() {
         }`}
       >
         <div className="container-x flex flex-col gap-1 py-4">
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-xl px-4 py-3 text-base font-medium text-ink hover:bg-mist"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`rounded-xl px-4 py-3 text-base font-medium ${
+                  active
+                    ? "bg-[#1a1a1a] text-white"
+                    : "text-ink hover:bg-mist"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <div className="mt-2 flex flex-col gap-2.5">
             <BookButton variant="primary" size="lg" className="w-full">
               {CTAS.primary.label}

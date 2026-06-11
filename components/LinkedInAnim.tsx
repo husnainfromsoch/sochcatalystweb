@@ -2,17 +2,17 @@
 import { useEffect, useRef } from "react";
 
 type NotifDef =
-  | { type: "person"; bg: string; initials: string; title: string; sub: string; dx: number; dy: number }
+  | { type: "person"; bg: string; initials: string; photo?: string; title: string; sub: string; dx: number; dy: number }
   | { type: "li"; title: string; sub: string; dx: number; dy: number }
   | { type: "icon"; emoji: string; bg: string; title: string; sub: string; dx: number; dy: number };
 
 const NOTIF_DEFS: NotifDef[] = [
-  { type: "person", bg: "#0a66c2", initials: "AR", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', dx: -225, dy: -175 },
+  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', dx: -225, dy: -175 },
   { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", dx: 150, dy: -135 },
-  { type: "person", bg: "#44712e", initials: "JM", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", dx: -228, dy: 28 },
+  { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", dx: -228, dy: 28 },
   { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", dx: 148, dy: 58 },
   { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -198 },
-  { type: "person", bg: "#6c3483", initials: "TP", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", dx: 65, dy: 188 },
+  { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", dx: 65, dy: 188 },
 ];
 
 const CSS = `
@@ -136,7 +136,9 @@ export default function LinkedInAnim() {
 
         let lft = "";
         if (n.type === "person") {
-          lft = `<div class="licard-n-avatar" style="background:${n.bg}">${n.initials}</div>`;
+          lft = n.photo
+            ? `<div class="licard-n-avatar" style="overflow:hidden;padding:0;background:none"><img src="${n.photo}" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/></div>`
+            : `<div class="licard-n-avatar" style="background:${n.bg}">${n.initials}</div>`;
         } else if (n.type === "li") {
           lft = `<div class="licard-n-li"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.73a1.77 1.77 0 110-3.54 1.77 1.77 0 010 3.54zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg></div>`;
         } else {
@@ -358,7 +360,9 @@ export default function LinkedInAnim() {
         {/* Avatar row */}
         <div className="licard-av-section">
           <div className="licard-av-wrap">
-            <div className="licard-av-initials">KP</div>
+            <div className="licard-av-initials" style={{ overflow: "hidden", padding: 0, background: "none" }}>
+              <img alt="" src="https://randomuser.me/api/portraits/women/44.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+            </div>
           </div>
           <div className="licard-av-actions">
             <button className="licard-btn-connect">Connect</button>
@@ -405,9 +409,15 @@ export default function LinkedInAnim() {
 
           <div className="licard-mutuals">
             <div className="licard-mutual-avs">
-              <div className="licard-mav" style={{ background: "#0a66c2" }}>AR</div>
-              <div className="licard-mav" style={{ background: "#44712e" }}>JM</div>
-              <div className="licard-mav" style={{ background: "#6c3483" }}>TP</div>
+              <div className="licard-mav" style={{ background: "none", overflow: "hidden", padding: 0 }}>
+                <img alt="" src="https://randomuser.me/api/portraits/men/22.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+              </div>
+              <div className="licard-mav" style={{ background: "none", overflow: "hidden", padding: 0 }}>
+                <img alt="" src="https://randomuser.me/api/portraits/women/28.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+              </div>
+              <div className="licard-mav" style={{ background: "none", overflow: "hidden", padding: 0 }}>
+                <img alt="" src="https://randomuser.me/api/portraits/men/45.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+              </div>
             </div>
             <div className="licard-mutual-txt">
               <b>Mark J.</b>, <b>Priya N.</b> and 22 other mutual connections
@@ -463,7 +473,9 @@ export default function LinkedInAnim() {
         <div className="licard-post-wrap">
           <div className="licard-post-card">
             <div className="licard-post-header">
-              <div className="licard-post-av-initials">KP</div>
+              <div className="licard-post-av-initials" style={{ overflow: "hidden", padding: 0, background: "none" }}>
+                <img alt="" src="https://randomuser.me/api/portraits/women/44.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
+              </div>
               <div className="licard-post-meta">
                 <div className="licard-post-name">
                   Kaitlin Peter <span>· 1st</span>

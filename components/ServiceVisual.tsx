@@ -39,14 +39,16 @@ function ProfileVisual() {
         <div className="h-16 bg-linkedin" />
         <div className="px-5 pb-5">
           <div className="-mt-7 flex items-end justify-between">
-            <Avatar c="#ff5c35" t="YN" className="h-14 w-14 text-base ring-4 ring-white" />
+            <span className="inline-flex h-14 w-14 shrink-0 overflow-hidden rounded-full ring-4 ring-white">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%"}} alt="James Whitfield" />
+            </span>
             <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-mist px-2.5 py-1 text-[0.65rem] font-semibold text-ink-soft ring-1 ring-line">
               <Icon name="check" className="h-3 w-3 text-leaf" strokeWidth={3} /> Optimised
             </span>
           </div>
           <div className="mt-3 flex items-center gap-1.5">
             <p className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-sans)" }}>
-              Your Name
+              James Whitfield
             </p>
             <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-linkedin text-white">
               <Icon name="check" className="h-2 w-2" strokeWidth={3} />
@@ -81,10 +83,12 @@ function ContentVisual() {
     <Stage>
       <div className={`${card} p-5 animate-float-a`}>
         <div className="flex items-center gap-2.5">
-          <Avatar c="#ff5c35" t="YN" className="h-9 w-9 text-xs" />
+          <span className="inline-flex h-9 w-9 shrink-0 overflow-hidden rounded-full">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%"}} alt="James Whitfield" />
+          </span>
           <div className="leading-tight">
-            <p className="text-xs font-semibold text-ink">Your Name</p>
-            <p className="text-[0.65rem] text-muted">Founder · Posting now</p>
+            <p className="text-xs font-semibold text-ink">James Whitfield</p>
+            <p className="text-[0.65rem] text-muted">Founder & CEO · Whitfield Advisory</p>
           </div>
         </div>
         <div className="mt-3.5 space-y-2">
