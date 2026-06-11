@@ -152,18 +152,17 @@ export default function BiolaBabawale() {
             </div>
           </div>
 
-          {/* right column — portrait placeholder */}
+          {/* right column — portrait */}
           <div
             className="animate-fade-up"
             style={{ animationDelay: "100ms" }}
           >
-            <div className="flex aspect-[3/4] w-full items-center justify-center overflow-hidden rounded border border-line bg-cream">
-              <div className="text-center">
-                <span className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-brand text-2xl font-bold text-white">
-                  BB
-                </span>
-                <p className="mt-3 text-xs text-muted">Portrait placeholder</p>
-              </div>
+            <div className="aspect-[3/4] w-full overflow-hidden rounded border border-line">
+              <img
+                src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png"
+                alt="Biola Babawale"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
             </div>
           </div>
 

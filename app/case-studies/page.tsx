@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 const CARDS = [
   {
     initials: "GA",
+    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png",
     tags: ["LinkedIn Management"],
     title:
       "Turning a founder’s LinkedIn into a consistent pipeline of qualified conversations",
@@ -26,6 +27,7 @@ const CARDS = [
   },
   {
     initials: "BB",
+    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png",
     tags: ["Personal Branding & Community Growth"],
     title:
       "Giving a movement founder the LinkedIn presence her mission deserved",
@@ -70,13 +72,13 @@ export default function CaseStudiesPage() {
               >
                 <div className="flex flex-row">
 
-                  {/* portrait placeholder */}
-                  <div className="w-[280px] shrink-0 self-stretch">
-                    <div className="flex h-full min-h-[320px] items-center justify-center bg-[#e8e1d3] grayscale">
-                      <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#888] text-xl font-bold text-white">
-                        {card.initials}
-                      </span>
-                    </div>
+                  {/* portrait */}
+                  <div className="w-[280px] shrink-0 self-stretch overflow-hidden">
+                    <img
+                      src={card.image}
+                      alt={card.initials}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "320px", display: "block" }}
+                    />
                   </div>
 
                   {/* content */}

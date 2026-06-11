@@ -87,16 +87,23 @@ function Slide({
     <div className="relative grid w-full flex-shrink-0 lg:grid-cols-[2fr_3fr]" style={{ minWidth: "100%" }}>
       {/* ── Left: brand panel ── */}
       <div
-        className="relative flex min-h-[14rem] flex-col items-start justify-end p-8 lg:min-h-[28rem]"
+        className="relative flex min-h-[14rem] flex-col items-start justify-end overflow-hidden p-8 lg:min-h-[28rem]"
         style={{ background: study.accent }}
       >
-        {/* ghost initials watermark */}
-        <span
-          className="absolute right-6 top-6 select-none text-[7rem] font-bold leading-none text-white/10"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {study.initials}
-        </span>
+        {study.image ? (
+          <img
+            src={study.image}
+            alt={study.company}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        ) : (
+          <span
+            className="absolute right-6 top-6 select-none text-[7rem] font-bold leading-none text-white/10"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {study.initials}
+          </span>
+        )}
 
         <div className="relative space-y-1">
           <p
