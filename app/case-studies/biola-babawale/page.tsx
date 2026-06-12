@@ -221,8 +221,12 @@ export default function BiolaBabawale() {
                 </p>
               </div>
 
-              <div className="mt-10 flex aspect-[16/8] w-full items-center justify-center rounded border border-line bg-cream">
-                <p className="text-sm text-muted">Landscape image placeholder</p>
+              <div className="mt-10 aspect-[16/8] w-full overflow-hidden rounded">
+                <img
+                  src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png"
+                  alt="Cycle Together case study"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "4px" }}
+                />
               </div>
             </Reveal>
 
