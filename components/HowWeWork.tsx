@@ -1,8 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
-import { BookButton } from "@/components/BookButton";
 import { Icon } from "@/components/Icons";
 import { HowWeWorkChart } from "@/components/HowWeWorkChart";
-import { STEPS, CTAS } from "@/lib/content";
+import { STEPS } from "@/lib/content";
 
 export function HowWeWork() {
   return (
@@ -40,11 +39,6 @@ export function HowWeWork() {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <BookButton variant="primary" size="lg">
-            {CTAS.primary.label}
-          </BookButton>
-        </div>
       </div>
     </section>
   );
