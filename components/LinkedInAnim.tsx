@@ -319,14 +319,13 @@ export default function LinkedInAnim() {
             />
             <text
               x="14"
-              y="93"
+              y="94"
               fontFamily="'Source Sans 3',system-ui,sans-serif"
-              fontSize="9.5"
-              fontWeight="600"
+              fontSize="11"
+              fontWeight="300"
               fill="rgba(255,255,255,0.6)"
-              letterSpacing="0.8"
             >
-              EDTECH · ONLINE LEARNING · SKILLS FOR THE FUTURE
+              Founder &amp; CEO
             </text>
           </svg>
         </div>
@@ -347,7 +346,7 @@ export default function LinkedInAnim() {
         {/* Profile info */}
         <div className="licard-info">
           <div className="licard-pname">
-            Kaitlin Peter
+            Sarah Mitchell
             <div className="licard-verify-icon">
               <svg viewBox="0 0 16 16" fill="none" width="10" height="10">
                 <path
@@ -362,7 +361,7 @@ export default function LinkedInAnim() {
             <span className="licard-pronouns">(she/her)</span>
           </div>
           <div className="licard-headline">
-            Founder &amp; CEO at Edolutions · Making Quality Education Accessible to Every Learner
+            Founder &amp; CEO · Helping B2B SaaS teams close enterprise deals
           </div>
           <div className="licard-location-line">
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -372,12 +371,12 @@ export default function LinkedInAnim() {
               />
               <circle cx="8" cy="5.5" r="1.5" fill="#f3f2ef" />
             </svg>
-            <span>San Francisco Bay Area, California</span>
+            <span>London, United Kingdom</span>
             &nbsp;·&nbsp;
             <span className="licard-loc-link">Contact info</span>
           </div>
           <div className="licard-followers-line">
-            <b id="licard-follNum">312</b> followers &nbsp;·&nbsp;{" "}
+            <b id="licard-follNum">0</b> followers &nbsp;·&nbsp;{" "}
             <span id="licard-connNum">500</span>+ connections
           </div>
 
@@ -452,9 +451,9 @@ export default function LinkedInAnim() {
               </div>
               <div className="licard-post-meta">
                 <div className="licard-post-name">
-                  Kaitlin Peter <span>· 1st</span>
+                  Sarah Mitchell <span>· 1st</span>
                 </div>
-                <div className="licard-post-sub">Founder &amp; CEO · Edolutions</div>
+                <div className="licard-post-sub">Founder &amp; CEO · B2B SaaS</div>
                 <div className="licard-post-time">
                   3h &nbsp;·&nbsp;
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
