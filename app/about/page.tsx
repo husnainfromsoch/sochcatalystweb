@@ -125,14 +125,11 @@ export default function AboutPage() {
           {/* image — replace placeholder with <Image src="/umair.jpg" alt="Umair Shahzad" fill className="object-cover" /> */}
           <Reveal className="order-2 lg:order-1">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-line bg-cream">
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="text-center">
-                  <span className="inline-flex h-28 w-28 items-center justify-center rounded-full bg-brand text-4xl font-bold text-white">
-                    US
-                  </span>
-                  <p className="mt-4 text-xs text-muted">Photo coming soon</p>
-                </div>
-              </div>
+              <img
+                src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/694e752108dbf4bfac6a9469_Umair%20co-founder.webp"
+                alt="Umair Shahzad"
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }}
+              />
             </div>
           </Reveal>
 
@@ -184,7 +181,9 @@ export default function AboutPage() {
 
             {/* LinkedIn CTA */}
             <a
-              href="#"
+              href="https://www.linkedin.com/in/consult-with-umair"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-lg border border-linkedin/30 bg-linkedin/5 px-4 py-2.5 text-sm font-semibold text-linkedin transition-colors hover:bg-linkedin/10"
             >
               <svg
