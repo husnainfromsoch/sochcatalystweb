@@ -23,7 +23,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 animate-fade-up [animation-delay:240ms]">
-            <AuditButton variant="primary" size="lg">
+            <AuditButton variant="secondary" size="lg">
               {CTAS.secondary.label}
             </AuditButton>
           </div>

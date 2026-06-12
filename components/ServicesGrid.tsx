@@ -10,8 +10,7 @@ export function ServicesGrid() {
       <div className="container-x grid gap-x-12 gap-y-10 lg:grid-cols-[0.85fr_1.4fr]">
         {/* left: intro (asymmetric, sticky) */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <span className="eyebrow">What we do</span>
-          <h2 className="text-h2 mt-6">
+          <h2 className="text-h2">
             Everything your LinkedIn needs, in one place.
           </h2>
           <p className="lead mt-5">

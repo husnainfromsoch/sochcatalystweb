@@ -21,13 +21,11 @@ export function Section({
 }
 
 export function SectionHeading({
-  eyebrow,
   title,
   intro,
   align = "center",
   className = "",
 }: {
-  eyebrow?: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
   align?: "center" | "left";
@@ -37,7 +35,6 @@ export function SectionHeading({
     align === "center" ? "mx-auto text-center items-center" : "text-left items-start";
   return (
     <div className={`flex max-w-2xl flex-col gap-4 ${alignment} ${className}`}>
-      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h2 className="text-h2">{title}</h2>
       {intro && <p className="lead">{intro}</p>}
     </div>

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/PageHero";
-import { BookButton } from "@/components/BookButton";
 import { AuditButton } from "@/components/AuditButton";
 import { Icon } from "@/components/Icons";
 
@@ -10,77 +8,136 @@ export const metadata: Metadata = {
     "Request a free LinkedIn audit. We review your profile, content and outreach and send back a prioritised plan of the moves that will get you the most return.",
 };
 
-const GET = [
+const AUDIT_CARDS = [
   {
     icon: "profile" as const,
-    title: "Profile teardown",
-    body: "Headline, about, banner and featured, checked against what actually turns visitors into conversations.",
+    title: "Profile Teardown",
+    body: "Headline, about, banner — checked against what turns visitors into leads.",
   },
   {
     icon: "pen" as const,
-    title: "Content review",
-    body: "An honest look at your hooks, formats and consistency, and the gaps holding your reach back.",
+    title: "Content Review",
+    body: "Hooks, formats, consistency, and the gaps holding your reach back.",
   },
   {
     icon: "target" as const,
-    title: "Positioning gaps",
-    body: "Where you blur into competitors, and the angle that would make you the obvious choice.",
+    title: "Positioning Gaps",
+    body: "Where you blur into competitors and how to become the obvious choice.",
   },
   {
     icon: "trend" as const,
-    title: "90-day roadmap",
-    body: "A prioritised, do-this-next plan you can start on right away, with or without us.",
+    title: "90-Day Roadmap",
+    body: "A prioritised plan you can start on right away, with or without us.",
   },
+];
+
+const AVATARS = [
+  "https://randomuser.me/api/portraits/men/32.jpg",
+  "https://randomuser.me/api/portraits/women/44.jpg",
+  "https://randomuser.me/api/portraits/men/67.jpg",
+  "https://randomuser.me/api/portraits/women/17.jpg",
 ];
 
 export default function AuditPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Free LinkedIn audit"
-        title={
-          <>
-            See exactly what&apos;s{" "}
-            <span className="text-gradient">holding your LinkedIn back.</span>
-          </>
-        }
-        intro="Request a free audit, no strings. We review your profile, content and outreach by hand, then send back a clear plan of what to fix first."
-      />
+      {/* ── HERO — two column ─────────────────────────────────────── */}
+      <section className="border-b border-line bg-mist">
+        <div className="container-x py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
-        <div className="container-x">
-          <h2 className="text-h2">What&apos;s inside your audit</h2>
-          <p className="lead mt-4">
-            A real teardown, not an automated score. A strategist reviews your
-            presence by hand.
+            {/* Left — copy */}
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+                Free LinkedIn Audit
+              </p>
+
+              <h1 className="text-display mt-4 text-[clamp(2.2rem,1.3rem+3.2vw,3.6rem)]">
+                See exactly what&apos;s holding your LinkedIn back.
+              </h1>
+
+              <p className="lead mt-5 font-light">
+                Request a free audit, no strings. We review your profile,
+                content and outreach by hand, then send back a clear plan of
+                what to fix first.
+              </p>
+
+              <div className="mt-8">
+                <AuditButton variant="primary" size="lg">
+                  Get Your Free Audit
+                </AuditButton>
+              </div>
+
+              <p className="mt-4 text-sm text-muted">
+                No commitment required. The audit is yours to keep.
+              </p>
+            </div>
+
+            {/* Right — deliverable cards */}
+            <div className="flex flex-col gap-3">
+              {AUDIT_CARDS.map((card) => (
+                <div
+                  key={card.title}
+                  className="flex items-start gap-3 rounded-lg border border-line bg-white px-6 py-5"
+                  style={{
+                    borderLeftWidth: "3px",
+                    borderLeftColor: "var(--color-brand)",
+                  }}
+                >
+                  <Icon
+                    name={card.icon}
+                    className="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                    strokeWidth={1.6}
+                  />
+                  <div>
+                    <p className="text-[15px] font-semibold text-ink">
+                      {card.title}
+                    </p>
+                    <p className="mt-1 text-[13px] leading-relaxed text-muted">
+                      {card.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DIVIDER ───────────────────────────────────────────────── */}
+      <hr className="border-line" />
+
+      {/* ── SOCIAL PROOF STRIP ────────────────────────────────────── */}
+      <section className="bg-mist py-12">
+        <div className="container-x flex flex-col items-center text-center">
+          <p
+            className="font-display italic text-ink"
+            style={{ fontSize: "1.25rem", lineHeight: 1.5 }}
+          >
+            Trusted by 40+ founders and senior executives across Europe,
+            North America, and the UK.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {GET.map((g) => (
-              <div
-                key={g.title}
-                className="rounded-xl border border-line bg-white p-5"
-              >
-                <Icon name={g.icon} className="h-7 w-7 text-brand" strokeWidth={1.5} />
-                <h3 className="mt-4 text-base font-semibold text-ink">{g.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate">{g.body}</p>
-              </div>
+          <div className="mt-6 flex items-center justify-center">
+            {AVATARS.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={i}
+                src={src}
+                alt=""
+                width={44}
+                height={44}
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "2px solid white",
+                  marginLeft: i === 0 ? 0 : -10,
+                  display: "block",
+                }}
+              />
             ))}
-          </div>
-
-          <div className="mt-8 flex items-center gap-3 rounded-2xl border border-line bg-mist p-5 text-sm text-slate">
-            <Icon name="shield" className="h-5 w-5 shrink-0 text-brand-dark" />
-            No commitment required. The audit is yours to keep, whether or not we
-            work together.
-          </div>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <BookButton variant="primary" size="lg">
-              Book a Discovery Call
-            </BookButton>
-            <AuditButton variant="secondary" size="lg" className="!ring-brand !text-brand hover:!ring-brand-dark hover:!text-brand-dark">
-              Get a Free LinkedIn Audit
-            </AuditButton>
           </div>
         </div>
       </section>

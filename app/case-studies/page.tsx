@@ -48,8 +48,7 @@ export default function CaseStudiesPage() {
       <section className="border-b border-line bg-cream py-16 sm:py-20">
         <div className="container-x">
           <Reveal>
-            <p className="eyebrow">Client work</p>
-            <h1 className="mt-6 text-display">
+            <h1 className="text-display">
               Results that speak for themselves.
             </h1>
             <p className="lead mt-5 max-w-2xl text-muted">

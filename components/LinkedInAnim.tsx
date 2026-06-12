@@ -95,7 +95,6 @@ export default function LinkedInAnim() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const LOOP = 9200;
     let nEls: HTMLElement[] = [];
     const timeouts: ReturnType<typeof setTimeout>[] = [];
 
@@ -195,7 +194,7 @@ export default function LinkedInAnim() {
       veil.style.transition = "none";
       veil.style.opacity = "";
 
-      if (follNum) follNum.textContent = "312";
+      if (follNum) follNum.textContent = "0";
       if (connNum) connNum.textContent = "500";
       if (sV) sV.textContent = "0";
       if (sI) sI.textContent = "0";
@@ -222,7 +221,7 @@ export default function LinkedInAnim() {
 
       timeouts.push(
         setTimeout(() => {
-          if (follNum) countTo(follNum, 312, 14280, 2400, (v) => v.toLocaleString());
+          if (follNum) countTo(follNum, 0, 8420, 2400, (v) => v.toLocaleString());
           if (connNum) countTo(connNum, 500, 1840, 2200, (v) => v.toLocaleString());
           if (sV) countTo(sV, 0, 312, 1800, null);
           if (sI) countTo(sI, 0, 184, 1600, (v) => v + "k");
@@ -255,37 +254,11 @@ export default function LinkedInAnim() {
           }, 2600 + i * 300)
         );
       });
-
-      timeouts.push(
-        setTimeout(() => {
-          nEls.forEach((n) => {
-            n.style.opacity = "0";
-            n.style.transform = "translateY(-5px) scale(.92)";
-          });
-        }, 7800)
-      );
-
-      timeouts.push(
-        setTimeout(() => {
-          veil.style.transition = "opacity .8s ease";
-          veil.style.opacity = "1";
-          card.classList.remove("alive");
-          timeouts.push(
-            setTimeout(() => {
-              veil.style.transition = "none";
-              veil.style.opacity = "";
-              veil.classList.remove("off");
-            }, 800)
-          );
-        }, 8300)
-      );
     }
 
     loop();
-    const intervalId = setInterval(loop, LOOP);
 
     return () => {
-      clearInterval(intervalId);
       timeouts.forEach(clearTimeout);
       nEls.forEach((n) => n.remove());
     };
@@ -307,9 +280,10 @@ export default function LinkedInAnim() {
           >
             <defs>
               <linearGradient id="licard-bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#0a3d6b" />
-                <stop offset="45%" stopColor="#0a66c2" />
-                <stop offset="100%" stopColor="#1282c4" />
+                <stop offset="0%" stopColor="#1a1a2e" />
+                <stop offset="40%" stopColor="#16213e" />
+                <stop offset="70%" stopColor="#0f3460" />
+                <stop offset="100%" stopColor="#e8633e" />
               </linearGradient>
             </defs>
             <rect width="390" height="104" fill="url(#licard-bg1)" />

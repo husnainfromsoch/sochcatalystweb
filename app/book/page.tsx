@@ -27,7 +27,6 @@ export default function BookPage() {
   return (
     <>
       <PageHero
-        eyebrow="Discovery call"
         title={
           <>
             Let&apos;s map your path from{" "}

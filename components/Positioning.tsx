@@ -31,8 +31,7 @@ export function Positioning() {
     >
       <div className="container-x">
         <Reveal className="max-w-3xl">
-          <span className="eyebrow">The Catalyst difference</span>
-          <h2 className="text-h2 mt-6">
+          <h2 className="text-h2">
             Most LinkedIn services sell content. We build the system behind it.
           </h2>
           <p className="lead mt-5">

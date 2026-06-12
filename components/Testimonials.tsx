@@ -16,8 +16,7 @@ export function Testimonials() {
     <section className="py-20 sm:py-24 lg:py-28" style={{ backgroundColor: "#f9f9f9" }}>
       <div className="container-x">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Proof, not promises</span>
-          <h2 className="text-h2 mt-6">Founders who stopped being invisible.</h2>
+          <h2 className="text-h2">Founders who stopped being invisible.</h2>
         </Reveal>
 
         {/* ── Carousel ── */}
