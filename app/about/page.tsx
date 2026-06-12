@@ -74,7 +74,7 @@ export default function AboutPage() {
                 style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
               >
                 &ldquo;We don&apos;t make you go viral. We make you{" "}
-                <span className="text-brand">credible</span> to the people who can say
+                <span className="text-brand">credible</span>{" "}to the people who can say
                 yes.&rdquo;
               </p>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-dashed border-line pt-6">
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
               >
                 &ldquo;We don&apos;t make you go viral. We make you{" "}
-                <span className="text-brand">credible</span> to the people who can
+                <span className="text-brand">credible</span>{" "}to the people who can
                 say yes.&rdquo;
               </p>
               <figcaption className="mt-4 flex items-center gap-2.5 border-t border-dashed border-line pt-4">
