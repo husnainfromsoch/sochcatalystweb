@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stats } from "@/components/Stats";
 import { CtaBand } from "@/components/CtaBand";
@@ -37,10 +36,27 @@ const VALUES: { icon: IconName; title: string; body: string }[] = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        title="Built by a practitioner. Built for founders."
-        intro="Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building."
-      />
+      <section className="border-b border-line bg-mist">
+        <div className="container-x py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <div>
+              <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
+                Built by a practitioner. Built for founders.
+              </h1>
+              <p className="lead mt-6 max-w-2xl">
+                Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
+                alt="Soch Catalyst team"
+                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px", minHeight: "480px" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* mission */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
