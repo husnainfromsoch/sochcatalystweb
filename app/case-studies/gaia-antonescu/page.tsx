@@ -223,8 +223,12 @@ export default function GaiaAntonescuPage() {
                 </p>
               </div>
 
-              <div className="mt-10 flex aspect-[16/8] w-full items-center justify-center rounded border border-line bg-cream">
-                <p className="text-sm text-muted">Landscape image placeholder</p>
+              <div className="mt-10 aspect-[16/8] w-full overflow-hidden rounded">
+                <img
+                  src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png"
+                  alt="Byzantine case study"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "4px" }}
+                />
               </div>
             </Reveal>
 
