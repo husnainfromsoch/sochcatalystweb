@@ -4,6 +4,7 @@ export default function ServicesVenn() {
       viewBox="0 0 1000 1000"
       role="img"
       className="w-full max-w-[520px] h-auto"
+      style={{ background: 'transparent' }}
       aria-label="Soch Catalyst services diagram">
 
       <style>{`
@@ -34,7 +35,7 @@ export default function ServicesVenn() {
         }
       `}</style>
 
-      <rect width="1000" height="1000" fill="#F5EFE0"/>
+      <rect width="1000" height="1000" fill="transparent"/>
 
       <circle cx="500" cy="500" r="420" fill="none"
         stroke="#26302A" strokeOpacity="0.14"
