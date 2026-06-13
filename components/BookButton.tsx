@@ -34,7 +34,7 @@ export function BookButton({
   className = "",
 }: Props) {
   const { openModal } = useBookingModal();
-  const cls = `group inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
+  const cls = `group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
   return (
     <button type="button" onClick={openModal} className={cls}>
       {children}

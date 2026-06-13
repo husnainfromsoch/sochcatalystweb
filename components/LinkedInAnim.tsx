@@ -44,12 +44,6 @@ const CSS = `
 .licard-mav:first-child{margin-left:0}
 .licard-mutual-txt{font-size:12px;color:rgba(0,0,0,.6);line-height:1.3}
 .licard-mutual-txt b{color:rgba(0,0,0,.75);font-weight:600}
-.licard-analytics-section{margin:0 16px 10px;padding:10px 12px;background:#f8f8f8;border-radius:6px;border:1px solid rgba(0,0,0,.06)}
-.licard-analytics-title{font-size:11px;font-weight:700;color:rgba(0,0,0,.55);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px}
-.licard-analytics-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.licard-ag-item{text-align:center}
-.licard-ag-num{font-size:18px;font-weight:700;color:#0a66c2;display:block;letter-spacing:-.3px}
-.licard-ag-lbl{font-size:10px;color:rgba(0,0,0,.45);line-height:1.3;display:block;margin-top:1px}
 .licard-activity-row{margin:0 16px 10px;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f3f2ef;border-radius:6px}
 .licard-act-left{display:flex;align-items:center;gap:7px}
 .licard-act-pulse{width:8px;height:8px;border-radius:50%;background:#0a66c2;animation:licard-pulse 1.8s ease-in-out infinite}
@@ -179,9 +173,6 @@ export default function LinkedInAnim() {
       const veil = container.querySelector<HTMLElement>(".licard-veil");
       const follNum = container.querySelector<HTMLElement>("#licard-follNum");
       const connNum = container.querySelector<HTMLElement>("#licard-connNum");
-      const sV = container.querySelector<HTMLElement>("#licard-sV");
-      const sI = container.querySelector<HTMLElement>("#licard-sI");
-      const sS = container.querySelector<HTMLElement>("#licard-sS");
       const actViews = container.querySelector<HTMLElement>("#licard-actViews");
       const sRe = container.querySelector<HTMLElement>("#licard-sRe");
       const sCo = container.querySelector<HTMLElement>("#licard-sCo");
@@ -196,9 +187,6 @@ export default function LinkedInAnim() {
 
       if (follNum) follNum.textContent = "0";
       if (connNum) connNum.textContent = "500";
-      if (sV) sV.textContent = "0";
-      if (sI) sI.textContent = "0";
-      if (sS) sS.textContent = "0";
       if (actViews) actViews.textContent = "0 views";
       if (sRe) sRe.textContent = "0";
       if (sCo) sCo.textContent = "0 comments";
@@ -223,9 +211,6 @@ export default function LinkedInAnim() {
         setTimeout(() => {
           if (follNum) countTo(follNum, 0, 8420, 2400, (v) => v.toLocaleString());
           if (connNum) countTo(connNum, 500, 1840, 2200, (v) => v.toLocaleString());
-          if (sV) countTo(sV, 0, 312, 1800, null);
-          if (sI) countTo(sI, 0, 184, 1600, (v) => v + "k");
-          if (sS) countTo(sS, 0, 248, 1700, null);
           if (actViews)
             countTo(actViews, 0, 184000, 2200, (v) =>
               v >= 1000 ? Math.floor(v / 1000) + "k views" : v + " views"
@@ -394,39 +379,6 @@ export default function LinkedInAnim() {
             </div>
             <div className="licard-mutual-txt">
               <b>Mark J.</b>, <b>Priya N.</b> and 22 other mutual connections
-            </div>
-          </div>
-        </div>
-
-        {/* Analytics */}
-        <div className="licard-analytics-section">
-          <div className="licard-analytics-title">
-            Your analytics &nbsp;
-            <span
-              style={{
-                fontSize: "10px",
-                color: "#0a66c2",
-                fontWeight: 600,
-                textTransform: "none",
-                letterSpacing: 0,
-                cursor: "pointer",
-              }}
-            >
-              Private to you
-            </span>
-          </div>
-          <div className="licard-analytics-grid">
-            <div className="licard-ag-item">
-              <span className="licard-ag-num" id="licard-sV">0</span>
-              <span className="licard-ag-lbl">Profile viewers</span>
-            </div>
-            <div className="licard-ag-item">
-              <span className="licard-ag-num" id="licard-sI">0</span>
-              <span className="licard-ag-lbl">Post impressions</span>
-            </div>
-            <div className="licard-ag-item">
-              <span className="licard-ag-num" id="licard-sS">0</span>
-              <span className="licard-ag-lbl">Search appearances</span>
             </div>
           </div>
         </div>
