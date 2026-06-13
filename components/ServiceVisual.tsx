@@ -64,7 +64,7 @@ function ProfileVisual() {
 
             {/* Headline + location */}
             <div style={{ marginTop: 8, marginBottom: 12, lineHeight: 1.4 }}>
-              <p style={{ fontSize: 12, fontWeight: 500, color: "#1a1a1a" }}>Helping B2B founders close deals through LinkedIn — without cold outreach.</p>
+              <p style={{ fontSize: 12, fontWeight: 500, color: "#1a1a1a" }}>Helping B2B founders close deals through LinkedIn, without cold outreach.</p>
               <p style={{ fontSize: 11, color: "#6b6560", marginTop: 4 }}>CEO · Whitfield Advisory · London, UK</p>
             </div>
 
@@ -214,9 +214,10 @@ function BrandingVisual() {
           <span className="text-2xl leading-none text-brand" style={{ fontFamily: "var(--font-display)" }}>
             &ldquo;
           </span>
-          <div className="mt-1 space-y-1.5">
-            <Bar w="90%" tone="ink" />
-            <Bar w="60%" />
+          <div className="mt-1">
+            <p style={{ fontSize: 13, fontWeight: 500, color: "#1a1a1a", lineHeight: 1.5 }}>People don&apos;t follow profiles.</p>
+            <p style={{ fontSize: 13, fontWeight: 500, color: "#1a1a1a", lineHeight: 1.5, marginTop: 4 }}>They follow a point of view.</p>
+            <p style={{ fontSize: 11, color: "#6b6560", marginTop: 10, fontStyle: "italic" }}>James Whitfield, after 90 days</p>
           </div>
         </div>
       </div>

@@ -3,9 +3,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { StatCounter } from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "Gaia Antonescu — Byzantine | Soch Catalyst Case Study",
+  title: "Gaia Antonescu, Byzantine | Soch Catalyst Case Study",
   description:
-    "How Soch Catalyst rebuilt Gaia Antonescu's LinkedIn presence from the ground up — generating 100% posting consistency, 4× profile view growth, and 12+ qualified inbound conversations in 90 days.",
+    "How Soch Catalyst rebuilt Gaia Antonescu's LinkedIn presence from the ground up, generating 100% posting consistency, 4× profile view growth, and 12+ qualified inbound conversations in 90 days.",
 };
 
 const HERO_STATS = [
@@ -26,7 +26,7 @@ const META = [
 ];
 
 const PROBLEMS = [
-  "Gaia’s profile wasn’t converting. The headline described her role rather than her value. The About section was a company description, not a founder story. There was no clear point of view — nothing that told a prospective client why Gaia specifically, why Byzantine specifically. Visitors landed and left with no strong reason to reach out.",
+  "Gaia’s profile wasn’t converting. The headline described her role rather than her value. The About section was a company description, not a founder story. There was no clear point of view, nothing that told a prospective client why Gaia specifically, why Byzantine specifically. Visitors landed and left with no strong reason to reach out.",
   "Content was inconsistent and reactive. When she had a thought worth sharing, she’d post. Most weeks, nothing went out. There was no strategy, no rhythm, and no system for turning her genuine expertise into material that reached the right people. The algorithm punishes inconsistency, and it was.",
   "Outreach had never been tried systematically. Conversations were happening, but only through warm introductions. There was no process for expanding into adjacent founder communities and decision-makers who didn’t already know her name.",
 ];
@@ -35,22 +35,22 @@ const FRAMEWORK = [
   {
     no: "01",
     title: "Audit & Positioning",
-    body: "We spent the first two weeks understanding Gaia’s business, her clients, her voice, and what Byzantine does differently. We interviewed her, reviewed her past work, and mapped the founder communities she most wanted to reach. From this we built her LinkedIn positioning — a clear, specific point of view that makes the right people stop scrolling and the wrong people self-select out. Everything downstream was built on this foundation.",
+    body: "We spent the first two weeks understanding Gaia’s business, her clients, her voice, and what Byzantine does differently. We interviewed her, reviewed her past work, and mapped the founder communities she most wanted to reach. From this we built her LinkedIn positioning: a clear, specific point of view that makes the right people stop scrolling and the wrong people self-select out. Everything downstream was built on this foundation.",
   },
   {
     no: "02",
     title: "Profile Overhaul",
-    body: "We rewrote every section from scratch. The headline became value-first and specific. The About section became a founder story — why Byzantine exists, what Gaia believes, and what a client can expect. The Featured section was rebuilt to showcase the work. Keywords were embedded throughout for discoverability without the profile reading like it was written for an algorithm. It now reads like Gaia wrote it on her best day.",
+    body: "We rewrote every section from scratch. The headline became value-first and specific. The About section became a founder story: why Byzantine exists, what Gaia believes, and what a client can expect. The Featured section was rebuilt to showcase the work. Keywords were embedded throughout for discoverability without the profile reading like it was written for an algorithm. It now reads like Gaia wrote it on her best day.",
   },
   {
     no: "03",
     title: "Content Engine",
-    body: "We built a content calendar anchored in three pillars drawn from the positioning work — each designed to attract a different type of engagement from the same target audience. We ghostwrite every post in Gaia’s voice, put it through a review round with her, and publish on a consistent three-times-per-week schedule. Within 30 days, impressions tripled. Within 60, profile views had grown 4×.",
+    body: "We built a content calendar anchored in three pillars drawn from the positioning work, each designed to attract a different type of engagement from the same target audience. We ghostwrite every post in Gaia’s voice, put it through a review round with her, and publish on a consistent three-times-per-week schedule. Within 30 days, impressions tripled. Within 60, profile views had grown 4×.",
   },
   {
     no: "04",
     title: "Outreach Sequencing",
-    body: "We built a targeted outreach system using Sales Navigator to identify founder-profile connections in Gaia’s target segments. Connection requests are personalised and non-salesy — the goal is conversation, not pitch. Follow-up sequences are human-written and context-aware. Within 90 days, 12 qualified conversations had been initiated through outreach alone.",
+    body: "We built a targeted outreach system using Sales Navigator to identify founder-profile connections in Gaia’s target segments. Connection requests are personalised and non-salesy, the goal is conversation, not pitch. Follow-up sequences are human-written and context-aware. Within 90 days, 12 qualified conversations had been initiated through outreach alone.",
   },
 ];
 
@@ -59,7 +59,7 @@ const RESULTS = [
     num: 100,
     suffix: "%",
     headline: "Posting consistency maintained.",
-    body: "Three posts per week, every week, for the full engagement — no missed weeks.",
+    body: "Three posts per week, every week, for the full engagement, no missed weeks.",
   },
   {
     num: 4,

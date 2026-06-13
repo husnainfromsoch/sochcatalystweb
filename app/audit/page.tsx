@@ -12,7 +12,7 @@ const AUDIT_CARDS = [
   {
     icon: "profile" as const,
     title: "Profile Teardown",
-    body: "Headline, about, banner — checked against what turns visitors into leads.",
+    body: "Headline, about, banner: checked against what turns visitors into leads.",
   },
   {
     icon: "pen" as const,

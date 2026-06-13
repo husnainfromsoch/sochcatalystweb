@@ -212,7 +212,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: "1.5 hrs", label: "Founder time on content/week (from 5)" },
     ],
     quote:
-      "Soch didn't just help us post more consistently — they helped us figure out what Byzantine actually stands for in the market.",
+      "Soch didn't just help us post more consistently, they helped us figure out what Byzantine actually stands for in the market.",
     author: "Gaia Ferrero",
     authorRole: "Founder & CEO, Byzantine",
     accent: "#0a3d6b",

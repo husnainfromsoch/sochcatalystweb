@@ -14,7 +14,7 @@ const VALUES: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shield",
     title: "Substance over hacks",
-    body: "The LinkedIn services market is full of shortcuts — engagement pods, follow-for-follow tactics, algorithm hacks. They work briefly and erode credibility permanently. Every account Soch runs is built on a genuine point of view, published consistently, without shortcuts.",
+    body: "The LinkedIn services market is full of shortcuts: engagement pods, follow-for-follow tactics, algorithm hacks. They work briefly and erode credibility permanently. Every account Soch runs is built on a genuine point of view, published consistently, without shortcuts.",
   },
   {
     icon: "chat",
@@ -154,14 +154,14 @@ export default function AboutPage() {
             <div className="space-y-4 text-slate">
               <p>
                 Umair Shahzad is an award-winning LinkedIn creator recognised as a
-                LinkedIn Top Voice — ranked in the top 200 globally in Venture
+                LinkedIn Top Voice, ranked in the top 200 globally in Venture
                 Capital. He has built his own presence publicly, with real results,
                 and spent years working with founders in high-stakes sectors where
                 trust and credibility are not optional.
               </p>
               <p>
                 Before starting Soch, Umair managed LinkedIn strategy for founders
-                in institutional finance and construction — industries where a single
+                in institutional finance and construction, industries where a single
                 poorly placed post can damage relationships built over years. That
                 experience shaped the Soch approach: positioning first, content
                 second, always in your voice, always pointed at a business outcome.

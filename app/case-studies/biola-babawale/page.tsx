@@ -3,9 +3,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { StatCounter } from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "Biola Babawale — Cycle Together | Soch Catalyst Case Study",
+  title: "Biola Babawale, Cycle Together | Soch Catalyst Case Study",
   description:
-    "How Soch Catalyst gave Cycle Together founder Biola Babawale the LinkedIn presence her mission deserved — 3× follower growth, 5+ partnership conversations, and 100% content consistency.",
+    "How Soch Catalyst gave Cycle Together founder Biola Babawale the LinkedIn presence her mission deserved: 3× follower growth, 5+ partnership conversations, and 100% content consistency.",
 };
 
 const HERO_STATS = [
@@ -27,30 +27,30 @@ const META = [
 
 const PROBLEMS = [
   "Biola’s LinkedIn profile wasn’t telling her story. The headline led with job title. The About section listed activities without communicating the mission or the why. There was no clear articulation of what Cycle Together is, who it’s for, or why Biola is the person building it. Visitors came and left without understanding the depth of what she was doing.",
-  "Content had been tried and abandoned. Biola had the ideas — she thinks clearly and cares deeply about the space — but converting that into a consistent LinkedIn presence felt overwhelming on top of everything else she was running. Posts went out in bursts and then went quiet for weeks. The inconsistency was costing her visibility and credibility with the exact audience she needed to build.",
-  "Partnership outreach was happening informally — conversations through mutual connections, emails that didn’t always land, and no systematic way to reach the corporate wellness teams and sport organisations who would benefit from partnering with Cycle Together. The opportunity was there. The process to capture it wasn’t.",
+  "Content had been tried and abandoned. Biola had the ideas, she thinks clearly and cares deeply about the space, but converting that into a consistent LinkedIn presence felt overwhelming on top of everything else she was running. Posts went out in bursts and then went quiet for weeks. The inconsistency was costing her visibility and credibility with the exact audience she needed to build.",
+  "Partnership outreach was happening informally: conversations through mutual connections, emails that didn’t always land, and no systematic way to reach the corporate wellness teams and sport organisations who would benefit from partnering with Cycle Together. The opportunity was there. The process to capture it wasn’t.",
 ];
 
 const FRAMEWORK = [
   {
     no: "01",
     title: "Mission-Led Positioning",
-    body: "We started by getting deep on the mission. Cycle Together isn’t a product — it’s a movement, and Biola’s LinkedIn needed to feel like one. We ran a positioning session to extract the core beliefs, the community story, and the specific language Biola uses when she talks about inclusion and access in sport. This became the foundation for everything: profile, content, and outreach.",
+    body: "We started by getting deep on the mission. Cycle Together isn’t a product, it’s a movement, and Biola’s LinkedIn needed to feel like one. We ran a positioning session to extract the core beliefs, the community story, and the specific language Biola uses when she talks about inclusion and access in sport. This became the foundation for everything: profile, content, and outreach.",
   },
   {
     no: "02",
     title: "Profile Rebuild",
-    body: "We rebuilt the profile around the mission, not the CV. The headline became a clear statement of what Cycle Together does and who it’s for. The About section opened with the founding story — the moment Biola knew cycling needed to change — and moved into what the community has become and where it’s going. The result was a profile that any corporate wellness lead, sport organisation, or community funder could land on and immediately understand.",
+    body: "We rebuilt the profile around the mission, not the CV. The headline became a clear statement of what Cycle Together does and who it’s for. The About section opened with the founding story: the moment Biola knew cycling needed to change, and moved into what the community has become and where it’s going. The result was a profile that any corporate wellness lead, sport organisation, or community funder could land on and immediately understand.",
   },
   {
     no: "03",
     title: "Content Voice & Calendar",
-    body: "We developed three content pillars for Biola: community stories from the ground, perspective pieces on inclusion in sport, and founder reflections on building something that matters. Every post is ghostwritten in her voice — warm, direct, and grounded in real experience. We publish twice a week on a fixed schedule. Within 60 days, follower growth had tripled against the previous 60-day baseline.",
+    body: "We developed three content pillars for Biola: community stories from the ground, perspective pieces on inclusion in sport, and founder reflections on building something that matters. Every post is ghostwritten in her voice, warm, direct, and grounded in real experience. We publish twice a week on a fixed schedule. Within 60 days, follower growth had tripled against the previous 60-day baseline.",
   },
   {
     no: "04",
     title: "Partnership Outreach",
-    body: "We built a targeted outreach list of corporate wellness teams, sport governing bodies, and community sport funders using Sales Navigator. Connection requests led with the mission — what Cycle Together does, why it matters, and what a partnership could look like — without asking for anything in the first message. Within the engagement period, five substantive partnership conversations were initiated through LinkedIn outreach alone.",
+    body: "We built a targeted outreach list of corporate wellness teams, sport governing bodies, and community sport funders using Sales Navigator. Connection requests led with the mission: what Cycle Together does, why it matters, and what a partnership could look like, without asking for anything in the first message. Within the engagement period, five substantive partnership conversations were initiated through LinkedIn outreach alone.",
   },
 ];
 
@@ -65,13 +65,13 @@ const RESULTS = [
     num: 5,
     suffix: "+",
     headline: "Partnership conversations opened.",
-    body: "With corporate wellness teams, sport organisations, and community funders — through LinkedIn outreach alone.",
+    body: "With corporate wellness teams, sport organisations, and community funders, through LinkedIn outreach alone.",
   },
   {
     num: 100,
     suffix: "%",
     headline: "Consistent weekly content maintained.",
-    body: "Two posts per week, every week, for the full engagement — in a voice that sounds like Biola wrote it herself.",
+    body: "Two posts per week, every week, for the full engagement, in a voice that sounds like Biola wrote it herself.",
   },
 ];
 

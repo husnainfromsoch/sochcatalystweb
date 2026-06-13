@@ -155,7 +155,7 @@ function Slide({
             &ldquo;{study.quote}&rdquo;
           </blockquote>
           <p className="mt-3 text-sm font-semibold text-ink">
-            — {study.author},{" "}
+            {study.author},{" "}
             <span className="font-normal text-slate">{study.authorRole}</span>
           </p>
           {study.href && (
