@@ -239,13 +239,20 @@ function CoachingVisual() {
         </div>
         <div className="mt-3.5 rounded-xl border border-line bg-mist/60 p-3">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-white">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-forest text-white">
               <Icon name="chat" className="h-4 w-4" />
             </span>
-            <div className="flex-1 space-y-1.5">
-              <Bar w="80%" tone="ink" />
-              <Bar w="50%" />
+            <div className="flex-1" style={{ lineHeight: 1.4 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>LinkedIn for Founders</p>
+              <p style={{ fontSize: 11, color: "#6b6560", marginTop: 4 }}>How to post with authority and turn views into calls</p>
             </div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, paddingTop: 10, borderTop: "1px solid #f0ece4" }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8633e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span style={{ fontSize: 11, color: "#6b6560", marginLeft: 4 }}>Next session: Thu 19 Jun</span>
+            </div>
+            <span style={{ fontSize: 11, color: "#e8633e", fontWeight: 600 }}>12 spots left</span>
           </div>
         </div>
         <div className="mt-4 flex items-center justify-between">
