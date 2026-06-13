@@ -148,16 +148,6 @@ function ContentVisual() {
 }
 
 function LeadsVisual() {
-  const rows = [
-    { c: "#0a66c2", t: "AR", status: "Booked call", tone: "leaf" as const },
-    { c: "#1f7a8c", t: "JO", status: "Replied", tone: "ink" as const },
-    { c: "#7a817d", t: "MK", status: null, tone: "muted" as const },
-  ];
-  const statusCls = {
-    leaf: "bg-leaf/12 text-leaf",
-    ink: "bg-mist text-ink-soft ring-1 ring-line",
-    muted: "bg-mist text-muted ring-1 ring-line",
-  };
   return (
     <Stage>
       <div className={`${card} p-5 animate-float-a`}>
@@ -168,20 +158,29 @@ function LeadsVisual() {
           </span>
         </div>
         <div className="mt-3.5 space-y-2.5">
-          {rows.map((r) => (
-            <div key={r.t} className="flex items-center gap-2.5 rounded-lg border border-line bg-mist/60 p-2">
-              <Avatar c={r.c} t={r.t} className="h-7 w-7" />
-              <div className="flex-1 space-y-1.5">
-                <Bar w="70%" tone="ink" />
-                <Bar w="45%" />
-              </div>
-              {r.status && (
-                <span className={`rounded-md px-2 py-0.5 text-[0.6rem] font-semibold ${statusCls[r.tone]}`}>
-                  {r.status}
-                </span>
-              )}
+          <div className="flex items-center gap-2.5 rounded-lg border border-line bg-mist/60 p-2">
+            <Avatar c="#0a66c2" t="AR" className="h-7 w-7" />
+            <div className="flex-1">
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>Alex Reynolds</p>
+              <p style={{ fontSize: 11, color: "#6b6560", marginTop: 3 }}>MD · Reynolds Capital</p>
             </div>
-          ))}
+            <span className="rounded-md px-2 py-0.5 text-[0.6rem] font-semibold bg-leaf/12 text-leaf">Booked call</span>
+          </div>
+          <div className="flex items-center gap-2.5 rounded-lg border border-line bg-mist/60 p-2">
+            <Avatar c="#1f7a8c" t="JO" className="h-7 w-7" />
+            <div className="flex-1">
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>Jamie Okafor</p>
+              <p style={{ fontSize: 11, color: "#6b6560", marginTop: 3 }}>Founder · Okafor Ventures</p>
+            </div>
+            <span className="rounded-md px-2 py-0.5 text-[0.6rem] font-semibold bg-mist text-ink-soft ring-1 ring-line">Replied</span>
+          </div>
+          <div className="flex items-center gap-2.5 rounded-lg border border-line bg-mist/60 p-2">
+            <Avatar c="#7a817d" t="MK" className="h-7 w-7" />
+            <div className="flex-1">
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>Marcus Klein</p>
+              <p style={{ fontSize: 11, color: "#6b6560", marginTop: 3 }}>CEO · Klein &amp; Partners</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className={`${chip} -bottom-1 right-2 w-32 animate-float-b`}>
