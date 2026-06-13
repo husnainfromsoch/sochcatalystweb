@@ -35,44 +35,57 @@ function Stage({ children }: { children: React.ReactNode }) {
 function ProfileVisual() {
   return (
     <Stage>
-      <div className={`${card} overflow-hidden animate-float-a`}>
-        <div className="h-16 bg-linkedin" />
-        <div className="px-5 pb-5">
-          <div className="-mt-7 flex items-end justify-between">
-            <span className="inline-flex h-14 w-14 shrink-0 overflow-hidden rounded-full ring-4 ring-white">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%"}} alt="James Whitfield" />
-            </span>
-            <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-mist px-2.5 py-1 text-[0.65rem] font-semibold text-ink-soft ring-1 ring-line">
-              <Icon name="check" className="h-3 w-3 text-leaf" strokeWidth={3} /> Optimised
-            </span>
+      <div className="relative">
+        {/* Main card */}
+        <div
+          className="animate-float-a overflow-hidden"
+          style={{ background: "#fff", borderRadius: 16, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
+        >
+          {/* Blue banner */}
+          <div style={{ background: "#0a66c2", height: 80, position: "relative" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="James Whitfield"
+              style={{ width: 72, height: 72, borderRadius: "50%", border: "3px solid white", position: "absolute", bottom: -36, left: 20, objectFit: "cover" }}
+            />
+            <div style={{ position: "absolute", top: 12, right: 12, background: "white", borderRadius: 20, padding: "6px 16px", fontSize: 13, fontWeight: 600, color: "#1a7a4a" }}>
+              ✓ Optimised
+            </div>
           </div>
-          <div className="mt-3 flex items-center gap-1.5">
-            <p className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-sans)" }}>
-              James Whitfield
-            </p>
-            <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-linkedin text-white">
-              <Icon name="check" className="h-2 w-2" strokeWidth={3} />
-            </span>
-          </div>
-          <div className="mt-2.5 space-y-2">
-            <Bar w="90%" tone="ink" />
-            <Bar w="65%" />
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            {["Featured", "Offer"].map((t) => (
-              <div key={t} className="rounded-lg border border-line bg-mist p-2.5">
-                <p className="text-[0.6rem] font-semibold uppercase tracking-wide text-muted">{t}</p>
-                <span className="mt-1.5 block h-1.5 w-3/4 rounded-full bg-brand/40" />
-              </div>
-            ))}
+
+          {/* Card body */}
+          <div style={{ padding: "48px 20px 20px" }}>
+            {/* Name + verified badge */}
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 15, fontWeight: 700, color: "#1a1a1a" }}>James Whitfield</span>
+              <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#0a66c2", color: "white", fontSize: 10, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>✓</span>
+            </div>
+
+            {/* Skeleton lines */}
+            <div style={{ background: "#e0ddd8", width: "80%", height: 10, borderRadius: 4, marginTop: 12, marginBottom: 8 }} />
+            <div style={{ background: "#e0ddd8", width: "55%", height: 8, borderRadius: 4, marginBottom: 16 }} />
+
+            {/* Featured & Offer boxes */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 16 }}>
+              {["FEATURED", "OFFER"].map((label) => (
+                <div key={label} style={{ background: "#f5f0e8", borderRadius: 8, padding: "12px 14px" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, color: "#6b6560" }}>{label}</div>
+                  <div style={{ background: "#e8633e", height: 4, width: "50%", borderRadius: 2, marginTop: 8 }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className={`${chip} -bottom-1 -left-1 w-36 animate-float-c`}>
-        <p className="text-[0.6rem] font-semibold text-muted">Search visibility</p>
-        <p className="mt-0.5 flex items-center gap-1 text-sm font-semibold text-ink">
-          <Icon name="trend" className="h-3.5 w-3.5 text-leaf" /> Top 1%
-        </p>
+
+        {/* Floating search visibility card */}
+        <div
+          className="animate-float-c"
+          style={{ position: "absolute", bottom: -16, left: -16, background: "white", borderRadius: 12, boxShadow: "0 4px 20px rgba(0,0,0,0.12)", padding: "12px 16px" }}
+        >
+          <span style={{ fontSize: 11, color: "#6b6560", display: "block" }}>Search visibility</span>
+          <span style={{ fontSize: 18, fontWeight: 700, color: "#1a7a4a" }}>↑ Top 1%</span>
+        </div>
       </div>
     </Stage>
   );
@@ -87,27 +100,36 @@ function ContentVisual() {
             <img src="https://randomuser.me/api/portraits/men/32.jpg" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%"}} alt="James Whitfield" />
           </span>
           <div className="leading-tight">
-            <p className="text-xs font-semibold text-ink">James Whitfield</p>
-            <p className="text-[0.65rem] text-muted">Founder & CEO · Whitfield Advisory</p>
+            <p className="text-sm font-semibold text-ink">James Whitfield</p>
+            <p className="text-xs text-muted">Founder & CEO · Whitfield Advisory</p>
           </div>
         </div>
-        <div className="mt-3.5 space-y-2">
-          <Bar w="85%" tone="brand" />
-          <Bar w="100%" />
-          <Bar w="95%" />
-          <Bar w="55%" />
+        <div style={{ marginTop: 12, marginBottom: 14, lineHeight: 1.5 }}>
+          <p style={{ fontSize: 13, fontWeight: 700, color: "#1a1a1a" }}>Most founders post once and disappear.</p>
+          <p style={{ fontSize: 12, color: "#6b6560", marginTop: 6 }}>Consistency beats brilliance on LinkedIn.</p>
+          <p style={{ fontSize: 12, color: "#6b6560", marginTop: 4 }}>Your audience remembers who shows up.</p>
         </div>
         <div className="mt-4 flex items-center justify-between border-t border-line pt-3">
           <div className="flex -space-x-1">
             {["#0a66c2", "#ff5c35", "#1f8a66"].map((c) => (
-              <span key={c} className="h-4 w-4 rounded-full ring-2 ring-white" style={{ background: c }} />
+              <span key={c} className="h-5 w-5 rounded-full ring-2 ring-white" style={{ background: c }} />
             ))}
           </div>
           <p className="text-[0.65rem] font-medium text-muted">1,204 · 86 comments</p>
+          <div style={{ display: "flex", alignItems: "center", marginLeft: "auto" }}>
+            {[
+              "https://randomuser.me/api/portraits/women/44.jpg",
+              "https://randomuser.me/api/portraits/men/67.jpg",
+              "https://randomuser.me/api/portraits/women/22.jpg",
+            ].map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={src} src={src} alt="" style={{ width: 24, height: 24, borderRadius: "50%", border: "2px solid white", marginLeft: i === 0 ? 0 : -8, objectFit: "cover" }} />
+            ))}
+          </div>
         </div>
       </div>
       <div className={`${chip} -right-1 -top-2 flex w-auto items-center gap-2 animate-float-b`}>
-        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-peach text-brand">
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand text-white">
           <Icon name="clock" className="h-4 w-4" />
         </span>
         <div className="leading-tight">
@@ -123,7 +145,7 @@ function LeadsVisual() {
   const rows = [
     { c: "#0a66c2", t: "AR", status: "Booked call", tone: "leaf" as const },
     { c: "#1f7a8c", t: "JO", status: "Replied", tone: "ink" as const },
-    { c: "#7a817d", t: "MK", status: "Sequenced", tone: "muted" as const },
+    { c: "#7a817d", t: "MK", status: null, tone: "muted" as const },
   ];
   const statusCls = {
     leaf: "bg-leaf/12 text-leaf",
@@ -147,9 +169,11 @@ function LeadsVisual() {
                 <Bar w="70%" tone="ink" />
                 <Bar w="45%" />
               </div>
-              <span className={`rounded-md px-2 py-0.5 text-[0.6rem] font-semibold ${statusCls[r.tone]}`}>
-                {r.status}
-              </span>
+              {r.status && (
+                <span className={`rounded-md px-2 py-0.5 text-[0.6rem] font-semibold ${statusCls[r.tone]}`}>
+                  {r.status}
+                </span>
+              )}
             </div>
           ))}
         </div>
@@ -191,9 +215,8 @@ function BrandingVisual() {
           </div>
         </div>
       </div>
-      <div className={`${chip} -right-1 top-4 flex w-auto items-center gap-1.5 animate-float-c`}>
-        <Icon name="spark" className="h-4 w-4 text-brand" />
-        <p className="text-xs font-semibold text-ink">Signature voice</p>
+      <div className="absolute z-20 -right-1 top-4 flex w-auto items-center rounded-full bg-brand px-3 py-1.5 shadow-[var(--shadow-lift)] animate-float-c">
+        <p className="text-xs font-semibold text-white">✦ Signature voice</p>
       </div>
     </Stage>
   );
@@ -223,13 +246,14 @@ function CoachingVisual() {
         <div className="mt-4 flex items-center justify-between">
           <div className="flex -space-x-2">
             {[
-              { c: "#0a66c2", t: "AR" },
-              { c: "#ff5c35", t: "SM" },
-              { c: "#1f7a8c", t: "JO" },
-              { c: "#33403b", t: "+6" },
-            ].map((a) => (
-              <Avatar key={a.t} c={a.c} t={a.t} className="h-7 w-7 ring-2 ring-white" />
+              "https://randomuser.me/api/portraits/men/32.jpg",
+              "https://randomuser.me/api/portraits/women/44.jpg",
+              "https://randomuser.me/api/portraits/men/67.jpg",
+            ].map((src) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={src} src={src} alt="" className="h-7 w-7 rounded-full ring-2 ring-white" style={{ objectFit: "cover" }} />
             ))}
+            <Avatar c="#33403b" t="+6" className="h-7 w-7 ring-2 ring-white" />
           </div>
           <span className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-1.5 text-[0.65rem] font-semibold text-white">
             Join <Icon name="arrow" className="h-3.5 w-3.5" />
@@ -237,7 +261,7 @@ function CoachingVisual() {
         </div>
       </div>
       <div className={`${chip} -left-1 bottom-2 flex w-auto items-center gap-1.5 animate-float-b`}>
-        <Icon name="compass" className="h-4 w-4 text-brand" />
+        <span className="text-sm font-semibold text-brand">⊘</span>
         <p className="text-xs font-semibold text-ink">1:1 coaching</p>
       </div>
     </Stage>
@@ -245,44 +269,23 @@ function CoachingVisual() {
 }
 
 function AuditVisual() {
-  const items = ["Profile teardown", "Content gaps", "90-day roadmap"];
-  // donut: r=20, circumference ≈ 125.7; show ~72%
-  const C = 2 * Math.PI * 20;
+  const checks = ["Headline optimised", "Keywords embedded", "Featured section built"];
   return (
     <Stage>
       <div className={`${card} p-5 animate-float-a`}>
-        <div className="flex items-center gap-4">
-          <div className="relative h-[4.5rem] w-[4.5rem] shrink-0">
-            <svg viewBox="0 0 48 48" className="h-full w-full -rotate-90">
-              <circle cx="24" cy="24" r="20" fill="none" stroke="var(--color-line)" strokeWidth="5" />
-              <circle
-                cx="24"
-                cy="24"
-                r="20"
-                fill="none"
-                stroke="var(--color-brand)"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeDasharray={C}
-                strokeDashoffset={C * (1 - 0.72)}
-              />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-lg font-semibold text-ink" style={{ fontFamily: "var(--font-display)" }}>
-                72
-              </span>
-              <span className="text-[0.55rem] text-muted">/ 100</span>
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-semibold text-ink">Growth score</p>
-            <p className="mt-0.5 text-[0.65rem] text-muted">Profile · Content · Outreach</p>
-          </div>
+        <p className="text-sm font-semibold text-ink">LinkedIn Audit</p>
+        <div className="mt-3 flex items-center gap-2">
+          <span className="text-[0.7rem] font-bold text-brand">◆</span>
+          <span className="text-[0.75rem] font-semibold text-ink">Profile Score:</span>
+          <span className="text-[0.75rem] font-semibold text-brand">94/100</span>
+        </div>
+        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-line">
+          <div className="h-full rounded-full bg-brand" style={{ width: "94%" }} />
         </div>
         <div className="mt-4 space-y-2.5">
-          {items.map((t) => (
+          {checks.map((t) => (
             <div key={t} className="flex items-center gap-2.5">
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-leaf/12 text-leaf">
+              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-leaf/12 text-leaf">
                 <Icon name="check" className="h-2.5 w-2.5" strokeWidth={3} />
               </span>
               <span className="text-[0.7rem] text-ink-soft">{t}</span>
@@ -290,11 +293,9 @@ function AuditVisual() {
           ))}
         </div>
       </div>
-      <div className={`${chip} -right-1 -top-2 w-32 animate-float-c`}>
-        <p className="text-[0.6rem] font-semibold text-muted">Quick wins</p>
-        <p className="mt-0.5 flex items-center gap-1 text-sm font-semibold text-ink">
-          <Icon name="trend" className="h-3.5 w-3.5 text-leaf" /> 12 found
-        </p>
+      <div className={`${chip} -right-1 -top-2 flex w-auto items-center gap-2 animate-float-c`}>
+        <span className="h-2 w-2 rounded-full bg-leaf" />
+        <p className="text-xs font-semibold text-ink">Ready to send</p>
       </div>
     </Stage>
   );
