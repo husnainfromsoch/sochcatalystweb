@@ -62,18 +62,24 @@ function ProfileVisual() {
               <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#0a66c2", color: "white", fontSize: 10, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>✓</span>
             </div>
 
-            {/* Skeleton lines */}
-            <div style={{ background: "#e0ddd8", width: "80%", height: 10, borderRadius: 4, marginTop: 12, marginBottom: 8 }} />
-            <div style={{ background: "#e0ddd8", width: "55%", height: 8, borderRadius: 4, marginBottom: 16 }} />
+            {/* Headline + location */}
+            <div style={{ marginTop: 8, marginBottom: 12, lineHeight: 1.4 }}>
+              <p style={{ fontSize: 12, fontWeight: 500, color: "#1a1a1a" }}>Helping B2B founders close deals through LinkedIn — without cold outreach.</p>
+              <p style={{ fontSize: 11, color: "#6b6560", marginTop: 4 }}>CEO · Whitfield Advisory · London, UK</p>
+            </div>
 
             {/* Featured & Offer boxes */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 16 }}>
-              {["FEATURED", "OFFER"].map((label) => (
-                <div key={label} style={{ background: "#f5f0e8", borderRadius: 8, padding: "12px 14px" }}>
-                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, color: "#6b6560" }}>{label}</div>
-                  <div style={{ background: "#e8633e", height: 4, width: "50%", borderRadius: 2, marginTop: 8 }} />
-                </div>
-              ))}
+              <div style={{ background: "#f5f0e8", borderRadius: 8, padding: "12px 14px" }}>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, color: "#6b6560" }}>FEATURED</div>
+                <div style={{ background: "#e8633e", height: 4, width: "50%", borderRadius: 2, marginTop: 8 }} />
+                <p style={{ fontSize: 10, color: "#6b6560", marginTop: 4 }}>Case Study: 3 clients, 6 figures in 90 days</p>
+              </div>
+              <div style={{ background: "#f5f0e8", borderRadius: 8, padding: "12px 14px" }}>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 1, color: "#6b6560" }}>OFFER</div>
+                <div style={{ background: "#e8633e", height: 4, width: "50%", borderRadius: 2, marginTop: 8 }} />
+                <p style={{ fontSize: 10, color: "#6b6560", marginTop: 4 }}>Free LinkedIn Profile Audit →</p>
+              </div>
             </div>
           </div>
         </div>
