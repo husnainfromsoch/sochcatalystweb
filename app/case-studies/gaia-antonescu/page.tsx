@@ -103,13 +103,6 @@ export default function GaiaAntonescuPage() {
               LinkedIn Management
             </span>
 
-            <p
-              className="animate-fade-up mt-4 text-[0.7rem] font-bold uppercase tracking-widest text-muted"
-              style={{ animationDelay: "70ms" }}
-            >
-              Gaia Antonescu &mdash; Soch Catalyst Case Study
-            </p>
-
             <h1
               className="animate-fade-up mt-5 text-display text-[clamp(2rem,1.2rem+2.6vw,3.1rem)]"
               style={{ animationDelay: "140ms" }}
