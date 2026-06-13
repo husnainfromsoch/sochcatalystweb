@@ -136,7 +136,7 @@ export default function AboutPage() {
       </section>
 
       {/* founder bio */}
-      <section className="bg-mist py-20 sm:py-24 lg:py-28">
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* image — replace placeholder with <Image src="/umair.jpg" alt="Umair Shahzad" fill className="object-cover" /> */}
           <Reveal className="order-2 lg:order-1">
@@ -168,14 +168,7 @@ export default function AboutPage() {
               </p>
               <p>
                 The practitioners who advise on personal brand should have one worth
-                examining. You can find Umair{" "}
-                <a
-                  href="#"
-                  className="font-medium text-linkedin underline decoration-linkedin/40 underline-offset-2 hover:decoration-linkedin"
-                >
-                  on LinkedIn
-                </a>
-                .
+                examining.
               </p>
             </div>
 
