@@ -6,10 +6,12 @@ import { HowWeWork } from "@/components/HowWeWork";
 import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import { CtaBand } from "@/components/CtaBand";
+import { BookAutoOpen } from "@/components/BookAutoOpen";
 
 export default function Home() {
   return (
     <>
+      <BookAutoOpen />
       <Hero />
       <LogoMarquee />
       <Positioning />
