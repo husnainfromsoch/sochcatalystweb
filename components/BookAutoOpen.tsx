@@ -2,19 +2,29 @@
 
 import { useEffect } from "react";
 import { useBookingModal } from "@/context/BookingModalContext";
+import { useAuditModal } from "@/context/AuditModalContext";
 
 export function BookAutoOpen() {
-  const { openModal } = useBookingModal();
+  const { openModal: openBookingModal } = useBookingModal();
+  const { openModal: openAuditModal } = useAuditModal();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+
     if (params.get("book") === "true") {
-      openModal();
+      openBookingModal();
       const url = new URL(window.location.href);
       url.searchParams.delete("book");
       window.history.replaceState({}, "", url.pathname);
     }
-  }, [openModal]);
+
+    if (params.get("audit") === "true") {
+      openAuditModal();
+      const url = new URL(window.location.href);
+      url.searchParams.delete("audit");
+      window.history.replaceState({}, "", url.pathname);
+    }
+  }, [openBookingModal, openAuditModal]);
 
   return null;
 }
