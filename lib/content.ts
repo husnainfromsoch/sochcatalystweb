@@ -15,7 +15,7 @@ export const HERO = {
 export const SITE = {
   name: "Soch Catalyst",
   tagline: "LinkedIn growth for founders and senior executives.",
-  email: "hello@sochcatalyst.com",
+  email: "umair@sochcatalyst.com",
   linkedin: "https://www.linkedin.com/in/consult-with-umair/",
 };
 
