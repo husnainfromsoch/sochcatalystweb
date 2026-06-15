@@ -38,6 +38,32 @@ const CARDS = [
     ],
     href: "/case-studies/biola-babawale",
   },
+  {
+    initials: "Shahzad Akhtar - Strateasy Consulting",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&fit=crop",
+    tags: ["Management Consulting"],
+    title:
+      "Turning 28 years of practitioner expertise into a LinkedIn presence that generates consulting pipeline",
+    stats: [
+      { value: "29%", label: "Outreach Reply Rate" },
+      { value: "6×", label: "Profile Views in 60 Days" },
+      { value: "11", label: "Qualified Conversations" },
+    ],
+    href: "/case-studies/shahzad-akhtar",
+  },
+  {
+    initials: "Kaitlin Malaspina - Brenna & Co.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&fit=crop",
+    tags: ["Business Architecture"],
+    title:
+      "Making a distinctive offer legible: how a Private Operating House built the channel to match the work",
+    stats: [
+      { value: "3×", label: "Profile Views in 60 Days" },
+      { value: "22%", label: "Outreach Reply Rate" },
+      { value: "8", label: "Qualified Conversations" },
+    ],
+    href: "/case-studies/kaitlin-malaspina",
+  },
 ];
 
 export default function CaseStudiesPage() {
@@ -62,17 +88,17 @@ export default function CaseStudiesPage() {
 
       {/* ── Cards grid ── */}
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[56.25rem] px-6 lg:px-10">
-          <div className="grid gap-8">
+        <div className="mx-auto max-w-[68.75rem] px-6">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             {CARDS.map((card) => (
               <article
                 key={card.href}
-                className="group overflow-hidden rounded-xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_22px_48px_-22px_rgba(20,30,25,0.28)]"
+                className="group w-full min-w-0 overflow-hidden rounded-xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_22px_48px_-22px_rgba(20,30,25,0.28)]"
               >
                 <div className="flex flex-row">
 
                   {/* portrait */}
-                  <div className="w-[280px] shrink-0 self-stretch overflow-hidden">
+                  <div className="shrink-0 self-stretch overflow-hidden" style={{ width: "40%", minWidth: 0 }}>
                     <img
                       src={card.image}
                       alt={card.initials}
@@ -81,7 +107,7 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* content */}
-                  <div className="flex flex-1 flex-col justify-between p-10">
+                  <div className="flex min-w-0 flex-1 flex-col justify-between overflow-hidden" style={{ padding: "20px" }}>
 
                     <div>
                       {/* category tags */}
@@ -98,7 +124,7 @@ export default function CaseStudiesPage() {
 
                       {/* title */}
                       <h2
-                        className="mt-4 text-[1.22rem] font-semibold leading-snug text-ink"
+                        className="mt-4 text-[1rem] font-semibold leading-snug text-ink"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {card.title}
@@ -106,24 +132,25 @@ export default function CaseStudiesPage() {
                     </div>
 
                     {/* stat boxes */}
-                    <div className="mt-6 grid grid-cols-3 gap-3">
+                    <div className="mt-6 grid w-full grid-cols-3 gap-2">
                       {card.stats.map((s) => (
                         <div
                           key={s.label}
-                          className="rounded-lg border border-line px-4 py-3"
+                          className="min-w-0 overflow-hidden rounded-lg border border-line p-3"
                         >
                           <p
                             className="leading-none text-ink"
                             style={{
                               fontFamily: "var(--font-display)",
-                              fontSize: "1.5rem",
-                              fontWeight: 600,
+                              fontSize: "1.25rem",
+                              fontWeight: 700,
                               letterSpacing: "-0.022em",
+                              whiteSpace: "nowrap",
                             }}
                           >
                             {s.value}
                           </p>
-                          <p className="mt-1.5 text-[12px] leading-snug text-muted">
+                          <p className="mt-1 text-[11px] leading-[1.4] text-muted">
                             {s.label}
                           </p>
                         </div>
