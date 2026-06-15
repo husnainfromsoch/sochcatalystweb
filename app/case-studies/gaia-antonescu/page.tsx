@@ -142,9 +142,9 @@ export default function GaiaAntonescuPage() {
           >
             <div className="aspect-[3/4] w-full overflow-hidden rounded border border-line">
               <img
-                src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png"
+                src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg"
                 alt="Gaia Ferrero"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
               />
             </div>
           </div>

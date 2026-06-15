@@ -141,9 +141,9 @@ export default function BiolaBabawale() {
           >
             <div className="aspect-[3/4] w-full overflow-hidden rounded border border-line">
               <img
-                src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png"
+                src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg"
                 alt="Biola Babawale"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
               />
             </div>
           </div>
