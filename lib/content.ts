@@ -234,7 +234,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "Before Soch, I was having a lot of conversations that went nowhere. Now every conversation starts from a position of credibility.",
-    author: "Biola Akinwande",
+    author: "Biola Babawale",
     authorRole: "Founder & CEO, Cycle Together",
     accent: "#1a6b3c",
     initials: "CT",

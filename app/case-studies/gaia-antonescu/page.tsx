@@ -3,9 +3,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { StatCounter } from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "Gaia Antonescu, Byzantine | Soch Catalyst Case Study",
+  title: "Gaia Ferrero, Byzantine | Soch Catalyst Case Study",
   description:
-    "How Soch Catalyst rebuilt Gaia Antonescu's LinkedIn presence from the ground up, generating 100% posting consistency, 4× profile view growth, and 12+ qualified inbound conversations in 90 days.",
+    "How Soch Catalyst rebuilt Gaia Ferrero's LinkedIn presence from the ground up, generating 100% posting consistency, 4× profile view growth, and 12+ qualified inbound conversations in 90 days.",
 };
 
 const HERO_STATS = [
@@ -85,7 +85,7 @@ export default function GaiaAntonescuPage() {
           <p className="text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
             Case Studies
             <span className="mx-2 text-line">&rsaquo;</span>
-            Gaia Antonescu &mdash; Byzantine
+            Gaia Ferrero &mdash; Byzantine
           </p>
         </div>
       </div>
@@ -115,7 +115,7 @@ export default function GaiaAntonescuPage() {
               className="animate-fade-up lead mt-6 text-muted"
               style={{ animationDelay: "210ms" }}
             >
-              Gaia Antonescu, Founder of Byzantine, was showing up inconsistently
+              Gaia Ferrero, Founder of Byzantine, was showing up inconsistently
               on LinkedIn. We rebuilt her presence from the ground up &mdash;
               profile, content, and outreach &mdash; turning it into a channel that
               generates qualified conversations every week, without her spending
@@ -154,7 +154,7 @@ export default function GaiaAntonescuPage() {
             <div className="aspect-[3/4] w-full overflow-hidden rounded border border-line">
               <img
                 src="https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png"
-                alt="Gaia Antonescu"
+                alt="Gaia Ferrero"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
@@ -284,7 +284,7 @@ export default function GaiaAntonescuPage() {
                     </p>
                     <figcaption className="mt-5 border-t border-dashed border-line pt-5">
                       <span className="block text-sm font-semibold text-ink">
-                        Gaia Antonescu
+                        Gaia Ferrero
                       </span>
                       <span className="block text-xs text-muted">
                         Founder, Byzantine
