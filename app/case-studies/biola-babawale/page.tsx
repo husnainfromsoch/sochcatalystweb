@@ -79,17 +79,6 @@ export default function BiolaBabawale() {
   return (
     <div className="bg-white">
 
-      {/* ── Breadcrumb ── */}
-      <div className="border-b border-line bg-cream">
-        <div className="container-x py-3">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
-            Case Studies
-            <span className="mx-2 text-line">&rsaquo;</span>
-            Biola Babawale - Cycle Together
-          </p>
-        </div>
-      </div>
-
       {/* ── Hero ── */}
       <section className="bg-white py-16 sm:py-20 lg:py-28">
         <div className="container-x grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
