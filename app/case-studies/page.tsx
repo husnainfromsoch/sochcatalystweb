@@ -40,7 +40,7 @@ const CARDS = [
   },
   {
     initials: "Shahzad Akhtar - Strateasy Consulting",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&fit=crop",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s",
     tags: ["Management Consulting"],
     title:
       "Turning 28 years of practitioner expertise into a LinkedIn presence that generates consulting pipeline",
@@ -53,7 +53,7 @@ const CARDS = [
   },
   {
     initials: "Kaitlin Malaspina - Brenna & Co.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&fit=crop",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQHNiiko81qmAQ/profile-displayphoto-crop_800_800/B4EZkH3OJ3GoAI-/0/1756773540889?e=1782950400&v=beta&t=RBDDJIOTs9j5G85DH_3rrLbpkogSZ-CCyEfs85xbwzY",
     tags: ["Business Architecture"],
     title:
       "Making a distinctive offer legible: how a Private Operating House built the channel to match the work",
