@@ -60,6 +60,13 @@ const TESTIMONIALS = [
     name: "Biola Babawale",
     title: "CEO at Cycle Together",
   },
+  {
+    quote:
+      "Before this, my entire pipeline came from people who already knew me. Now the content does the introduction. By the time someone books a call, they have already decided I am the right person.",
+    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s",
+    name: "Shahzad Akhtar",
+    title: "Founder & MD, Strateasy Consulting",
+  },
 ];
 
 export default function ConfirmationPage() {
@@ -313,6 +320,9 @@ export default function ConfirmationPage() {
             }}
           >
             Slots fill fast. Grab yours now.
+          </p>
+          <p style={{ fontSize: '12px', color: '#a09a94', marginTop: '12px' }}>
+            Limited spots available each month.
           </p>
         </div>
       </section>
