@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useAuditModal } from "@/context/AuditModalContext";
 
 type FormData = {
@@ -15,6 +16,7 @@ type Errors = Partial<Record<keyof FormData, string>>;
 
 export function AuditModal() {
   const { isOpen, closeModal } = useAuditModal();
+  const router = useRouter();
   const backdropRef = useRef<HTMLDivElement>(null);
   const [form, setForm] = useState<FormData>({
     firstName: "",
@@ -24,7 +26,6 @@ export function AuditModal() {
     consent: false,
   });
   const [errors, setErrors] = useState<Errors>({});
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -44,7 +45,6 @@ export function AuditModal() {
     if (!isOpen) {
       setForm({ firstName: "", linkedInUrl: "", email: "", roleCompany: "", consent: false });
       setErrors({});
-      setSubmitted(false);
       setSubmitting(false);
       setSubmitError("");
     }
@@ -86,7 +86,8 @@ export function AuditModal() {
         }),
       });
       if (res.ok) {
-        setSubmitted(true);
+        closeModal();
+        router.push("/confirmation");
       } else {
         setSubmitError("Something went wrong. Please email us at hello@sochcatalyst.com");
       }
@@ -124,37 +125,17 @@ export function AuditModal() {
         </button>
 
         <div className="px-6 pb-8 pt-10 sm:px-8">
-          {submitted ? (
-            <div className="flex flex-col items-center py-8 text-center">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand/10">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-brand">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
-              <h2 className="font-display text-2xl font-semibold text-ink">You&apos;re all set!</h2>
-              <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-slate">
-                Thanks! We will send your audit within 24 hours.
-              </p>
-              <button
-                type="button"
-                onClick={closeModal}
-                className="mt-6 rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
-              >
-                Close
-              </button>
-            </div>
-          ) : (
-            <>
-              <h2 id="audit-modal-title" className="font-display text-[1.55rem] font-semibold leading-snug text-ink">
-                Get Your{" "}
-                <span className="text-brand">Free LinkedIn Audit</span>{" "}
-                Within 24 hours!
-              </h2>
-              <p className="mt-3 text-sm italic leading-relaxed text-slate">
-                Drop your profile link below. I will review it personally and send you the full breakdown within 24 hours.
-              </p>
+          <>
+            <h2 id="audit-modal-title" className="font-display text-[1.55rem] font-semibold leading-snug text-ink">
+              Get Your{" "}
+              <span className="text-brand">Free LinkedIn Audit</span>{" "}
+              Within 24 hours!
+            </h2>
+            <p className="mt-3 text-sm italic leading-relaxed text-slate">
+              Drop your profile link below. I will review it personally and send you the full breakdown within 24 hours.
+            </p>
 
-              <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
+            <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
                 {/* First Name */}
                 <div>
                   <label htmlFor="audit-first-name" className="block text-sm font-semibold text-ink">
@@ -271,9 +252,8 @@ export function AuditModal() {
                 >
                   {submitting ? "Sending..." : "Send My Profile →"}
                 </button>
-              </form>
-            </>
-          )}
+            </form>
+          </>
         </div>
       </div>
     </div>
