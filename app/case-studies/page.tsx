@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 const CARDS = [
   {
-    initials: "GA",
-    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png",
+    initials: "Gaia Ferrero — Byzantine Finance",
+    image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg",
     tags: ["LinkedIn Management"],
     title:
       "Turning a founder’s LinkedIn into a consistent pipeline of qualified conversations",
@@ -26,8 +26,8 @@ const CARDS = [
     href: "/case-studies/gaia-antonescu",
   },
   {
-    initials: "BB",
-    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png",
+    initials: "Biola Babawale — Cycle Together",
+    image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg",
     tags: ["Personal Branding & Community Growth"],
     title:
       "Giving a movement founder the LinkedIn presence her mission deserved",
