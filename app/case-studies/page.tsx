@@ -38,32 +38,6 @@ const CARDS = [
     ],
     href: "/case-studies/biola-babawale",
   },
-  {
-    initials: "Shahzad Akhtar - Strateasy Consulting",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23e8e8e8'/%3E%3C/svg%3E",
-    tags: ["Management Consulting", "LinkedIn Management", "Pakistan"],
-    title:
-      "Turning 28 years of practitioner expertise into a LinkedIn presence that generates consulting pipeline",
-    stats: [
-      { value: "29%", label: "Outreach reply rate" },
-      { value: "6×", label: "Growth in profile views in 60 days" },
-      { value: "11", label: "Qualified consulting conversations" },
-    ],
-    href: "/case-studies/shahzad-akhtar",
-  },
-  {
-    initials: "Kaitlin Malaspina - Brenna & Co.",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23e8e8e8'/%3E%3C/svg%3E",
-    tags: ["Business Architecture", "Fractional COO", "LinkedIn Management", "United States"],
-    title:
-      "Making a distinctive offer legible: how a Private Operating House built the channel to match the work",
-    stats: [
-      { value: "3×", label: "Growth in profile views in 60 days" },
-      { value: "22%", label: "Outreach reply rate" },
-      { value: "8", label: "Qualified founder conversations" },
-    ],
-    href: "/case-studies/kaitlin-malaspina",
-  },
 ];
 
 export default function CaseStudiesPage() {
