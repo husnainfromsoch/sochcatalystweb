@@ -216,7 +216,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     authorRole: "Founder & CEO, Byzantine",
     accent: "#0a3d6b",
     initials: "BZ",
-    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67f324415b174eb9108c9_Case%20Study%202%20(Gaia%27s).png",
+    image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg",
     href: "/case-studies/gaia-antonescu",
   },
   {
@@ -237,7 +237,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     authorRole: "Founder & CEO, Cycle Together",
     accent: "#1a6b3c",
     initials: "CT",
-    image: "https://cdn.prod.website-files.com/68e7ded717d0693d2c34536a/69a67b9de1d72ffdf6c29f9a_Case%20Study%201%20(Biola%27s).png",
+    image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg",
     href: "/case-studies/biola-babawale",
   },
 ];

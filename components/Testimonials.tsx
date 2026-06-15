@@ -99,7 +99,7 @@ function Slide({
           <img
             src={study.image}
             alt={study.company}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
           />
         ) : (
           <span
