@@ -1,4 +1,4 @@
-// Custom line-icon set (1.6 stroke, rounded) — no emoji, no clip-art.
+// Custom line-icon set (1.6 stroke, rounded), no emoji, no clip-art.
 import type { SVGProps } from "react";
 
 export type IconName =

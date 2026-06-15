@@ -41,12 +41,12 @@ const AVATARS = [
 export default function AuditPage() {
   return (
     <>
-      {/* ── HERO — two column ─────────────────────────────────────── */}
+      {/* ── HERO - two column ─────────────────────────────────────── */}
       <section className="border-b border-line bg-mist">
         <div className="container-x py-16 sm:py-20 lg:py-24">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-            {/* Left — copy */}
+            {/* Left - copy */}
             <div className="max-w-xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-brand">
                 Free LinkedIn Audit
@@ -73,7 +73,7 @@ export default function AuditPage() {
               </p>
             </div>
 
-            {/* Right — deliverable cards */}
+            {/* Right - deliverable cards */}
             <div className="flex flex-col gap-3">
               {AUDIT_CARDS.map((card) => (
                 <div

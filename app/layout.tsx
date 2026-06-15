@@ -16,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// Editorial serif for headlines — the HubSpot brand voice.
+// Editorial serif for headlines - the HubSpot brand voice.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],

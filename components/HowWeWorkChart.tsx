@@ -47,7 +47,7 @@ const SAMPLES = SEGMENTS.flatMap((s, si) => {
 });
 const TIMES = SAMPLES.map((_, i) => i / (SAMPLES.length - 1));
 
-/** "Authority over 90 days" chart — a marker climbs the curve, igniting each step as it arrives. */
+/** "Authority over 90 days" chart - a marker climbs the curve, igniting each step as it arrives. */
 export function HowWeWorkChart() {
   const reduce = useReducedMotion();
   const viewport = { once: true, margin: "-80px" } as const;
@@ -76,7 +76,7 @@ export function HowWeWorkChart() {
         <path d={CURVE} fill="none" stroke="var(--color-brand)" strokeWidth="2" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
       </svg>
 
-      {/* dashed stems + numbered markers — each ignites as the ball arrives */}
+      {/* dashed stems + numbered markers - each ignites as the ball arrives */}
       {STEPS.map((step, i) => {
         const n = NODES[i];
         const isLast = i === STEPS.length - 1;

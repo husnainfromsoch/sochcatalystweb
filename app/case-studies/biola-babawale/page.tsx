@@ -85,7 +85,7 @@ export default function BiolaBabawale() {
           <p className="text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
             Case Studies
             <span className="mx-2 text-line">&rsaquo;</span>
-            Biola Babawale &mdash; Cycle Together
+            Biola Babawale - Cycle Together
           </p>
         </div>
       </div>
@@ -115,7 +115,7 @@ export default function BiolaBabawale() {
               style={{ animationDelay: "210ms" }}
             >
               Biola Babawale founded Cycle Together to make cycling more inclusive
-              and accessible &mdash; but the community she was building offline
+              and accessible, but the community she was building offline
               wasn&rsquo;t reflected in her LinkedIn presence. We rebuilt her
               profile, developed her content voice, and helped her reach the right
               people in sport, wellness, and corporate partnerships.
@@ -145,7 +145,7 @@ export default function BiolaBabawale() {
             </div>
           </div>
 
-          {/* right column — portrait */}
+          {/* right column - portrait */}
           <div
             className="animate-fade-up"
             style={{ animationDelay: "100ms" }}
@@ -196,7 +196,7 @@ export default function BiolaBabawale() {
               <h2 className="text-h2">The context behind the work.</h2>
               <div className="mt-8 space-y-5 text-[1rem] leading-relaxed text-slate">
                 <p>
-                  Biola built Cycle Together from a personal belief &mdash; that cycling
+                  Biola built Cycle Together from a personal belief: that cycling
                   should be for everyone, regardless of background, ability, or budget.
                   What started as a grassroots community initiative had grown into
                   something with real momentum: events, partnerships, and a growing
@@ -206,8 +206,8 @@ export default function BiolaBabawale() {
                 <p>
                   Her profile read like a professional CV, not a founder story. Her
                   content was sporadic and unfocused. And the people she most needed to
-                  reach &mdash; corporate sponsors, sport and wellness organisations,
-                  community funders, and like-minded founders &mdash; had no easy way
+                  reach, corporate sponsors, sport and wellness organisations,
+                  community funders, and like-minded founders, had no easy way
                   to find her or understand what Cycle Together stood for. She came to
                   Soch to fix that. Not to grow follower numbers for their own sake, but
                   to make her LinkedIn presence do actual work for her mission.
@@ -277,7 +277,7 @@ export default function BiolaBabawale() {
                     >
                       I had so much to say about what we&rsquo;re building, but I
                       couldn&rsquo;t figure out how to say it on LinkedIn in a way
-                      that felt right. Soch helped me find that voice &mdash; and
+                      that felt right. Soch helped me find that voice, and
                       then made sure it showed up every single week.
                     </p>
                     <figcaption className="mt-5 border-t border-dashed border-line pt-5">

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /**
  * Placeholder wordmark + mark. Replace the SVG / text when the real
- * brand identity is finalised — this is the only file to touch.
+ * brand identity is finalised; this is the only file to touch.
  */
 export function Logo({
   className = "",

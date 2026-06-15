@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-//  Soch Catalyst — single source of content & config.
+//  Soch Catalyst - single source of content & config.
 //  Copy, services, process, proof and the scheduler link all live here
 //  so the client can update everything from one file.
 // ------------------------------------------------------------------
@@ -242,7 +242,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
-// NOTE: Placeholder testimonials — replace with real client quotes & names.
+// NOTE: Placeholder testimonials: replace with real client quotes & names.
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:

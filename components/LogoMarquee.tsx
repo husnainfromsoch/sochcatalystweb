@@ -1,6 +1,6 @@
 import { CLIENT_LOGOS } from "@/lib/content";
 
-/** Trust strip — real client logos, gently scrolling. */
+/** Trust strip - real client logos, gently scrolling. */
 export function LogoMarquee() {
   const row = [...CLIENT_LOGOS, ...CLIENT_LOGOS, ...CLIENT_LOGOS];
   return (

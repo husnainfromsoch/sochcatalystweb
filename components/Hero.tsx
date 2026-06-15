@@ -5,7 +5,7 @@ import LinkedInAnim from "@/components/LinkedInAnim";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-mist">
-      {/* one soft, flat peach wash behind the visual — no glow blobs */}
+      {/* one soft, flat peach wash behind the visual, no glow blobs */}
       <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 bg-[radial-gradient(60%_60%_at_70%_35%,var(--color-peach),transparent_70%)] opacity-70 lg:block" />
 
       <div className="container-x relative grid items-start gap-10 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-14">

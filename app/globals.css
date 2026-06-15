@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Soch Catalyst — Design System (HubSpot brand language)            */
+/*  Soch Catalyst - Design System (HubSpot brand language)            */
 /*  Editorial serif headlines · warm cream · flat orange · forest CTA */
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* Brand — HubSpot red-orange */
+  /* Brand - HubSpot red-orange */
   --color-brand: #ff5c35;
   --color-brand-light: #ff7a59;
   --color-brand-dark: #e8431b;
   --color-brand-deep: #c9350f;
 
-  /* Text — warm near-black */
+  /* Text - warm near-black */
   --color-ink: #1c2b26;
   --color-ink-soft: #33403b;
   --color-slate: #4c534f;
   --color-muted: #7a817d;
 
-  /* Surfaces — warm */
+  /* Surfaces - warm */
   --color-mist: #f6f2ea;   /* warm off-white section bg */
   --color-cream: #fbf8f2;  /* lighter warm */
   --color-peach: #ffe8dd;  /* soft accent bg */
@@ -37,7 +37,7 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 
-  /* Shadows — subtle, HubSpot uses borders not big shadows */
+  /* Shadows - subtle, HubSpot uses borders not big shadows */
   --shadow-soft: 0 1px 2px rgba(20, 30, 25, 0.04);
   --shadow-card: 0 6px 22px -12px rgba(20, 30, 25, 0.18);
   --shadow-lift: 0 22px 48px -22px rgba(20, 30, 25, 0.28);

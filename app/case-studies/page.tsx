@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const CARDS = [
   {
-    initials: "Gaia Ferrero — Byzantine Finance",
+    initials: "Gaia Ferrero - Byzantine Finance",
     image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg",
     tags: ["LinkedIn Management"],
     title:
@@ -26,7 +26,7 @@ const CARDS = [
     href: "/case-studies/gaia-antonescu",
   },
   {
-    initials: "Biola Babawale — Cycle Together",
+    initials: "Biola Babawale - Cycle Together",
     image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg",
     tags: ["Personal Branding & Community Growth"],
     title:

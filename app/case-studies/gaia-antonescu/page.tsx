@@ -85,7 +85,7 @@ export default function GaiaAntonescuPage() {
           <p className="text-[0.7rem] font-semibold uppercase tracking-widest text-muted">
             Case Studies
             <span className="mx-2 text-line">&rsaquo;</span>
-            Gaia Ferrero &mdash; Byzantine
+            Gaia Ferrero - Byzantine
           </p>
         </div>
       </div>
@@ -116,8 +116,8 @@ export default function GaiaAntonescuPage() {
               style={{ animationDelay: "210ms" }}
             >
               Gaia Ferrero, Founder of Byzantine, was showing up inconsistently
-              on LinkedIn. We rebuilt her presence from the ground up &mdash;
-              profile, content, and outreach &mdash; turning it into a channel that
+              on LinkedIn. We rebuilt her presence from the ground up,
+              profile, content, and outreach, turning it into a channel that
               generates qualified conversations every week, without her spending
               hours on it.
             </p>
@@ -146,7 +146,7 @@ export default function GaiaAntonescuPage() {
             </div>
           </div>
 
-          {/* right column — portrait */}
+          {/* right column - portrait */}
           <div
             className="animate-fade-up"
             style={{ animationDelay: "100ms" }}
@@ -198,7 +198,7 @@ export default function GaiaAntonescuPage() {
               <div className="mt-8 space-y-5 text-[1rem] leading-relaxed text-slate">
                 <p>
                   Gaia had built Byzantine into a respected boutique strategy firm
-                  through referrals and reputation. She knew LinkedIn mattered &mdash;
+                  through referrals and reputation. She knew LinkedIn mattered:
                   her clients were there, her peers were there, and the conversations
                   she wanted to be part of were happening there daily. But LinkedIn had
                   always felt like a chore. She&rsquo;d post sporadically when she had
@@ -209,7 +209,7 @@ export default function GaiaAntonescuPage() {
                   She came to Soch not because she didn&rsquo;t understand LinkedIn, but
                   because she understood it well enough to know she wasn&rsquo;t doing it
                   justice. She needed a partner who could take full ownership of her
-                  presence &mdash; strategy, content, and outreach &mdash; so she could
+                  presence, strategy, content, and outreach, so she could
                   stay focused on running the business. We started with a full audit
                   before touching anything. You don&rsquo;t fix what you haven&rsquo;t
                   properly diagnosed.
@@ -279,7 +279,7 @@ export default function GaiaAntonescuPage() {
                     >
                       I knew what good LinkedIn looked like. I just couldn&rsquo;t
                       make it happen alongside everything else. Handing it to Soch
-                      was the right call &mdash; within a few weeks it felt like my
+                      was the right call. Within a few weeks it felt like my
                       profile finally sounded like me.
                     </p>
                     <figcaption className="mt-5 border-t border-dashed border-line pt-5">

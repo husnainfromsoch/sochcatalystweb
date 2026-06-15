@@ -1,4 +1,4 @@
-// Bespoke, presentational mini-mockups — one per service slug.
+// Bespoke, presentational mini-mockups - one per service slug.
 // Same card idiom as the homepage Hero: white rounded-2xl cards, ring-1 ring-line,
 // soft lift shadow, skeleton bars, avatar circles and brand/linkedin/leaf accents.
 import { Icon } from "@/components/Icons";

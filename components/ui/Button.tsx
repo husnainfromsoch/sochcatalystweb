@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icons";
 type Variant = "primary" | "secondary" | "dark" | "light";
 type Size = "md" | "lg";
 
-// Flat, square-ish buttons — HubSpot style. No gradients, no glow.
+// Flat, square-ish buttons - HubSpot style. No gradients, no glow.
 const variants: Record<Variant, string> = {
   primary: "bg-brand text-white hover:bg-brand-dark",
   secondary: "bg-white text-ink ring-1 ring-ink/20 hover:ring-ink/45",

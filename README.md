@@ -1,4 +1,4 @@
-# Soch Catalyst — Website
+# Soch Catalyst - Website
 
 Marketing site for **Soch Catalyst**, a LinkedIn growth agency for B2B founders & CEOs.
 
@@ -13,7 +13,7 @@ Marketing site for **Soch Catalyst**, a LinkedIn growth agency for B2B founders 
 ## Prerequisites
 
 - **Node.js 20+** and npm
-- That's it — no database, no API keys required to run locally.
+- That's it: no database, no API keys required to run locally.
 
 ## Run locally
 
@@ -37,7 +37,7 @@ The dev server hot-reloads on save.
 ## Project structure
 
 ```
-app/                 # routes (App Router) — one folder per page
+app/                 # routes (App Router) - one folder per page
   layout.tsx         # root layout: fonts, <Header/> + <Footer/>, site metadata
   page.tsx           # home page (composes the section components)
   globals.css        # Tailwind import + design tokens (@theme block)
@@ -55,7 +55,7 @@ public/              # static assets
 
 | Route       | Purpose                                                       |
 | ----------- | ------------------------------------------------------------- |
-| `/`         | Home — hero, positioning, services, how-we-work, proof, CTA   |
+| `/`         | Home - hero, positioning, services, how-we-work, proof, CTA   |
 | `/services` | All six services in detail                                    |
 | `/about`    | Who we are & what we believe                                  |
 | `/book`     | **Book a Discovery Call** (primary CTA)                       |
@@ -93,13 +93,13 @@ embeddable scheduler URL.
 
 ### Styling
 
-Tailwind CSS v4 — utility classes in JSX. Custom colours/tokens (e.g. `bg-brand`,
+Tailwind CSS v4 - utility classes in JSX. Custom colours/tokens (e.g. `bg-brand`,
 `text-ink`, `bg-mist`) are defined in the `@theme` block of `app/globals.css`, not
 in a `tailwind.config` file. Add a token there and it becomes a utility class.
 
 ---
 
-## ⚠️ Before launch — placeholders to replace
+## ⚠️ Before launch - placeholders to replace
 
 These are intentionally fake and must be swapped for real content:
 
@@ -113,6 +113,6 @@ These are intentionally fake and must be swapped for real content:
 
 ## Deploy
 
-Any Next.js host works (Vercel is the simplest — connect the repo and it builds
+Any Next.js host works (Vercel is the simplest, connect the repo and it builds
 automatically). Set `NEXT_PUBLIC_SCHEDULER_URL` in the host's environment
 variables. Otherwise: `npm run build` then `npm start` behind a reverse proxy.

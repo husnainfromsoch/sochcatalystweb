@@ -113,7 +113,7 @@ export default function AboutPage() {
 
       <Stats />
 
-      {/* values — editorial 2-col, dashed dividers, no glossy tiles */}
+      {/* values - editorial 2-col, dashed dividers, no glossy tiles */}
       <section className="bg-cream py-20 sm:py-24 lg:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
@@ -138,7 +138,7 @@ export default function AboutPage() {
       {/* founder bio */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* image — replace placeholder with <Image src="/umair.jpg" alt="Umair Shahzad" fill className="object-cover" /> */}
+          {/* image - replace placeholder with <Image src="/umair.jpg" alt="Umair Shahzad" fill className="object-cover" /> */}
           <Reveal className="order-2 lg:order-1">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-line bg-cream">
               <img

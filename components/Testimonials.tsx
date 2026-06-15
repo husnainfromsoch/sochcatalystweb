@@ -170,7 +170,7 @@ function Slide({
           )}
         </div>
 
-        {/* ── Next arrow — vertically centred on right edge ── */}
+        {/* ── Next arrow - vertically centred on right edge ── */}
         <button
           onClick={(e) => { e.stopPropagation(); onNext(); }}
           disabled={isLast}
@@ -193,7 +193,7 @@ function Slide({
         </button>
       </div>
 
-      {/* ── Prev arrow — vertically centred on left edge ── */}
+      {/* ── Prev arrow - vertically centred on left edge ── */}
       <button
         onClick={(e) => { e.stopPropagation(); onPrev(); }}
         disabled={isFirst}

@@ -20,7 +20,7 @@ export function HowWeWork() {
         {/* Authority-over-90-days chart: steps plotted on a compounding curve, drawn in on scroll */}
         <HowWeWorkChart />
 
-        {/* Step copy — columns align under the plotted nodes on lg; stacks editorially below */}
+        {/* Step copy - columns align under the plotted nodes on lg; stacks editorially below */}
         <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-5 lg:grid-cols-4">
           {STEPS.map((step, i) => (
             <Reveal key={step.no} delay={i * 0.08}>
