@@ -52,12 +52,12 @@ export default function AboutPage() {
             Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
           </p>
         </div>
-        <div className="about-hero-img-col" style={{ flex: 1, padding: 0, margin: 0, overflow: "hidden", position: "relative", minHeight: "500px" }}>
+        <div className="about-hero-img-col" style={{ flex: 1, padding: 0, margin: 0, overflow: "hidden", position: "relative", minHeight: "500px", borderRadius: "16px" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
             alt="Soch Catalyst team"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: 0, margin: 0, padding: 0 }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
           />
         </div>
       </section>
