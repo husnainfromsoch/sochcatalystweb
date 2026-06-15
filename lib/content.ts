@@ -34,7 +34,6 @@ export const CTAS = {
 
 export const NAV = [
   { label: "Services", href: "/services" },
-  { label: "How we work", href: "/#how-we-work" },
   { label: "Case studies", href: "/case-studies" },
   { label: "About", href: "/about" },
 ];
