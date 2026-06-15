@@ -36,25 +36,29 @@ const VALUES: { icon: IconName; title: string; body: string }[] = [
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-line bg-mist">
-        <div className="container-x py-16 sm:py-20 lg:py-24">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div>
-              <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
-                Built by a practitioner. Built for founders.
-              </h1>
-              <p className="lead mt-6 max-w-2xl">
-                Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
-              </p>
-            </div>
-            <div>
-              <img
-                src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
-                alt="Soch Catalyst team"
-                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px", minHeight: "480px" }}
-              />
-            </div>
-          </div>
+      <style>{`
+        @media (max-width: 767px) {
+          .about-hero { flex-direction: column !important; min-height: unset !important; }
+          .about-hero-text { flex: unset !important; width: 100% !important; padding: 48px 24px !important; }
+          .about-hero-img-col { min-height: 350px !important; width: 100% !important; flex: unset !important; }
+        }
+      `}</style>
+      <section className="about-hero border-b border-line bg-mist" style={{ display: "flex", alignItems: "stretch", minHeight: "600px", padding: 0 }}>
+        <div className="about-hero-text" style={{ flex: "0 0 45%", padding: "80px 60px 80px 80px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
+            Built by a practitioner. Built for founders.
+          </h1>
+          <p className="lead mt-6 max-w-2xl">
+            Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
+          </p>
+        </div>
+        <div className="about-hero-img-col" style={{ flex: 1, padding: 0, margin: 0, overflow: "hidden", position: "relative", minHeight: "500px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
+            alt="Soch Catalyst team"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: 0, margin: 0, padding: 0 }}
+          />
         </div>
       </section>
 
