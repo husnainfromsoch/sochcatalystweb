@@ -22,6 +22,29 @@ const STEPS = [
   },
 ];
 
+const REVIEW_ITEMS = [
+  {
+    num: "01",
+    title: "Your First Impression",
+    desc: "Most profiles lose the right person in the first ten seconds. I find exactly where that happens on yours.",
+  },
+  {
+    num: "02",
+    title: "Your Positioning Clarity",
+    desc: "Does a stranger immediately understand why you over everyone else? I tell you yes or no.",
+  },
+  {
+    num: "03",
+    title: "Your Content Narrative",
+    desc: "Are your posts building toward something or just filling a feed? The answer shows up in your inbound.",
+  },
+  {
+    num: "04",
+    title: "Your Conversion Architecture",
+    desc: "When someone ready to hire lands on your profile, what does it do with them?",
+  },
+];
+
 const TESTIMONIALS = [
   {
     quote:
@@ -86,7 +109,9 @@ export default function ConfirmationPage() {
             style={{
               width: "100%",
               maxWidth: 680,
-              height: "auto",
+              height: 420,
+              objectFit: "cover",
+              objectPosition: "center top",
               borderRadius: 16,
               margin: "32px auto 0",
               display: "block",
@@ -125,7 +150,6 @@ export default function ConfirmationPage() {
           While you wait, watch this.
         </h2>
 
-        {/* Replace YOUR_YOUTUBE_ID with actual YouTube video ID */}
         <div
           style={{
             maxWidth: 680,
@@ -140,7 +164,7 @@ export default function ConfirmationPage() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID"
+            src="https://www.youtube.com/embed/Y_L9g_aFQsM?si=LEuiK0kaVbDKXamh"
             title="Message from Umair"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -194,26 +218,21 @@ export default function ConfirmationPage() {
                 display: "flex",
                 gap: 16,
                 alignItems: "flex-start",
-                background: "white",
-                borderRadius: 12,
-                padding: "20px 24px",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                background: "#FAF7F2",
+                border: "1px solid #e8e0d5",
+                borderRadius: 8,
+                padding: 16,
                 marginBottom: 12,
               }}
             >
               <div
                 style={{
-                  width: 36,
-                  height: 36,
-                  background: "#e8633e",
-                  color: "white",
-                  borderRadius: "50%",
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: 700,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  color: "#EA6A47",
                   flexShrink: 0,
+                  minWidth: 24,
+                  lineHeight: 1.4,
                 }}
               >
                 {i + 1}
@@ -267,7 +286,9 @@ export default function ConfirmationPage() {
               margin: "0 auto 16px",
             }}
           >
-            You do not have to wait for the email.
+            You do not{" "}
+            <span style={{ color: "#EA6A47", textDecoration: "underline" }}>have to wait</span>
+            {" "}for the email.
           </h2>
 
           <p
@@ -282,10 +303,94 @@ export default function ConfirmationPage() {
           </p>
 
           <ConfirmationBookBtn />
+          <p
+            style={{
+              fontSize: 13,
+              color: "#a09a94",
+              opacity: 0.7,
+              marginTop: 8,
+              textAlign: "center",
+            }}
+          >
+            Slots fill fast. Grab yours now.
+          </p>
         </div>
       </section>
 
-      {/* ── 5. TESTIMONIALS ──────────────────────────────────────────── */}
+      {/* ── 5. HERE IS WHAT I AM REVIEWING ──────────────────────────── */}
+      <section style={{ background: "white", padding: "60px 24px" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 32,
+              fontWeight: 600,
+              color: "#1a1a1a",
+              lineHeight: 1.15,
+              letterSpacing: "-0.01em",
+              marginBottom: 32,
+              textAlign: "center",
+            }}
+          >
+            Here Is What I Am Reviewing.
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 16,
+            }}
+          >
+            {REVIEW_ITEMS.map((item) => (
+              <div
+                key={item.num}
+                style={{
+                  border: "1px solid #e8e0d5",
+                  borderRadius: 8,
+                  padding: 20,
+                  background: "white",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 11,
+                    color: "#a09a94",
+                    fontWeight: 600,
+                    marginBottom: 8,
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {item.num}
+                </p>
+                <p
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: "#1a1a1a",
+                    marginBottom: 6,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {item.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: "#6b6560",
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. TESTIMONIALS ──────────────────────────────────────────── */}
       <section style={{ background: "#FAF7F2", padding: "80px 24px" }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <h2
@@ -299,7 +404,8 @@ export default function ConfirmationPage() {
               marginBottom: 40,
             }}
           >
-            Different Founders. The Same Result.
+            Different Founders. The Same.{" "}
+            <span style={{ color: "#EA6A47" }}>Problem.</span>
           </h2>
 
           {TESTIMONIALS.map((t) => (
@@ -382,34 +488,47 @@ export default function ConfirmationPage() {
         </div>
       </section>
 
-      {/* ── 6. FOOTER NOTE ───────────────────────────────────────────── */}
+      {/* ── 7. ONE LAST THING ────────────────────────────────────────── */}
       <section
         style={{
-          background: "white",
-          padding: "32px 24px",
+          background: "#F0EDE8",
+          padding: "48px 24px",
           textAlign: "center",
-          borderTop: "1px solid #f0ece4",
+          borderTop: "1px solid #e8e0d5",
         }}
       >
-        <p
-          style={{
-            fontSize: 13,
-            color: "#6b6560",
-            lineHeight: 1.6,
-            maxWidth: 500,
-            margin: "0 auto",
-          }}
-        >
-          Do not forget to check your inbox. The report sometimes lands in
-          promotions. If you do not see it within 24 hours, check your spam or
-          email{" "}
-          <a
-            href="mailto:umair@sochcatalyst.com"
-            style={{ color: "#e8633e", textDecoration: "none", fontWeight: 600 }}
+        <div style={{ maxWidth: 500, margin: "0 auto" }}>
+          <h3
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 22,
+              fontWeight: 600,
+              color: "#1a1a1a",
+              marginBottom: 12,
+              letterSpacing: "-0.01em",
+            }}
           >
-            umair@sochcatalyst.com
-          </a>
-        </p>
+            One Last Thing
+          </h3>
+          <p
+            style={{
+              fontSize: 14,
+              color: "#6b6560",
+              lineHeight: 1.7,
+              margin: 0,
+            }}
+          >
+            Do not forget to check your inbox. The report sometimes lands in
+            promotions. If you do not see it within 24 hours, check your spam
+            folder or email us directly at{" "}
+            <a
+              href="mailto:umair@sochcatalyst.com"
+              style={{ color: "#e8633e", textDecoration: "none", fontWeight: 600 }}
+            >
+              umair@sochcatalyst.com
+            </a>
+          </p>
+        </div>
       </section>
     </>
   );
