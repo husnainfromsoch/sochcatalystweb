@@ -1,101 +1,44 @@
 "use client"
 
-import { useRef, useState, useEffect } from 'react'
-import { ConfirmationBookBtn } from "@/components/ConfirmationBookBtn"
+import { useState } from 'react'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const STEPS = [
   {
+    num: 1,
     title: "I review your profile personally within 24 hours.",
     body: "Headline, about section, featured section, last ten posts. Every section.",
   },
   {
+    num: 2,
     title: "You get the full breakdown over email.",
     body: "What is working, what is costing you, what to fix first. Specific to your profile.",
   },
   {
+    num: 3,
     title: "Book a Strategy call with me.",
     body: "Strategy call link is in the email. Take it or leave it. Completely your call.",
   },
 ]
 
-const REVIEW_ITEMS = [
+const FAQS = [
   {
-    num: "01",
-    title: "Your First Impression",
-    desc: "Most profiles lose the right person in the first ten seconds. I find exactly where that happens on yours.",
+    q: "What does the audit actually cover?",
+    a: "We review your headline, about section, featured section, banner, and last ten posts. You get a written breakdown of what is working, what is costing you visibility, and what to fix first.",
   },
   {
-    num: "02",
-    title: "Your Positioning Clarity",
-    desc: "Does a stranger immediately understand why you over everyone else? I tell you yes or no.",
+    q: "How does working together work?",
+    a: "We start with a strategy call to go through the audit findings. From there, most clients move into a full engagement covering profile, content, and outreach. You approve everything before it goes live.",
   },
   {
-    num: "03",
-    title: "Your Content Narrative",
-    desc: "Are your posts building toward something or just filling a feed? The answer shows up in your inbound.",
-  },
-  {
-    num: "04",
-    title: "Your Conversion Architecture",
-    desc: "When someone ready to hire lands on your profile, what does it do with them?",
+    q: "What should I have ready?",
+    a: "Nothing. Just check your inbox within 24 hours. If you want to move fast, book a strategy call now so we can go through the findings together.",
   },
 ]
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Hands down, working with Umair completely transformed how I show up on LinkedIn. I went from posting randomly to having a clear system that actually brings inbound leads. I have had 3 discovery calls booked directly from LinkedIn in the last month alone.",
-    avatar: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg",
-    name: "Gaia Ferrero",
-    title: "CEO at Byzantine Finance",
-  },
-  {
-    quote:
-      "I had been on LinkedIn for four years and never once got an inbound lead. Umair fixed my profile in a week and two founders reached out cold within ten days.",
-    avatar: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg",
-    name: "Biola Babawale",
-    title: "CEO at Cycle Together",
-  },
-  {
-    quote:
-      "Before this, my entire pipeline came from people who already knew me. Now the content does the introduction. By the time someone books a call, they have already decided I am the right person.",
-    avatar: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s",
-    name: "Shahzad Akhtar",
-    title: "Founder & MD, Strateasy Consulting",
-  },
-]
-
-const useScrollAnimation = (threshold = 0.15) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const ref = useRef<any>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
-
-  return [ref, isVisible] as const
-}
 
 const fadeUp = (visible: boolean, delay = 0): React.CSSProperties => ({
   opacity: visible ? 1 : 0,
   transform: visible ? 'translateY(0)' : 'translateY(32px)',
-  transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
-  willChange: 'opacity, transform',
-})
-
-const slideLeft = (visible: boolean, delay = 0): React.CSSProperties => ({
-  opacity: visible ? 1 : 0,
-  transform: visible ? 'translateX(0)' : 'translateX(-20px)',
   transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
   willChange: 'opacity, transform',
 })
@@ -107,537 +50,434 @@ const fadeIn = (visible: boolean): React.CSSProperties => ({
 })
 
 export function ConfirmationContent() {
-  const [heroTextRef, heroTextVisible] = useScrollAnimation()
-  const [heroImageRef, heroImageVisible] = useScrollAnimation()
-  const [videoRef, videoVisible] = useScrollAnimation()
-  const [stepsRef, stepsVisible] = useScrollAnimation()
-  const [ctaRef, ctaVisible] = useScrollAnimation()
-  const [reviewRef, reviewVisible] = useScrollAnimation()
-  const [testimonialsRef, testimonialsVisible] = useScrollAnimation()
+  const [heroRef, heroVisible] = useScrollAnimation(0)
+  const [bodyRef, bodyVisible] = useScrollAnimation()
+  const [faqRef, faqVisible] = useScrollAnimation()
   const [footerRef, footerVisible] = useScrollAnimation()
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
     <>
-      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } .video-wrapper { padding: 0 20px !important; } .review-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .conf-hero { padding: 24px !important; }
+          .conf-hero-inner { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+          .conf-body { margin: 24px !important; }
+          .conf-body-grid { grid-template-columns: 1fr !important; }
+          .conf-body-left { border-right: none !important; border-bottom: 1px solid #f0ece4 !important; }
+          .conf-faq { margin: 0 24px !important; }
+          .conf-footer { padding: 20px 24px !important; }
+          .conf-footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+        }
+      `}</style>
 
-      {/* ── 1. HERO ──────────────────────────────────────────────────── */}
+      {/* ── SECTION 1: HERO BAR ──────────────────────────────────────── */}
       <section
+        ref={heroRef}
+        className="conf-hero"
         style={{
-          background: "#FAF7F2",
-          textAlign: "center",
-          borderTop: "4px solid #e8633e",
+          background: "#1a1a1a",
+          padding: "24px 48px",
+          ...fadeIn(heroVisible),
         }}
       >
         <div
-          ref={heroTextRef}
+          className="conf-hero-inner"
           style={{
-            maxWidth: 680,
-            margin: "0 auto",
-            padding: "80px 24px 60px",
-            ...fadeUp(heroTextVisible),
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 6vw, 3rem)",
-              fontWeight: 600,
-              color: "#1a1a1a",
-              lineHeight: 1.08,
-              letterSpacing: "-0.015em",
-              marginBottom: 20,
-            }}
-          >
-            Your Profile Is With Us.
-          </h1>
+          {/* Left: circle + text */}
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div
+              style={{
+                width: 40,
+                height: 40,
+                background: "#2a6a3a",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+              }}
+            >
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+                <path d="M1.5 7L6.5 12L16.5 2" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
 
-          <p
-            style={{
-              fontSize: 17,
-              color: "#6b6560",
-              lineHeight: 1.65,
-              marginBottom: 36,
-              maxWidth: 420,
-              margin: "0 auto 36px",
-            }}
-          >
-            That is all you needed to do. Umair will take it from here.
-          </p>
-        </div>
+            <div>
+              <p
+                style={{
+                  fontSize: 11,
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                  color: "#e8633e",
+                  fontWeight: 700,
+                  margin: "0 0 4px",
+                }}
+              >
+                LINKEDIN AUDIT · SUBMITTED
+              </p>
+              <h1
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: 32,
+                  fontWeight: 800,
+                  color: "white",
+                  lineHeight: 1.1,
+                  margin: 0,
+                }}
+              >
+                Your profile is with us.
+              </h1>
+              <p style={{ fontSize: 14, color: "#a09a94", margin: "4px 0 0" }}>
+                Two quick things below before we send the audit.
+              </p>
+            </div>
+          </div>
 
-        <div
-          ref={heroImageRef}
-          style={{
-            maxWidth: 1200,
-            margin: "32px auto 0",
-            padding: "0 48px",
-            ...fadeUp(heroImageVisible, 100),
-          }}
-          className="img-wrapper"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://assets.cdn.filesafe.space/B3a6hs9JTYdYyIDQkauN/media/69dce8884753e162ccc93ebe.jpeg"
-            alt="Umair Shahzad"
-            style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "contain",
-              borderRadius: 16,
-              display: "block",
-            }}
-          />
-        </div>
-      </section>
-
-      {/* ── 2. VIDEO MESSAGE ─────────────────────────────────────────── */}
-      <section
-        ref={videoRef}
-        style={{
-          background: "white",
-          padding: 0,
-          textAlign: "center",
-          ...fadeUp(videoVisible),
-        }}
-      >
-        <div style={{ padding: "48px 24px 24px" }}>
-          <p
-            style={{
-              fontSize: 11,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              color: "#e8633e",
-              fontWeight: 700,
-              marginBottom: 8,
-            }}
-          >
-            A MESSAGE FROM UMAIR
-          </p>
-
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 28,
-              fontWeight: 600,
-              color: "#1a1a1a",
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              marginBottom: 0,
-            }}
-          >
-            While you wait, watch this.
-          </h2>
-        </div>
-
-        <div
-          className="video-wrapper"
-          style={{
-            maxWidth: 1100,
-            margin: "0 auto",
-            padding: "0 48px",
-          }}
-        >
+          {/* Right: confirmed pill */}
           <div
             style={{
-              borderRadius: 16,
-              overflow: "hidden",
-              aspectRatio: "16/9",
-              position: "relative",
-              width: "100%",
+              background: "#1e3a28",
+              color: "#4ade80",
+              borderRadius: 20,
+              padding: "8px 16px",
+              fontSize: 13,
+              whiteSpace: "nowrap",
+              flexShrink: 0,
             }}
           >
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/Y_L9g_aFQsM?si=LEuiK0kaVbDKXamh"
-              title="Message from Umair"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                border: "none",
-                borderRadius: 16,
-              }}
-            />
+            ● Your audit is confirmed
           </div>
         </div>
       </section>
 
-      {/* ── 3. WHAT HAPPENS NEXT ─────────────────────────────────────── */}
-      <section style={{ background: "white", padding: "60px 24px" }}>
-        <div ref={stepsRef} style={{ maxWidth: 600, margin: "0 auto" }}>
-          <p
-            style={{
-              fontSize: 11,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              color: "#e8633e",
-              fontWeight: 700,
-              marginBottom: 8,
-            }}
+      {/* ── SECTION 2: TWO COLUMN BODY ───────────────────────────────── */}
+      <div
+        ref={bodyRef}
+        className="conf-body"
+        style={{
+          border: "1px solid #f0ece4",
+          borderRadius: 16,
+          margin: "32px 48px",
+          overflow: "hidden",
+          background: "white",
+          ...fadeUp(bodyVisible),
+        }}
+      >
+        <div
+          className="conf-body-grid"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+        >
+          {/* LEFT COLUMN */}
+          <div
+            className="conf-body-left"
+            style={{ padding: 40, borderRight: "1px solid #f0ece4" }}
           >
-            WHAT HAPPENS NEXT
-          </p>
-
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 32,
-              fontWeight: 600,
-              color: "#1a1a1a",
-              lineHeight: 1.15,
-              letterSpacing: "-0.01em",
-              marginBottom: 40,
-            }}
-          >
-            Three things, in order.
-          </h2>
-
-          {STEPS.map((step, i) => (
-            <div
-              key={i}
+            <p
               style={{
-                display: "flex",
-                gap: 16,
-                alignItems: "flex-start",
-                background: "#FAF7F2",
-                border: "1px solid #e8e0d5",
-                borderRadius: 8,
-                padding: 16,
-                marginBottom: 12,
-                ...slideLeft(stepsVisible, i * 150),
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#e8633e",
+                fontWeight: 700,
+                margin: "0 0 8px",
               }}
             >
+              STEP 1 · WHAT HAPPENS NEXT
+            </p>
+
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 22,
+                fontWeight: 700,
+                color: "#1a1a1a",
+                lineHeight: 1.2,
+                margin: "0 0 24px",
+              }}
+            >
+              Three things, in order.
+            </h2>
+
+            {STEPS.map((step, i) => (
               <div
+                key={i}
                 style={{
-                  fontSize: 18,
-                  fontWeight: 700,
-                  color: "#EA6A47",
-                  flexShrink: 0,
-                  minWidth: 24,
-                  lineHeight: 1.4,
+                  display: "flex",
+                  gap: 16,
+                  alignItems: "flex-start",
+                  marginBottom: 16,
+                  ...fadeUp(bodyVisible, i * 100),
                 }}
               >
-                {i + 1}
-              </div>
-
-              <div>
-                <p
+                <div
                   style={{
-                    fontSize: 15,
-                    fontWeight: 600,
-                    color: "#1a1a1a",
-                    marginBottom: 4,
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "#e8633e",
+                    flexShrink: 0,
+                    minWidth: 20,
                     lineHeight: 1.4,
                   }}
                 >
-                  {step.title}
-                </p>
-                <p
-                  style={{
-                    fontSize: 13,
-                    color: "#6b6560",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {step.body}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 4. CTA ───────────────────────────────────────────────────── */}
-      <section
-        ref={ctaRef}
-        style={{
-          background: "#FAF7F2",
-          padding: "80px 24px",
-          textAlign: "center",
-          ...fadeUp(ctaVisible),
-        }}
-      >
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 800,
-              color: "#1a1a1a",
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-              margin: "0 auto 20px",
-            }}
-          >
-            You do not{" "}
-            <span style={{ color: "#e8633e" }}>have to wait</span>
-            {" "}for the email.
-          </h2>
-
-          <p
-            style={{
-              fontSize: 16,
-              color: "#6b6560",
-              lineHeight: 1.65,
-              marginBottom: 8,
-            }}
-          >
-            Grab a slot now. The audit report lands either way.
-          </p>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#6b6560",
-              lineHeight: 1.65,
-              marginBottom: 32,
-            }}
-          >
-            The call is for founders who want to move fast.
-          </p>
-
-          <ConfirmationBookBtn />
-          <p
-            style={{
-              fontSize: 13,
-              color: "#6b6560",
-              marginTop: 12,
-              textAlign: "center",
-            }}
-          >
-            Slots fill fast. Grab yours now.
-          </p>
-          <p style={{ fontSize: 12, color: "#a09a94", marginTop: 4 }}>
-            Limited spots available each month.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 5. HERE IS WHAT I AM REVIEWING ──────────────────────────── */}
-      <section style={{ background: "white", padding: "80px 24px" }}>
-        <div ref={reviewRef} style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 40,
-              fontWeight: 800,
-              color: "#1a1a1a",
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-              marginBottom: 48,
-              textAlign: "center",
-            }}
-          >
-            Here Is What I Am Reviewing.
-          </h2>
-
-          <div
-            className="review-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 24,
-            }}
-          >
-            {REVIEW_ITEMS.map((item, i) => (
-              <div
-                key={item.num}
-                style={{
-                  border: "1px solid #f0ece4",
-                  borderRadius: 16,
-                  padding: 32,
-                  background: "white",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                  ...fadeUp(reviewVisible, (i % 2) * 150),
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 13,
-                    color: "#e8633e",
-                    fontWeight: 700,
-                    marginBottom: 12,
-                    letterSpacing: "1px",
-                  }}
-                >
-                  {item.num}
-                </p>
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 700,
-                    color: "#1a1a1a",
-                    marginBottom: 12,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {item.title}
-                </p>
-                <p
-                  style={{
-                    fontSize: 15,
-                    color: "#6b6560",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. TESTIMONIALS ──────────────────────────────────────────── */}
-      <section style={{ background: "#FAF7F2", padding: "80px 24px" }}>
-        <div ref={testimonialsRef} style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 32,
-              fontWeight: 600,
-              color: "#1a1a1a",
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              marginBottom: 40,
-            }}
-          >
-            Different Founders. The Same.{" "}
-            <span style={{ color: "#EA6A47" }}>Problem.</span>
-          </h2>
-
-          {TESTIMONIALS.map((t, i) => (
-            <div
-              key={t.name}
-              style={{
-                background: "white",
-                borderRadius: 16,
-                padding: 32,
-                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-                marginBottom: 20,
-                maxWidth: 600,
-                margin: "0 auto 20px",
-                borderLeft: "4px solid #e8633e",
-                textAlign: "left",
-                ...fadeUp(testimonialsVisible, i * 150),
-              }}
-            >
-              <div
-                style={{
-                  color: "#e8633e",
-                  fontSize: 18,
-                  letterSpacing: 3,
-                  marginBottom: 16,
-                }}
-              >
-                ★★★★★
-              </div>
-
-              <p
-                style={{
-                  fontSize: 15,
-                  color: "#1a1a1a",
-                  lineHeight: 1.7,
-                  marginBottom: 20,
-                  fontStyle: "italic",
-                }}
-              >
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    flexShrink: 0,
-                    border: "2px solid #e8633e",
-                  }}
-                />
+                  {step.num}
+                </div>
                 <div>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      fontWeight: 600,
-                      color: "#1a1a1a",
-                      margin: 0,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {t.name}
+                  <p style={{ fontSize: 15, fontWeight: 600, color: "#1a1a1a", margin: "0 0 4px", lineHeight: 1.4 }}>
+                    {step.title}
                   </p>
-                  <p
-                    style={{
-                      fontSize: 12,
-                      color: "#6b6560",
-                      margin: "2px 0 0",
-                    }}
-                  >
-                    {t.title}
+                  <p style={{ fontSize: 13, color: "#6b6560", lineHeight: 1.6, margin: 0 }}>
+                    {step.body}
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
 
-      {/* ── 7. ONE LAST THING ────────────────────────────────────────── */}
-      <section
-        ref={footerRef}
+            {/* Info box */}
+            <div
+              style={{
+                border: "1px solid #e8633e",
+                borderRadius: 8,
+                padding: 16,
+                marginTop: 24,
+                background: "#fdf5f2",
+              }}
+            >
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", margin: "0 0 4px" }}>
+                Umair reviews every profile personally.
+              </p>
+              <p style={{ fontSize: 12, color: "#6b6560", lineHeight: 1.6, margin: 0 }}>
+                Not a template. Not a tool. If you don&apos;t hear back within 24 hours, email{" "}
+                <a
+                  href="mailto:umair@sochcatalyst.com"
+                  style={{ color: "#e8633e", textDecoration: "none", fontWeight: 600 }}
+                >
+                  umair@sochcatalyst.com
+                </a>
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div style={{ borderTop: "1px solid #f0ece4", margin: "24px 0" }} />
+
+            <p
+              style={{
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#6b6560",
+                fontWeight: 600,
+                margin: "0 0 8px",
+              }}
+            >
+              WHILE YOU WAIT
+            </p>
+            <a
+              href="#video-section"
+              style={{ fontSize: 13, color: "#e8633e", fontWeight: 600, textDecoration: "none" }}
+            >
+              Watch Umair&apos;s LinkedIn breakdown →
+            </a>
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div style={{ padding: 40 }}>
+            <p
+              style={{
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#e8633e",
+                fontWeight: 700,
+                margin: "0 0 8px",
+              }}
+            >
+              STEP 2 · WATCH FIRST, 3 MIN
+            </p>
+
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: 22,
+                fontWeight: 700,
+                color: "#1a1a1a",
+                lineHeight: 1.2,
+                margin: "0 0 8px",
+              }}
+            >
+              A quick word from Umair.
+            </h2>
+
+            <p style={{ fontSize: 14, color: "#6b6560", lineHeight: 1.6, margin: "0 0 24px" }}>
+              What the audit covers, what it doesn&apos;t, and the one thing worth thinking through before we send it.
+            </p>
+
+            <div
+              id="video-section"
+              style={{
+                borderRadius: 12,
+                overflow: "hidden",
+                aspectRatio: "16/9",
+                position: "relative",
+                width: "100%",
+              }}
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/Y_L9g_aFQsM"
+                title="A quick word from Umair"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── SECTION 3: FAQ ACCORDION ─────────────────────────────────── */}
+      <div
+        ref={faqRef}
+        className="conf-faq"
         style={{
-          background: "#F0EDE8",
-          padding: "48px 24px",
-          textAlign: "center",
-          borderTop: "1px solid #e8e0d5",
+          background: "white",
+          margin: "0 48px",
+          border: "1px solid #f0ece4",
+          borderRadius: 16,
+          overflow: "hidden",
+          ...fadeUp(faqVisible),
+        }}
+      >
+        {FAQS.map((item, i) => (
+          <div
+            key={i}
+            style={{
+              borderBottom: i < FAQS.length - 1 ? "1px solid #f0ece4" : "none",
+            }}
+          >
+            <button
+              onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              style={{
+                width: "100%",
+                padding: "20px 24px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                textAlign: "left",
+              }}
+            >
+              <span style={{ fontSize: 15, fontWeight: 600, color: "#1a1a1a" }}>
+                {item.q}
+              </span>
+              <span
+                style={{
+                  color: "#e8633e",
+                  fontSize: 20,
+                  fontWeight: 400,
+                  flexShrink: 0,
+                  marginLeft: 16,
+                  lineHeight: 1,
+                }}
+              >
+                {openFaq === i ? "−" : "+"}
+              </span>
+            </button>
+
+            {openFaq === i && (
+              <div style={{ padding: "0 24px 20px" }}>
+                <p style={{ fontSize: 13, color: "#6b6560", lineHeight: 1.6, margin: 0 }}>
+                  {item.a}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* ── SECTION 4: FOOTER STRIP ──────────────────────────────────── */}
+      <footer
+        ref={footerRef}
+        className="conf-footer"
+        style={{
+          background: "#1a1a1a",
+          padding: "20px 48px",
+          marginTop: 32,
           ...fadeIn(footerVisible),
         }}
       >
-        <div style={{ maxWidth: 500, margin: "0 auto" }}>
-          <h3
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 22,
-              fontWeight: 600,
-              color: "#1a1a1a",
-              marginBottom: 12,
-              letterSpacing: "-0.01em",
-            }}
-          >
-            One Last Thing
-          </h3>
-          <p
-            style={{
-              fontSize: 14,
-              color: "#6b6560",
-              lineHeight: 1.7,
-              margin: 0,
-            }}
-          >
-            Do not forget to check your inbox. The report sometimes lands in
-            promotions. If you do not see it within 24 hours, check your spam
-            folder or email us directly at{" "}
+        <div
+          className="conf-footer-inner"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          {/* Left: avatar + name + role */}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{
+                width: 32,
+                height: 32,
+                background: "#e8633e",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 12,
+                fontWeight: 700,
+                color: "white",
+                flexShrink: 0,
+              }}
+            >
+              SC
+            </div>
+            <div style={{ marginLeft: 10 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "white", margin: 0, lineHeight: 1.3 }}>
+                Umair Shahzad
+              </p>
+              <p style={{ fontSize: 12, color: "#a09a94", margin: 0 }}>
+                Founder, Soch Catalyst
+              </p>
+            </div>
+          </div>
+
+          {/* Right: links */}
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <a
+              href="https://sochcatalyst.com"
+              style={{ fontSize: 12, color: "#a09a94", textDecoration: "none" }}
+            >
+              sochcatalyst.com
+            </a>
+            <span style={{ fontSize: 12, color: "#a09a94" }}>·</span>
             <a
               href="mailto:umair@sochcatalyst.com"
-              style={{ color: "#e8633e", textDecoration: "none", fontWeight: 600 }}
+              style={{ fontSize: 12, color: "#a09a94", textDecoration: "none" }}
             >
-              umair@sochcatalyst.com
+              Contact
             </a>
-          </p>
+          </div>
         </div>
-      </section>
+      </footer>
     </>
   )
 }
