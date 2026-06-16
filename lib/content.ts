@@ -240,6 +240,48 @@ export const CASE_STUDIES: CaseStudy[] = [
     image: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg",
     href: "/case-studies/biola-babawale",
   },
+  {
+    company: "Strateasy Consulting",
+    industry: "Management Consulting · Pakistan",
+    region: "Pakistan",
+    duration: "5 months",
+    scope: "LinkedIn strategy & outreach",
+    metrics: [
+      { value: "29%", label: "Outreach reply rate" },
+      { value: "6×", label: "Profile views growth (60 days)" },
+      { value: "11", label: "Qualified conversations" },
+      { value: "100%", label: "Posting consistency maintained" },
+    ],
+    quote:
+      "Before this, my entire pipeline came from people who already knew me. Now the content does the introduction.",
+    author: "Shahzad Akhtar",
+    authorRole: "Founder & MD, Strateasy Consulting",
+    accent: "#1a3a5c",
+    initials: "SA",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s",
+    href: "/case-studies/shahzad-akhtar",
+  },
+  {
+    company: "Brenna & Co.",
+    industry: "Business Architecture · United States",
+    region: "United States",
+    duration: "12 weeks",
+    scope: "LinkedIn strategy & outreach",
+    metrics: [
+      { value: "3×", label: "Profile views growth (60 days)" },
+      { value: "22%", label: "Outreach reply rate" },
+      { value: "8", label: "Qualified founder conversations" },
+      { value: "100%", label: "Posting consistency maintained" },
+    ],
+    quote:
+      "Soch fixed that. And they did it without changing what Brenna and Co. is. They just made it visible to the right people at the right moment.",
+    author: "Kaitlin Malaspina",
+    authorRole: "Principal & Founder, Brenna & Co.",
+    accent: "#4a2c6e",
+    initials: "BC",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQHNiiko81qmAQ/profile-displayphoto-crop_800_800/B4EZkH3OJ3GoAI-/0/1756773540889?e=1782950400&v=beta&t=RBDDJIOTs9j5G85DH_3rrLbpkogSZ-CCyEfs85xbwzY",
+    href: "/case-studies/kaitlin-malaspina",
+  },
 ];
 
 // NOTE: Placeholder testimonials: replace with real client quotes & names.

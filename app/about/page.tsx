@@ -52,13 +52,21 @@ export default function AboutPage() {
             Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
           </p>
         </div>
-        <div className="about-hero-img-col" style={{ flex: 1, paddingTop: "24px", paddingBottom: "24px", margin: 0, overflow: "hidden", position: "relative", minHeight: "500px", borderRadius: "16px" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
-            alt="Soch Catalyst team"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
-          />
+        <div className="about-hero-img-col" style={{ flex: 1, padding: "24px 16px", position: "relative", minHeight: "500px", display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: "8px", backgroundColor: "#ffffff", borderRadius: "16px" }}>
+          {[
+            { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg", alt: "Gaia Ferrero, Byzantine" },
+            { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg", alt: "Biola Babawale, Cycle Together" },
+            { src: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s", alt: "Shahzad Akhtar, Strateasy Consulting" },
+            { src: "https://media.licdn.com/dms/image/v2/D4E03AQHNiiko81qmAQ/profile-displayphoto-crop_800_800/B4EZkH3OJ3GoAI-/0/1756773540889?e=1782950400&v=beta&t=RBDDJIOTs9j5G85DH_3rrLbpkogSZ-CCyEfs85xbwzY", alt: "Kaitlin Malaspina, Brenna & Co." },
+          ].map((f) => (
+            <div key={f.alt} style={{ overflow: "hidden", borderRadius: "8px", border: "1px solid var(--color-line)", minHeight: 0, minWidth: 0 }}>
+              <img
+                src={f.src}
+                alt={f.alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
