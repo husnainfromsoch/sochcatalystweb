@@ -43,8 +43,8 @@ export default function AboutPage() {
           .about-hero-img-col { min-height: 350px !important; width: 100% !important; flex: unset !important; }
         }
       `}</style>
-      <section className="about-hero border-b border-line bg-mist" style={{ display: "flex", alignItems: "stretch", minHeight: "600px", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="about-hero-text" style={{ flex: "0 0 45%", padding: "80px 60px 80px 80px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <section className="about-hero border-b border-line bg-mist" style={{ display: "flex", alignItems: "flex-start", minHeight: "600px", paddingTop: "60px", paddingBottom: "60px" }}>
+        <div className="about-hero-text" style={{ flex: "0 0 45%", padding: "40px 60px 80px 80px", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignSelf: "flex-start" }}>
           <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
             Built by a practitioner. Built for founders.
           </h1>
@@ -52,12 +52,12 @@ export default function AboutPage() {
             Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
           </p>
         </div>
-        <div className="about-hero-img-col" style={{ flex: 1, paddingTop: "24px", paddingBottom: "24px", margin: 0, overflow: "hidden", position: "relative", minHeight: "500px", borderRadius: "16px" }}>
+        <div className="about-hero-img-col" style={{ flex: 1, margin: 0, overflow: "hidden", borderRadius: "16px", alignSelf: "flex-start", display: "flex", alignItems: "flex-start" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
             alt="Soch Catalyst team"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
+            style={{ width: "100%", height: "auto", maxHeight: "580px", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
           />
         </div>
       </section>
