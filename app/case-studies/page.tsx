@@ -72,8 +72,8 @@ export default function CaseStudiesPage() {
 
       {/* ── Page header ── */}
       <section className="border-b border-line bg-cream py-16 sm:py-20">
-        <div className="container-x">
-          <Reveal>
+        <div className="container-x flex flex-col gap-10 md:flex-row md:items-center md:gap-12">
+          <Reveal className="md:w-[55%]">
             <h1 className="text-display">
               Results that speak for themselves.
             </h1>
@@ -83,6 +83,24 @@ export default function CaseStudiesPage() {
               here is verified with the client.
             </p>
           </Reveal>
+          <div className="hidden md:block md:w-[45%]">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+              {[
+                { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg", alt: "Gaia Ferrero" },
+                { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg", alt: "Biola Babawale" },
+                { src: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s", alt: "Shahzad Akhtar" },
+                { src: "https://media.licdn.com/dms/image/v2/D4E03AQHNiiko81qmAQ/profile-displayphoto-crop_800_800/B4EZkH3OJ3GoAI-/0/1756773540889?e=1782950400&v=beta&t=RBDDJIOTs9j5G85DH_3rrLbpkogSZ-CCyEfs85xbwzY", alt: "Kaitlin Malaspina" },
+              ].map((f) => (
+                <div key={f.alt} style={{ aspectRatio: "1/1", overflow: "hidden", borderRadius: "12px" }}>
+                  <img
+                    src={f.src}
+                    alt={f.alt}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
