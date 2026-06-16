@@ -72,8 +72,8 @@ export default function CaseStudiesPage() {
     <div className="bg-white">
 
       {/* ── Page header ── */}
-      <section className="border-b border-line bg-cream" style={{ display: "flex", alignItems: "stretch", minHeight: "500px" }}>
-        <div style={{ flex: "0 0 50%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 60px" }}>
+      <section className="border-b border-line bg-cream" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "60px 80px", minHeight: "500px" }}>
+        <div style={{ flex: "0 0 45%", display: "flex", flexDirection: "column", justifyContent: "center", alignSelf: "center", textAlign: "left" }}>
           <Reveal>
             <h1 className="text-display">
               Results that speak for themselves.
@@ -85,8 +85,8 @@ export default function CaseStudiesPage() {
             </p>
           </Reveal>
         </div>
-        <div className="hidden md:block" style={{ flex: 1, padding: "40px 40px 40px 0", alignSelf: "stretch" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: "8px", width: "100%", height: "100%", minHeight: "480px" }}>
+        <div className="hidden md:block" style={{ flex: "0 0 48%", maxWidth: "520px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: "8px", width: "100%", height: "100%", minHeight: "380px" }}>
             {[
               { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb631aa9fc98e79ae2810_1714512298914.jpg", alt: "Gaia Ferrero" },
               { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg", alt: "Biola Babawale" },
@@ -98,7 +98,7 @@ export default function CaseStudiesPage() {
                   <img
                     src={f.src}
                     alt={f.alt}
-                    style={{ width: "100%", height: "100%", minHeight: "220px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                    style={{ width: "100%", height: "100%", minHeight: "200px", objectFit: "cover", objectPosition: "center top", display: "block" }}
                   />
                 </div>
               </AnimateIn>
