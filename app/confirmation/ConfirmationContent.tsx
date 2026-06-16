@@ -36,16 +36,32 @@ const FAQS = [
   },
 ]
 
+const STEP_DELAYS = [200, 350, 500]
+
+const slideDown = (visible: boolean, delay = 0): React.CSSProperties => ({
+  opacity: visible ? 1 : 0,
+  transform: visible ? 'translateY(0)' : 'translateY(-20px)',
+  transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
+  willChange: 'opacity, transform',
+})
+
 const fadeUp = (visible: boolean, delay = 0): React.CSSProperties => ({
   opacity: visible ? 1 : 0,
-  transform: visible ? 'translateY(0)' : 'translateY(32px)',
+  transform: visible ? 'translateY(0)' : 'translateY(40px)',
   transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
   willChange: 'opacity, transform',
 })
 
-const fadeIn = (visible: boolean): React.CSSProperties => ({
+const slideLeft = (visible: boolean, delay = 0): React.CSSProperties => ({
   opacity: visible ? 1 : 0,
-  transition: 'opacity 0.6s ease',
+  transform: visible ? 'translateX(0)' : 'translateX(-20px)',
+  transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+  willChange: 'opacity, transform',
+})
+
+const fadeIn = (visible: boolean, delay = 0): React.CSSProperties => ({
+  opacity: visible ? 1 : 0,
+  transition: `opacity 0.6s ease ${delay}ms`,
   willChange: 'opacity',
 })
 
@@ -56,6 +72,7 @@ export function ConfirmationContent() {
   const [footerRef, footerVisible] = useScrollAnimation()
 
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [hoveredFaq, setHoveredFaq] = useState<number | null>(null)
 
   return (
     <>
@@ -66,7 +83,7 @@ export function ConfirmationContent() {
           .conf-body { margin: 24px !important; }
           .conf-body-grid { grid-template-columns: 1fr !important; }
           .conf-body-left { border-right: none !important; border-bottom: 1px solid #f0ece4 !important; }
-          .conf-faq { margin: 0 24px !important; }
+          .conf-faq { margin: 24px !important; }
           .conf-footer { padding: 20px 24px !important; }
           .conf-footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
         }
@@ -78,8 +95,9 @@ export function ConfirmationContent() {
         className="conf-hero"
         style={{
           background: "#1a1a1a",
-          padding: "24px 48px",
-          ...fadeIn(heroVisible),
+          padding: "28px 56px",
+          borderBottom: "1px solid #2a2a2a",
+          ...slideDown(heroVisible),
         }}
       >
         <div
@@ -94,8 +112,8 @@ export function ConfirmationContent() {
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div
               style={{
-                width: 40,
-                height: 40,
+                width: 48,
+                height: 48,
                 background: "#2a6a3a",
                 borderRadius: "50%",
                 display: "flex",
@@ -104,8 +122,8 @@ export function ConfirmationContent() {
                 flexShrink: 0,
               }}
             >
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
-                <path d="M1.5 7L6.5 12L16.5 2" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                <path d="M1.5 8L7 13.5L18.5 2" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
@@ -125,7 +143,7 @@ export function ConfirmationContent() {
               <h1
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: 32,
+                  fontSize: 36,
                   fontWeight: 800,
                   color: "white",
                   lineHeight: 1.1,
@@ -162,12 +180,13 @@ export function ConfirmationContent() {
         ref={bodyRef}
         className="conf-body"
         style={{
-          border: "1px solid #f0ece4",
+          border: "1px solid #ebe8e2",
           borderRadius: 16,
-          margin: "32px 48px",
+          margin: "32px 56px",
           overflow: "hidden",
           background: "white",
-          ...fadeUp(bodyVisible),
+          boxShadow: "0 4px 32px rgba(0,0,0,0.08)",
+          ...fadeUp(bodyVisible, 100),
         }}
       >
         <div
@@ -212,18 +231,26 @@ export function ConfirmationContent() {
                   display: "flex",
                   gap: 16,
                   alignItems: "flex-start",
-                  marginBottom: 16,
-                  ...fadeUp(bodyVisible, i * 100),
+                  marginBottom: 0,
+                  paddingBottom: 24,
+                  marginTop: i === 0 ? 0 : 24,
+                  borderBottom: i < STEPS.length - 1 ? "1px solid #f5f2ed" : "none",
+                  ...slideLeft(bodyVisible, STEP_DELAYS[i]),
                 }}
               >
                 <div
                   style={{
-                    fontSize: 18,
-                    fontWeight: 700,
+                    width: 28,
+                    height: 28,
+                    background: "#fdf0ec",
                     color: "#e8633e",
+                    borderRadius: "50%",
+                    fontWeight: 700,
+                    fontSize: 14,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     flexShrink: 0,
-                    minWidth: 20,
-                    lineHeight: 1.4,
                   }}
                 >
                   {step.num}
@@ -242,11 +269,12 @@ export function ConfirmationContent() {
             {/* Info box */}
             <div
               style={{
-                border: "1px solid #e8633e",
+                borderLeft: "3px solid #e8633e",
                 borderRadius: 8,
-                padding: 16,
+                padding: "16px 20px",
                 marginTop: 24,
-                background: "#fdf5f2",
+                background: "#fdf8f5",
+                ...fadeIn(bodyVisible, 600),
               }}
             >
               <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", margin: "0 0 4px" }}>
@@ -326,6 +354,7 @@ export function ConfirmationContent() {
                 aspectRatio: "16/9",
                 position: "relative",
                 width: "100%",
+                ...fadeUp(bodyVisible, 300),
               }}
             >
               <iframe
@@ -356,11 +385,11 @@ export function ConfirmationContent() {
         className="conf-faq"
         style={{
           background: "white",
-          margin: "0 48px",
+          margin: "24px 56px",
           border: "1px solid #f0ece4",
           borderRadius: 16,
           overflow: "hidden",
-          ...fadeUp(faqVisible),
+          boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
         }}
       >
         {FAQS.map((item, i) => (
@@ -368,10 +397,13 @@ export function ConfirmationContent() {
             key={i}
             style={{
               borderBottom: i < FAQS.length - 1 ? "1px solid #f0ece4" : "none",
+              ...fadeUp(faqVisible, i * 100),
             }}
           >
             <button
               onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              onMouseEnter={() => setHoveredFaq(i)}
+              onMouseLeave={() => setHoveredFaq(null)}
               style={{
                 width: "100%",
                 padding: "20px 24px",
@@ -379,9 +411,10 @@ export function ConfirmationContent() {
                 justifyContent: "space-between",
                 alignItems: "center",
                 cursor: "pointer",
-                background: "none",
+                background: hoveredFaq === i ? "#fafaf8" : "none",
                 border: "none",
                 textAlign: "left",
+                transition: "background 0.15s ease",
               }}
             >
               <span style={{ fontSize: 15, fontWeight: 600, color: "#1a1a1a" }}>
@@ -418,7 +451,7 @@ export function ConfirmationContent() {
         className="conf-footer"
         style={{
           background: "#1a1a1a",
-          padding: "20px 48px",
+          padding: "20px 56px",
           marginTop: 32,
           ...fadeIn(footerVisible),
         }}
