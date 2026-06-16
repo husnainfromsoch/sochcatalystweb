@@ -72,6 +72,7 @@ const TESTIMONIALS = [
 export default function ConfirmationPage() {
   return (
     <>
+      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } }`}</style>
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section
         style={{
@@ -109,21 +110,27 @@ export default function ConfirmationPage() {
           </p>
         </div>
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://assets.cdn.filesafe.space/B3a6hs9JTYdYyIDQkauN/media/69dce8884753e162ccc93ebe.jpeg"
-          alt="Umair Shahzad"
+        <div
           style={{
-            width: "100%",
-            maxWidth: "100%",
-            height: 500,
-            objectFit: "cover",
-            objectPosition: "center top",
-            borderRadius: 0,
-            display: "block",
-            margin: 0,
+            maxWidth: 1200,
+            margin: "32px auto 0",
+            padding: "0 48px",
           }}
-        />
+          className="img-wrapper"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://assets.cdn.filesafe.space/B3a6hs9JTYdYyIDQkauN/media/69dce8884753e162ccc93ebe.jpeg"
+            alt="Umair Shahzad"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain",
+              borderRadius: 16,
+              display: "block",
+            }}
+          />
+        </div>
       </section>
 
       {/* ── 2. VIDEO MESSAGE ─────────────────────────────────────────── */}
