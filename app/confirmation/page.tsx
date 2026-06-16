@@ -76,12 +76,11 @@ export default function ConfirmationPage() {
       <section
         style={{
           background: "#FAF7F2",
-          padding: "80px 24px 60px",
           textAlign: "center",
           borderTop: "4px solid #e8633e",
         }}
       >
-        <div style={{ maxWidth: 680, margin: "0 auto" }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "80px 24px 60px" }}>
           <h1
             style={{
               fontFamily: "var(--font-display)",
@@ -108,24 +107,23 @@ export default function ConfirmationPage() {
           >
             That is all you needed to do. Umair will take it from here.
           </p>
-
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://assets.cdn.filesafe.space/B3a6hs9JTYdYyIDQkauN/media/69dce8884753e162ccc93ebe.jpeg"
-            alt="Umair Shahzad"
-            style={{
-              width: "100%",
-              maxWidth: 680,
-              height: 420,
-              objectFit: "cover",
-              objectPosition: "center top",
-              borderRadius: 16,
-              margin: "32px auto 0",
-              display: "block",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-            }}
-          />
         </div>
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://assets.cdn.filesafe.space/B3a6hs9JTYdYyIDQkauN/media/69dce8884753e162ccc93ebe.jpeg"
+          alt="Umair Shahzad"
+          style={{
+            width: "100%",
+            maxWidth: "100%",
+            height: 500,
+            objectFit: "cover",
+            objectPosition: "center top",
+            borderRadius: 0,
+            display: "block",
+            margin: 0,
+          }}
+        />
       </section>
 
       {/* ── 2. VIDEO MESSAGE ─────────────────────────────────────────── */}
