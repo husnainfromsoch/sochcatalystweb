@@ -209,7 +209,7 @@ export default function CaseStudiesPage() {
                 <BookButton variant="primary" size="lg">
                   {CTAS.primary.label}
                 </BookButton>
-                <AuditButton variant="secondary" size="lg">
+                <AuditButton variant="secondary" size="lg" className="cursor-pointer hover:bg-[#1a1a1a] hover:text-white hover:!ring-[#1a1a1a]">
                   {CTAS.secondary.label}
                 </AuditButton>
               </div>
