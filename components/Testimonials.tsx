@@ -110,14 +110,16 @@ function Slide({
           </span>
         )}
 
-        <div className="relative space-y-1">
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)", borderRadius: "0 0 0 16px" }} />
+
+        <div className="relative space-y-1" style={{ zIndex: 1 }}>
           <p
-            className="text-2xl font-bold text-white"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="font-bold text-white"
+            style={{ fontFamily: "var(--font-display)", fontSize: "18px", fontWeight: 700, textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}
           >
             {study.company}
           </p>
-          <p className="text-sm text-white/65">{study.industry}</p>
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.85)", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>{study.industry}</p>
         </div>
       </div>
 
