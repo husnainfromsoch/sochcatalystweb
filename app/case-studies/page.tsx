@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { BookButton } from "@/components/BookButton";
 import { AuditButton } from "@/components/AuditButton";
 import { CTAS } from "@/lib/content";
+import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Case Studies: Client Results | Soch Catalyst",
@@ -91,14 +92,16 @@ export default function CaseStudiesPage() {
               { src: "https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2fb8c5358ef1ae4b6b238c_1674503443215.jpg", alt: "Biola Babawale" },
               { src: "https://media.licdn.com/dms/image/v2/D4D03AQEPW0neV8fQrA/profile-displayphoto-crop_800_800/B4DZkkgP2THsAI-/0/1757254059122?e=1782950400&v=beta&t=mgmnxulxv_s2Yuno-AdYbwJK7qA8imxV7c73EPYzI9s", alt: "Shahzad Akhtar" },
               { src: "https://media.licdn.com/dms/image/v2/D4E03AQHNiiko81qmAQ/profile-displayphoto-crop_800_800/B4EZkH3OJ3GoAI-/0/1756773540889?e=1782950400&v=beta&t=RBDDJIOTs9j5G85DH_3rrLbpkogSZ-CCyEfs85xbwzY", alt: "Kaitlin Malaspina" },
-            ].map((f) => (
-              <div key={f.alt} style={{ overflow: "hidden", borderRadius: "12px", minHeight: 0 }}>
-                <img
-                  src={f.src}
-                  alt={f.alt}
-                  style={{ width: "100%", height: "100%", minHeight: "220px", objectFit: "cover", objectPosition: "center top", display: "block" }}
-                />
-              </div>
+            ].map((f, i) => (
+              <AnimateIn key={f.alt} delay={i * 100} direction="up">
+                <div style={{ overflow: "hidden", borderRadius: "12px", minHeight: 0 }}>
+                  <img
+                    src={f.src}
+                    alt={f.alt}
+                    style={{ width: "100%", height: "100%", minHeight: "220px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+                  />
+                </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -108,9 +111,9 @@ export default function CaseStudiesPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[68.75rem] px-6">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            {CARDS.map((card) => (
+            {CARDS.map((card, i) => (
+              <AnimateIn key={card.href} delay={i * 150}>
               <article
-                key={card.href}
                 className="group w-full min-w-0 overflow-hidden rounded-xl border border-line bg-white transition-shadow duration-300 hover:shadow-[0_22px_48px_-22px_rgba(20,30,25,0.28)]"
               >
                 <div className="flex flex-row">
@@ -188,6 +191,7 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               </article>
+              </AnimateIn>
             ))}
           </div>
         </div>

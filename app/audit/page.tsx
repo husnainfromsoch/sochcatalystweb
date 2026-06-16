@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AuditButton } from "@/components/AuditButton";
 import { Icon } from "@/components/Icons";
+import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
   title: "Get a Free LinkedIn Audit",
@@ -48,56 +49,67 @@ export default function AuditPage() {
 
             {/* Left - copy */}
             <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand">
-                Free LinkedIn Audit
-              </p>
+              <AnimateIn delay={0}>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+                  Free LinkedIn Audit
+                </p>
+              </AnimateIn>
 
-              <h1 className="text-display mt-4 text-[clamp(2.2rem,1.3rem+3.2vw,3.6rem)]">
-                See exactly what&apos;s holding your LinkedIn back.
-              </h1>
+              <AnimateIn delay={0}>
+                <h1 className="text-display mt-4 text-[clamp(2.2rem,1.3rem+3.2vw,3.6rem)]">
+                  See exactly what&apos;s holding your LinkedIn back.
+                </h1>
+              </AnimateIn>
 
-              <p className="lead mt-5 font-light">
-                Request a free audit, no strings. We review your profile,
-                content and outreach by hand, then send back a clear plan of
-                what to fix first.
-              </p>
+              <AnimateIn delay={100}>
+                <p className="lead mt-5 font-light">
+                  Request a free audit, no strings. We review your profile,
+                  content and outreach by hand, then send back a clear plan of
+                  what to fix first.
+                </p>
+              </AnimateIn>
 
-              <div className="mt-8">
-                <AuditButton variant="primary" size="lg">
-                  Get Your Free Audit
-                </AuditButton>
-              </div>
+              <AnimateIn delay={200}>
+                <div className="mt-8">
+                  <AuditButton variant="primary" size="lg">
+                    Get Your Free Audit
+                  </AuditButton>
+                </div>
+              </AnimateIn>
 
-              <p className="mt-4 text-sm text-muted">
-                No commitment required. The audit is yours to keep.
-              </p>
+              <AnimateIn delay={250}>
+                <p className="mt-4 text-sm text-muted">
+                  No commitment required. The audit is yours to keep.
+                </p>
+              </AnimateIn>
             </div>
 
             {/* Right - deliverable cards */}
             <div className="flex flex-col gap-3">
-              {AUDIT_CARDS.map((card) => (
-                <div
-                  key={card.title}
-                  className="flex items-start gap-3 rounded-lg border border-line bg-white px-6 py-5"
-                  style={{
-                    borderLeftWidth: "3px",
-                    borderLeftColor: "var(--color-brand)",
-                  }}
-                >
-                  <Icon
-                    name={card.icon}
-                    className="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                    strokeWidth={1.6}
-                  />
-                  <div>
-                    <p className="text-[15px] font-semibold text-ink">
-                      {card.title}
-                    </p>
-                    <p className="mt-1 text-[13px] leading-relaxed text-muted">
-                      {card.body}
-                    </p>
+              {AUDIT_CARDS.map((card, i) => (
+                <AnimateIn key={card.title} delay={i * 100}>
+                  <div
+                    className="flex items-start gap-3 rounded-lg border border-line bg-white px-6 py-5"
+                    style={{
+                      borderLeftWidth: "3px",
+                      borderLeftColor: "var(--color-brand)",
+                    }}
+                  >
+                    <Icon
+                      name={card.icon}
+                      className="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                      strokeWidth={1.6}
+                    />
+                    <div>
+                      <p className="text-[15px] font-semibold text-ink">
+                        {card.title}
+                      </p>
+                      <p className="mt-1 text-[13px] leading-relaxed text-muted">
+                        {card.body}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </AnimateIn>
               ))}
             </div>
           </div>
@@ -110,35 +122,39 @@ export default function AuditPage() {
       {/* ── SOCIAL PROOF STRIP ────────────────────────────────────── */}
       <section className="bg-mist py-12">
         <div className="container-x flex flex-col items-center text-center">
-          <p
-            className="font-display italic text-ink"
-            style={{ fontSize: "1.25rem", lineHeight: 1.5 }}
-          >
-            Trusted by 40+ founders and senior executives across Europe,
-            North America, and the UK.
-          </p>
+          <AnimateIn delay={0}>
+            <p
+              className="font-display italic text-ink"
+              style={{ fontSize: "1.25rem", lineHeight: 1.5 }}
+            >
+              Trusted by 40+ founders and senior executives across Europe,
+              North America, and the UK.
+            </p>
+          </AnimateIn>
 
-          <div className="mt-6 flex items-center justify-center">
-            {AVATARS.map((src, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={i}
-                src={src}
-                alt=""
-                width={44}
-                height={44}
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  border: "2px solid white",
-                  marginLeft: i === 0 ? 0 : -10,
-                  display: "block",
-                }}
-              />
-            ))}
-          </div>
+          <AnimateIn delay={100}>
+            <div className="mt-6 flex items-center justify-center">
+              {AVATARS.map((src, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  width={44}
+                  height={44}
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "2px solid white",
+                    marginLeft: i === 0 ? 0 : -10,
+                    display: "block",
+                  }}
+                />
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
     </>
