@@ -11,7 +11,7 @@ const NOTIF_DEFS: NotifDef[] = [
   { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", dx: 150, dy: -135 },
   { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", dx: -228, dy: 28 },
   { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", dx: 148, dy: 58 },
-  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -198 },
+  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -118 },
   { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", dx: 65, dy: 188 },
 ];
 
@@ -21,8 +21,8 @@ const CSS = `
 .licard-scan{position:absolute;left:0;right:0;height:3px;top:-6px;z-index:40;opacity:0;background:linear-gradient(90deg,transparent 0%,rgba(10,102,194,0.95) 50%,transparent 100%);box-shadow:0 0 16px 6px rgba(10,102,194,0.4),0 0 40px 12px rgba(10,102,194,0.15)}
 .licard-veil{position:absolute;inset:0;z-index:30;background:rgba(255,255,255,0.7);pointer-events:none;border-radius:8px;transition:opacity 1.1s ease}
 .licard-veil.off{opacity:0}
-.licard-banner{width:100%;height:104px;position:relative;overflow:hidden;display:block}
-.licard-banner svg{width:100%;height:100%;display:block}
+.licard-banner{width:100%;height:100px;position:relative;overflow:hidden;display:flex;z-index:0}
+.licard-banner-img{height:100%;object-fit:cover;display:block;flex-shrink:0}
 .licard-av-section{padding:0 16px;display:flex;align-items:flex-start;justify-content:space-between;margin-top:-38px;margin-bottom:4px}
 .licard-av-wrap{position:relative;flex-shrink:0;width:76px;height:76px}
 .licard-av-initials{width:76px;height:76px;border-radius:50%;border:3.5px solid #fff;display:flex;align-items:center;justify-content:center;background:#0a66c2;color:#fff;font-size:24px;font-weight:700;box-shadow:0 0 0 1px rgba(0,0,0,.1);box-sizing:border-box}
@@ -257,62 +257,14 @@ export default function LinkedInAnim() {
         <div className="licard-veil" />
 
         {/* Banner */}
-        <div className="licard-banner">
-          <svg
-            viewBox="0 0 390 104"
-            preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="licard-bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1a1a2e" />
-                <stop offset="40%" stopColor="#16213e" />
-                <stop offset="70%" stopColor="#0f3460" />
-                <stop offset="100%" stopColor="#e8633e" />
-              </linearGradient>
-            </defs>
-            <rect width="390" height="104" fill="url(#licard-bg1)" />
-            <g stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none">
-              <line x1="20" y1="80" x2="90" y2="30" />
-              <line x1="90" y1="30" x2="180" y2="60" />
-              <line x1="180" y1="60" x2="260" y2="20" />
-              <line x1="260" y1="20" x2="350" y2="55" />
-              <line x1="350" y1="55" x2="390" y2="35" />
-              <line x1="90" y1="30" x2="130" y2="85" />
-              <line x1="180" y1="60" x2="220" y2="95" />
-              <line x1="260" y1="20" x2="300" y2="80" />
-            </g>
-            <g fill="rgba(255,255,255,0.25)">
-              <circle cx="20" cy="80" r="3" />
-              <circle cx="90" cy="30" r="3.5" />
-              <circle cx="130" cy="85" r="2.5" />
-              <circle cx="180" cy="60" r="3" />
-              <circle cx="220" cy="95" r="2" />
-              <circle cx="260" cy="20" r="3.5" />
-              <circle cx="300" cy="80" r="2.5" />
-              <circle cx="350" cy="55" r="3" />
-            </g>
-            <ellipse cx="320" cy="30" rx="80" ry="50" fill="rgba(255,255,255,0.06)" />
-            <ellipse cx="60" cy="75" rx="60" ry="40" fill="rgba(255,255,255,0.04)" />
-            <polyline
-              points="30,90 80,75 130,80 190,55 240,60 290,38 340,42 380,25"
-              stroke="rgba(255,255,255,0.18)"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <text
-              x="14"
-              y="94"
-              fontFamily="'Source Sans 3',system-ui,sans-serif"
-              fontSize="11"
-              fontWeight="300"
-              fill="rgba(255,255,255,0.6)"
-            >
-              Founder &amp; CEO
-            </text>
-          </svg>
+        <div className="licard-banner" style={{ background: "#1e3a5f", borderRadius: "8px 8px 0 0" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&fit=crop&crop=face" alt="" style={{ width: "33%", objectPosition: "center 20%" }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&fit=crop&crop=face" alt="" style={{ width: "34%", objectPosition: "center 20%" }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&fit=crop&crop=face" alt="" style={{ width: "33%", objectPosition: "center 20%" }} />
+          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4))" }} />
         </div>
 
         {/* Avatar row */}
