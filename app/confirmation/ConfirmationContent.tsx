@@ -69,7 +69,6 @@ export function ConfirmationContent() {
   const [heroRef, heroVisible] = useScrollAnimation(0)
   const [bodyRef, bodyVisible] = useScrollAnimation()
   const [faqRef, faqVisible] = useScrollAnimation()
-  const [footerRef, footerVisible] = useScrollAnimation()
 
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [hoveredFaq, setHoveredFaq] = useState<number | null>(null)
@@ -84,8 +83,6 @@ export function ConfirmationContent() {
           .conf-body-grid { grid-template-columns: 1fr !important; }
           .conf-body-left { border-right: none !important; border-bottom: 1px solid #f0ece4 !important; }
           .conf-faq { margin: 24px !important; }
-          .conf-footer { padding: 20px 24px !important; }
-          .conf-footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
         }
       `}</style>
 
@@ -445,72 +442,6 @@ export function ConfirmationContent() {
         ))}
       </div>
 
-      {/* ── SECTION 4: FOOTER STRIP ──────────────────────────────────── */}
-      <footer
-        ref={footerRef}
-        className="conf-footer"
-        style={{
-          background: "#1a1a1a",
-          padding: "20px 56px",
-          marginTop: 32,
-          ...fadeIn(footerVisible),
-        }}
-      >
-        <div
-          className="conf-footer-inner"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          {/* Left: avatar + name + role */}
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <div
-              style={{
-                width: 32,
-                height: 32,
-                background: "#e8633e",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 12,
-                fontWeight: 700,
-                color: "white",
-                flexShrink: 0,
-              }}
-            >
-              SC
-            </div>
-            <div style={{ marginLeft: 10 }}>
-              <p style={{ fontSize: 13, fontWeight: 600, color: "white", margin: 0, lineHeight: 1.3 }}>
-                Umair Shahzad
-              </p>
-              <p style={{ fontSize: 12, color: "#a09a94", margin: 0 }}>
-                Founder, Soch Catalyst
-              </p>
-            </div>
-          </div>
-
-          {/* Right: links */}
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <a
-              href="https://sochcatalyst.com"
-              style={{ fontSize: 12, color: "#a09a94", textDecoration: "none" }}
-            >
-              sochcatalyst.com
-            </a>
-            <span style={{ fontSize: 12, color: "#a09a94" }}>·</span>
-            <a
-              href="mailto:umair@sochcatalyst.com"
-              style={{ fontSize: 12, color: "#a09a94", textDecoration: "none" }}
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </footer>
     </>
   )
 }
