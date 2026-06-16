@@ -7,11 +7,11 @@ type NotifDef =
   | { type: "icon"; emoji: string; bg: string; title: string; sub: string; dx: number; dy: number };
 
 const NOTIF_DEFS: NotifDef[] = [
-  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', dx: -225, dy: -175 },
+  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', dx: -260, dy: -148 },
   { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", dx: 150, dy: -135 },
   { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", dx: -228, dy: 28 },
   { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", dx: 148, dy: 58 },
-  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -118 },
+  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -95 },
   { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", dx: 65, dy: 188 },
 ];
 
@@ -268,7 +268,7 @@ export default function LinkedInAnim() {
         </div>
 
         {/* Avatar row */}
-        <div className="licard-av-section">
+        <div className="licard-av-section" style={{ position: "relative", zIndex: 10 }}>
           <div className="licard-av-wrap">
             <div className="licard-av-initials" style={{ overflow: "hidden", padding: 0, background: "none" }}>
               <img alt="" src="https://randomuser.me/api/portraits/women/44.jpg" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }} />
