@@ -72,7 +72,7 @@ const TESTIMONIALS = [
 export default function ConfirmationPage() {
   return (
     <>
-      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } }`}</style>
+      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } .video-wrapper { padding: 0 20px !important; } }`}</style>
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section
         style={{
@@ -134,62 +134,72 @@ export default function ConfirmationPage() {
       </section>
 
       {/* ── 2. VIDEO MESSAGE ─────────────────────────────────────────── */}
-      <section style={{ background: "white", padding: "60px 24px", textAlign: "center" }}>
-        <p
-          style={{
-            fontSize: 11,
-            textTransform: "uppercase",
-            letterSpacing: "2px",
-            color: "#e8633e",
-            fontWeight: 700,
-            marginBottom: 8,
-          }}
-        >
-          A MESSAGE FROM UMAIR
-        </p>
+      <section style={{ background: "white", padding: 0, textAlign: "center" }}>
+        <div style={{ padding: "48px 24px 24px" }}>
+          <p
+            style={{
+              fontSize: 11,
+              textTransform: "uppercase",
+              letterSpacing: "2px",
+              color: "#e8633e",
+              fontWeight: 700,
+              marginBottom: 8,
+            }}
+          >
+            A MESSAGE FROM UMAIR
+          </p>
 
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 28,
-            fontWeight: 600,
-            color: "#1a1a1a",
-            lineHeight: 1.2,
-            letterSpacing: "-0.01em",
-            marginBottom: 32,
-          }}
-        >
-          While you wait, watch this.
-        </h2>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: 28,
+              fontWeight: 600,
+              color: "#1a1a1a",
+              lineHeight: 1.2,
+              letterSpacing: "-0.01em",
+              marginBottom: 0,
+            }}
+          >
+            While you wait, watch this.
+          </h2>
+        </div>
 
         <div
+          className="video-wrapper"
           style={{
-            maxWidth: 680,
+            maxWidth: 1100,
             margin: "0 auto",
-            borderRadius: 16,
-            overflow: "hidden",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-            aspectRatio: "16/9",
-            position: "relative",
+            padding: "0 48px",
           }}
         >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/Y_L9g_aFQsM?si=LEuiK0kaVbDKXamh"
-            title="Message from Umair"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+          <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
               borderRadius: 16,
+              overflow: "hidden",
+              aspectRatio: "16/9",
+              position: "relative",
+              width: "100%",
             }}
-          />
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Y_L9g_aFQsM?si=LEuiK0kaVbDKXamh"
+              title="Message from Umair"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+                borderRadius: 16,
+              }}
+            />
+          </div>
         </div>
       </section>
 
