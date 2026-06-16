@@ -72,7 +72,7 @@ const TESTIMONIALS = [
 export default function ConfirmationPage() {
   return (
     <>
-      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } .video-wrapper { padding: 0 20px !important; } }`}</style>
+      <style>{`@media (max-width: 768px) { .img-wrapper { padding: 0 20px !important; } .video-wrapper { padding: 0 20px !important; } .review-grid { grid-template-columns: 1fr !important; } }`}</style>
       {/* ── 1. HERO ──────────────────────────────────────────────────── */}
       <section
         style={{
@@ -291,69 +291,78 @@ export default function ConfirmationPage() {
       {/* ── 4. CTA ───────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "#1a1a1a",
+          background: "#FAF7F2",
           padding: "80px 24px",
           textAlign: "center",
         }}
       >
-        <div style={{ maxWidth: 500, margin: "0 auto" }}>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: 36,
-              fontWeight: 600,
-              color: "white",
-              lineHeight: 1.2,
-              letterSpacing: "-0.01em",
-              margin: "0 auto 16px",
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              fontWeight: 800,
+              color: "#1a1a1a",
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+              margin: "0 auto 20px",
             }}
           >
             You do not{" "}
-            <span style={{ color: "#EA6A47", textDecoration: "underline" }}>have to wait</span>
+            <span style={{ color: "#e8633e" }}>have to wait</span>
             {" "}for the email.
           </h2>
 
           <p
             style={{
-              fontSize: 15,
-              color: "#a09a94",
+              fontSize: 16,
+              color: "#6b6560",
+              lineHeight: 1.65,
+              marginBottom: 8,
+            }}
+          >
+            Grab a slot now. The audit report lands either way.
+          </p>
+          <p
+            style={{
+              fontSize: 16,
+              color: "#6b6560",
               lineHeight: 1.65,
               marginBottom: 32,
             }}
           >
-            Grab a slot now. The audit report lands either way.
+            The call is for founders who want to move fast.
           </p>
 
           <ConfirmationBookBtn />
           <p
             style={{
               fontSize: 13,
-              color: "#a09a94",
-              opacity: 0.7,
-              marginTop: 8,
+              color: "#6b6560",
+              marginTop: 12,
               textAlign: "center",
             }}
           >
             Slots fill fast. Grab yours now.
           </p>
-          <p style={{ fontSize: '12px', color: '#a09a94', marginTop: '12px' }}>
+          <p style={{ fontSize: 12, color: "#a09a94", marginTop: 4 }}>
             Limited spots available each month.
           </p>
         </div>
       </section>
 
       {/* ── 5. HERE IS WHAT I AM REVIEWING ──────────────────────────── */}
-      <section style={{ background: "white", padding: "60px 24px" }}>
-        <div style={{ maxWidth: 680, margin: "0 auto" }}>
+      <section style={{ background: "white", padding: "80px 24px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: 32,
-              fontWeight: 600,
+              fontSize: 40,
+              fontWeight: 800,
               color: "#1a1a1a",
               lineHeight: 1.15,
-              letterSpacing: "-0.01em",
-              marginBottom: 32,
+              letterSpacing: "-0.02em",
+              marginBottom: 48,
               textAlign: "center",
             }}
           >
@@ -361,28 +370,30 @@ export default function ConfirmationPage() {
           </h2>
 
           <div
+            className="review-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: 16,
+              gridTemplateColumns: "1fr 1fr",
+              gap: 24,
             }}
           >
             {REVIEW_ITEMS.map((item) => (
               <div
                 key={item.num}
                 style={{
-                  border: "1px solid #e8e0d5",
-                  borderRadius: 8,
-                  padding: 20,
+                  border: "1px solid #f0ece4",
+                  borderRadius: 16,
+                  padding: 32,
                   background: "white",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
                 }}
               >
                 <p
                   style={{
-                    fontSize: 11,
-                    color: "#a09a94",
-                    fontWeight: 600,
-                    marginBottom: 8,
+                    fontSize: 13,
+                    color: "#e8633e",
+                    fontWeight: 700,
+                    marginBottom: 12,
                     letterSpacing: "1px",
                   }}
                 >
@@ -390,10 +401,10 @@ export default function ConfirmationPage() {
                 </p>
                 <p
                   style={{
-                    fontSize: 15,
-                    fontWeight: 600,
+                    fontSize: 20,
+                    fontWeight: 700,
                     color: "#1a1a1a",
-                    marginBottom: 6,
+                    marginBottom: 12,
                     lineHeight: 1.3,
                   }}
                 >
@@ -401,7 +412,7 @@ export default function ConfirmationPage() {
                 </p>
                 <p
                   style={{
-                    fontSize: 13,
+                    fontSize: 15,
                     color: "#6b6560",
                     lineHeight: 1.6,
                     margin: 0,
