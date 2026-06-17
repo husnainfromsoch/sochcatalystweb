@@ -61,7 +61,7 @@ export default function AboutPage() {
           <AnimateIn delay={200} direction="up">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a2beaeb063f8696865babaa_image.png"
+              src="http://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a3237b03252cba28a8ab02c_2%20(2).jpg"
               alt="Soch Catalyst team"
               style={{ width: "100%", height: "auto", maxHeight: "580px", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
             />
