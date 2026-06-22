@@ -2,17 +2,17 @@
 import { useEffect, useRef } from "react";
 
 type NotifDef =
-  | { type: "person"; bg: string; initials: string; photo?: string; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number }
-  | { type: "li"; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number }
-  | { type: "icon"; emoji: string; bg: string; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number };
+  | { type: "person"; bg: string; initials: string; photo?: string; title: string; sub: string; top?: string; bottom?: string; left?: string; right?: string }
+  | { type: "li"; title: string; sub: string; top?: string; bottom?: string; left?: string; right?: string }
+  | { type: "icon"; emoji: string; bg: string; title: string; sub: string; top?: string; bottom?: string; left?: string; right?: string };
 
 const NOTIF_DEFS: NotifDef[] = [
-  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', top: 270, left: -20 },
-  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", top: 350, right: -20 },
-  { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", top: 380, left: -20 },
-  { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", top: 440, right: -20 },
-  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", top: 280, right: -20 },
-  { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", bottom: 80, right: -20 },
+  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', top: "40%", left: "-120px" },
+  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", top: "30%", right: "-120px" },
+  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", top: "45%", right: "-130px" },
+  { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", top: "55%", left: "-130px" },
+  { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", top: "65%", right: "-120px" },
+  { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", bottom: "10%", right: "-120px" },
 ];
 
 const CSS = `
@@ -121,10 +121,10 @@ export default function LinkedInAnim() {
       NOTIF_DEFS.forEach((n) => {
         const el = document.createElement("div");
         el.className = "licard-notif";
-        if (n.top !== undefined) el.style.top = n.top + "px";
-        if (n.bottom !== undefined) el.style.bottom = n.bottom + "px";
-        if (n.left !== undefined) el.style.left = n.left + "px";
-        if (n.right !== undefined) el.style.right = n.right + "px";
+        if (n.top !== undefined) el.style.top = n.top;
+        if (n.bottom !== undefined) el.style.bottom = n.bottom;
+        if (n.left !== undefined) el.style.left = n.left;
+        if (n.right !== undefined) el.style.right = n.right;
 
         let lft = "";
         if (n.type === "person") {
