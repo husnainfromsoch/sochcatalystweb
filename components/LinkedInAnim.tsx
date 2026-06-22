@@ -7,8 +7,8 @@ type NotifDef =
   | { type: "icon"; emoji: string; bg: string; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number };
 
 const NOTIF_DEFS: NotifDef[] = [
-  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', top: 120, left: -20 },
-  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", top: 120, right: -20 },
+  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', top: 270, left: -20 },
+  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", top: 350, right: -20 },
   { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", top: 380, left: -20 },
   { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", top: 440, right: -20 },
   { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", top: 280, right: -20 },
@@ -21,8 +21,8 @@ const CSS = `
 .licard-scan{position:absolute;left:0;right:0;height:3px;top:-6px;z-index:40;opacity:0;background:linear-gradient(90deg,transparent 0%,rgba(10,102,194,0.95) 50%,transparent 100%);box-shadow:0 0 16px 6px rgba(10,102,194,0.4),0 0 40px 12px rgba(10,102,194,0.15)}
 .licard-veil{position:absolute;inset:0;z-index:30;background:rgba(255,255,255,0.7);pointer-events:none;border-radius:8px;transition:opacity 1.1s ease}
 .licard-veil.off{opacity:0}
-.licard-banner{width:100%;height:100px;position:relative;overflow:hidden;display:flex;z-index:0}
-.licard-banner-img{height:100%;object-fit:cover;display:block;flex-shrink:0}
+.licard-banner{width:100%;position:relative;overflow:hidden;display:flex;background:#0a1628;z-index:0}
+.licard-banner-img{width:100%;height:auto;object-fit:contain;display:block;flex-shrink:0}
 .licard-av-section{padding:0 16px;display:flex;align-items:flex-start;justify-content:space-between;margin-top:-38px;margin-bottom:4px}
 .licard-av-wrap{position:relative;flex-shrink:0;width:76px;height:76px}
 .licard-av-initials{width:76px;height:76px;border-radius:50%;border:3.5px solid #fff;display:flex;align-items:center;justify-content:center;background:#0a66c2;color:#fff;font-size:24px;font-weight:700;box-shadow:0 0 0 1px rgba(0,0,0,.1);box-sizing:border-box}
@@ -259,11 +259,7 @@ export default function LinkedInAnim() {
         {/* Banner */}
         <div className="licard-banner" style={{ background: "#1e3a5f", borderRadius: "8px 8px 0 0" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&fit=crop&crop=face" alt="" style={{ width: "33%", objectPosition: "center 20%" }} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&fit=crop&crop=face" alt="" style={{ width: "34%", objectPosition: "center 20%" }} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="licard-banner-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&fit=crop&crop=face" alt="" style={{ width: "33%", objectPosition: "center 20%" }} />
+          <img className="licard-banner-img" src="https://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a39171ef092e143fb097285_image.png" alt="" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
           <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4))" }} />
         </div>
 
