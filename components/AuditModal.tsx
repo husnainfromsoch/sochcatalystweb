@@ -74,34 +74,18 @@ export function AuditModal() {
     setSubmitting(true);
     setSubmitError("");
     try {
-      const res = await fetch("https://formspree.io/f/xpqedpqb", {
+      const res = await fetch("https://sochconsulting.app.n8n.cloud/webhook/soch-lead-capture", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName: form.firstName,
-          linkedinUrl: form.linkedInUrl,
           email: form.email,
-          roleAndCompany: form.roleCompany,
-          consent: form.consent,
+          linkedInProfileURL: form.linkedInUrl,
+          roleInBusiness: form.roleCompany,
+          timestamp: new Date().toISOString(),
         }),
       });
       if (res.ok) {
-        try {
-          await fetch("https://sochconsulting.app.n8n.cloud/webhook/2bc5a176-a1b9-4cf4-9dce-c2388c166fda", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              firstName: form.firstName,
-              linkedinUrl: form.linkedInUrl,
-              email: form.email,
-              roleAndCompany: form.roleCompany,
-              submittedAt: new Date().toISOString(),
-              source: "Soch Catalyst Audit Form",
-            }),
-          });
-        } catch (webhookError) {
-          console.error("Webhook failed:", webhookError);
-        }
         closeModal();
         router.push("/confirmation");
       } else {

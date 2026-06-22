@@ -2,17 +2,17 @@
 import { useEffect, useRef } from "react";
 
 type NotifDef =
-  | { type: "person"; bg: string; initials: string; photo?: string; title: string; sub: string; dx: number; dy: number }
-  | { type: "li"; title: string; sub: string; dx: number; dy: number }
-  | { type: "icon"; emoji: string; bg: string; title: string; sub: string; dx: number; dy: number };
+  | { type: "person"; bg: string; initials: string; photo?: string; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number }
+  | { type: "li"; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number }
+  | { type: "icon"; emoji: string; bg: string; title: string; sub: string; top?: number; bottom?: number; left?: number; right?: number };
 
 const NOTIF_DEFS: NotifDef[] = [
-  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', dx: -260, dy: -148 },
-  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", dx: 150, dy: -135 },
-  { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", dx: -228, dy: 28 },
-  { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", dx: 148, dy: 58 },
-  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", dx: -65, dy: -95 },
-  { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", dx: 65, dy: 188 },
+  { type: "person", bg: "#0a66c2", initials: "AR", photo: "https://randomuser.me/api/portraits/men/32.jpg", title: "Ahmed Rahman sent you a message", sub: '"This is exactly why I backed EdTech…"', top: 120, left: -20 },
+  { type: "li", title: "Your post is trending 🔥", sub: "Reaching 3× more people than usual", top: 120, right: -20 },
+  { type: "person", bg: "#44712e", initials: "JM", photo: "https://randomuser.me/api/portraits/men/67.jpg", title: "Mark Jensen wants to connect", sub: "Partner · Andreessen Horowitz", top: 380, left: -20 },
+  { type: "icon", emoji: "📞", bg: "#e8f4fd", title: "Investor call booked", sub: "$500k seed discussion · Tomorrow 9am", top: 440, right: -20 },
+  { type: "icon", emoji: "🔔", bg: "#fef9e7", title: "You appeared in 84 searches", sub: "Up 312% this week", top: 280, right: -20 },
+  { type: "person", bg: "#6c3483", initials: "TP", photo: "https://randomuser.me/api/portraits/women/17.jpg", title: "Priya Nair accepted your request", sub: "CPO · Coursera · San Francisco", bottom: 80, right: -20 },
 ];
 
 const CSS = `
@@ -115,17 +115,16 @@ export default function LinkedInAnim() {
     function buildNotifs() {
       nEls.forEach((n) => n.remove());
       nEls = [];
-      const card = containerRef.current?.querySelector<HTMLElement>(".licard-card");
-      if (!card) return;
-      const r = card.getBoundingClientRect();
-      const cx = r.left + r.width / 2;
-      const cy = r.top + r.height / 2;
+      const host = containerRef.current?.querySelector<HTMLElement>("[data-notif-host]");
+      if (!host) return;
 
       NOTIF_DEFS.forEach((n) => {
         const el = document.createElement("div");
         el.className = "licard-notif";
-        el.style.left = cx + n.dx - 140 + window.pageXOffset + "px";
-        el.style.top = cy + n.dy - 22 + window.pageYOffset + "px";
+        if (n.top !== undefined) el.style.top = n.top + "px";
+        if (n.bottom !== undefined) el.style.bottom = n.bottom + "px";
+        if (n.left !== undefined) el.style.left = n.left + "px";
+        if (n.right !== undefined) el.style.right = n.right + "px";
 
         let lft = "";
         if (n.type === "person") {
@@ -139,7 +138,7 @@ export default function LinkedInAnim() {
         }
 
         el.innerHTML = `${lft}<div class="licard-n-body"><div class="licard-n-title">${n.title}</div><div class="licard-n-sub">${n.sub}</div></div>`;
-        document.body.appendChild(el);
+        host.appendChild(el);
         nEls.push(el);
       });
     }
@@ -252,6 +251,7 @@ export default function LinkedInAnim() {
   return (
     <div ref={containerRef} className="w-full flex justify-center">
       <style>{CSS}</style>
+      <div data-notif-host="" style={{ position: "relative", width: "fit-content" }}>
       <div className="licard-card">
         <div className="licard-scan" />
         <div className="licard-veil" />
@@ -436,6 +436,7 @@ export default function LinkedInAnim() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
