@@ -45,7 +45,7 @@ export default function AboutPage() {
         }
       `}</style>
       <section className="about-hero border-b border-line bg-mist" style={{ display: "flex", alignItems: "flex-start", minHeight: "600px", paddingTop: "60px", paddingBottom: "60px" }}>
-        <div className="about-hero-text" style={{ flex: "0 0 45%", padding: "40px 60px 80px 80px", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignSelf: "flex-start" }}>
+        <div className="about-hero-text" style={{ flex: "0 0 45%", padding: "40px clamp(16px, 5vw, 80px) 80px clamp(16px, 5vw, 80px)", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignSelf: "flex-start" }}>
           <AnimateIn delay={0}>
             <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
               Built by a practitioner. Built for founders.
