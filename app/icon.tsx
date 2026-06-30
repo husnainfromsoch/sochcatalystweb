@@ -15,23 +15,14 @@ export default function Icon() {
           justifyContent: 'center',
           background: '#ff5c35',
           borderRadius: 7,
+          color: 'white',
+          fontSize: 22,
+          fontWeight: 700,
+          fontFamily: 'serif',
+          letterSpacing: '-0.5px',
         }}
       >
-        {/* Up-arrow chevron */}
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-        >
-          <path
-            d="M9 14V4M4 9l5-5 5 5"
-            stroke="white"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        S
       </div>
     ),
     { ...size }
