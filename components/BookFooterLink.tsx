@@ -1,18 +1,16 @@
-"use client";
-
-import { useBookingModal } from "@/context/BookingModalContext";
+const CAL_URL = "https://cal.com/withumair/30min";
 
 export function BookFooterLink() {
-  const { openModal } = useBookingModal();
   return (
     <li>
-      <button
-        type="button"
-        onClick={openModal}
+      <a
+        href={CAL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-sm text-white/60 transition-colors hover:text-brand-light"
       >
         Book a discovery call
-      </button>
+      </a>
     </li>
   );
 }

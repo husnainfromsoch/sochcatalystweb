@@ -1,7 +1,4 @@
-"use client";
-
 import { Icon } from "@/components/Icons";
-import { useBookingModal } from "@/context/BookingModalContext";
 
 type Variant = "primary" | "secondary" | "dark" | "light";
 type Size = "md" | "lg";
@@ -18,6 +15,8 @@ const sizes: Record<Size, string> = {
   lg: "px-6 py-3 text-base",
 };
 
+const CAL_URL = "https://cal.com/withumair/30min";
+
 type Props = {
   children?: React.ReactNode;
   variant?: Variant;
@@ -33,10 +32,14 @@ export function BookButton({
   arrow = false,
   className = "",
 }: Props) {
-  const { openModal } = useBookingModal();
   const cls = `group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
   return (
-    <button type="button" onClick={openModal} className={cls}>
+    <a
+      href={CAL_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cls}
+    >
       {children}
       {arrow && (
         <Icon
@@ -44,6 +47,6 @@ export function BookButton({
           className="h-[1.05em] w-[1.05em] transition-transform duration-200 group-hover:translate-x-0.5"
         />
       )}
-    </button>
+    </a>
   );
 }

@@ -6,8 +6,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AuditModalProvider } from "@/context/AuditModalContext";
 import { AuditModal } from "@/components/AuditModal";
-import { BookingModalProvider } from "@/context/BookingModalContext";
-import { BookingModal } from "@/components/BookingModal";
 import { BookAutoOpen } from "@/components/BookAutoOpen";
 
 const inter = Inter({
@@ -70,14 +68,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col overflow-x-hidden bg-white">
         <AuditModalProvider>
-          <BookingModalProvider>
-            <BookAutoOpen />
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <AuditModal />
-            <BookingModal />
-          </BookingModalProvider>
+          <BookAutoOpen />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <AuditModal />
         </AuditModalProvider>
         <Script
           id="videoask-config"

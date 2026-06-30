@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-import { useBookingModal } from "@/context/BookingModalContext";
 import { useAuditModal } from "@/context/AuditModalContext";
 
+const CAL_URL = "https://cal.com/withumair/30min";
+
 export function BookAutoOpen() {
-  const { openModal: openBookingModal } = useBookingModal();
   const { openModal: openAuditModal } = useAuditModal();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("book") === "true") {
-      openBookingModal();
+      window.open(CAL_URL, "_blank", "noopener,noreferrer");
       const url = new URL(window.location.href);
       url.searchParams.delete("book");
       window.history.replaceState({}, "", url.pathname);
@@ -24,7 +24,7 @@ export function BookAutoOpen() {
       url.searchParams.delete("audit");
       window.history.replaceState({}, "", url.pathname);
     }
-  }, [openBookingModal, openAuditModal]);
+  }, [openAuditModal]);
 
   return null;
 }

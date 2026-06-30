@@ -1,13 +1,11 @@
-"use client";
-
-import { useBookingModal } from "@/context/BookingModalContext";
+const CAL_URL = "https://cal.com/withumair/30min";
 
 export function ConfirmationBookBtn() {
-  const { openModal } = useBookingModal();
   return (
-    <button
-      type="button"
-      onClick={openModal}
+    <a
+      href={CAL_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       style={{
         background: "#e8633e",
         color: "white",
@@ -19,9 +17,10 @@ export function ConfirmationBookBtn() {
         cursor: "pointer",
         display: "inline-block",
         boxShadow: "0 4px 16px rgba(232,99,62,0.4)",
+        textDecoration: "none",
       }}
     >
       Book My Free Strategy Call
-    </button>
+    </a>
   );
 }
