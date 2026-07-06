@@ -1,4 +1,4 @@
-const CAL_URL = "https://cal.com/withumair/30min";
+const CAL_URL = "https://cal.com/sochcatalyst/30min";
 
 export function ConfirmationBookBtn() {
   return (

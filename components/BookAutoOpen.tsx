@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useAuditModal } from "@/context/AuditModalContext";
 
-const CAL_URL = "https://cal.com/withumair/30min";
+const CAL_URL = "https://cal.com/sochcatalyst/30min";
 
 export function BookAutoOpen() {
   const { openModal: openAuditModal } = useAuditModal();

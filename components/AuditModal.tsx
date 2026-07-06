@@ -74,7 +74,7 @@ export function AuditModal() {
     setSubmitting(true);
     setSubmitError("");
     try {
-      const res = await fetch("https://sochconsulting.app.n8n.cloud/webhook/soch-lead-capture", {
+      const res = await fetch("https://sochconsulting.app.n8n.cloud/webhook/sochcatalystlinkedinaudit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

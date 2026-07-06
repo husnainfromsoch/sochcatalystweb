@@ -15,7 +15,7 @@ const sizes: Record<Size, string> = {
   lg: "px-6 py-3 text-base",
 };
 
-const CAL_URL = "https://cal.com/withumair/30min";
+const CAL_URL = "https://cal.com/sochcatalyst/30min";
 
 type Props = {
   children?: React.ReactNode;
