@@ -8,14 +8,14 @@ import AnimateIn from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "About. Built for Founders Done Being Invisible",
   description:
-    "Soch Catalyst is a LinkedIn agency for founders and senior executives. We run personal branding, content, outreach and profile management, so your LinkedIn brings you work.",
+    "Signal House is a LinkedIn agency for founders and senior executives. We run personal branding, content, outreach and profile management, so your LinkedIn brings you work.",
 };
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shield",
     title: "Substance over hacks",
-    body: "The LinkedIn services market is full of shortcuts: engagement pods, follow-for-follow tactics, algorithm hacks. They work briefly and erode credibility permanently. Every account Soch runs is built on a genuine point of view, published consistently, without shortcuts.",
+    body: "The LinkedIn services market is full of shortcuts: engagement pods, follow-for-follow tactics, algorithm hacks. They work briefly and erode credibility permanently. Every account Signal House runs is built on a genuine point of view, published consistently, without shortcuts.",
   },
   {
     icon: "chat",
@@ -30,7 +30,7 @@ const VALUES: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "spark",
     title: "Partners, not vendors",
-    body: "Soch takes a small number of clients at a time, deliberately. We are not a content mill. Every client gets direct access to the people doing the work. If something is not working, we say so. If the strategy needs changing, we change it. That is what a partner does.",
+    body: "Signal House takes a small number of clients at a time, deliberately. We are not a content mill. Every client gets direct access to the people doing the work. If something is not working, we say so. If the strategy needs changing, we change it. That is what a partner does.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
           </AnimateIn>
           <AnimateIn delay={100}>
             <p className="lead mt-6 max-w-2xl">
-              Soch Catalyst is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
+              Signal House is a LinkedIn positioning agency led by Umair Shahzad, an award-winning LinkedIn creator and LinkedIn Top Voice, recognised globally in Venture Capital. We work with founders and senior executives who want their LinkedIn presence to reflect the seriousness of what they are building.
             </p>
           </AnimateIn>
         </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="http://cdn.prod.website-files.com/68e7ded517d0693d2c345250/6a3237b03252cba28a8ab02c_2%20(2).jpg"
-              alt="Soch Catalyst team"
+              alt="Signal House team"
               style={{ width: "100%", height: "auto", maxHeight: "580px", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "16px", margin: 0, padding: 0 }}
             />
           </AnimateIn>
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 from doing the positioning work first.
               </p>
               <p className="font-medium text-ink">
-                Soch Catalyst was built to do that work.
+                Signal House was built to do that work.
               </p>
             </div>
           </Reveal>
@@ -106,11 +106,11 @@ export default function AboutPage() {
               </p>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-dashed border-line pt-6">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                  SC
+                  SH
                 </span>
                 <span className="leading-tight">
                   <span className="block text-sm font-semibold text-ink">
-                    The Soch Catalyst team
+                    The Signal House team
                   </span>
                   <span className="block text-xs text-muted">
                     Your LinkedIn growth partners
@@ -171,10 +171,10 @@ export default function AboutPage() {
                 trust and credibility are not optional.
               </p>
               <p>
-                Before starting Soch, Umair managed LinkedIn strategy for founders
+                Before starting Signal House, Umair managed LinkedIn strategy for founders
                 in institutional finance and construction, industries where a single
                 poorly placed post can damage relationships built over years. That
-                experience shaped the Soch approach: positioning first, content
+                experience shaped the Signal House approach: positioning first, content
                 second, always in your voice, always pointed at a business outcome.
               </p>
               <p>
@@ -229,10 +229,10 @@ export default function AboutPage() {
               </p>
               <figcaption className="mt-4 flex items-center gap-2.5 border-t border-dashed border-line pt-4">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-xs font-bold text-white">
-                  SC
+                  SH
                 </span>
                 <span className="text-xs font-semibold text-ink">
-                  The Soch Catalyst team
+                  The Signal House team
                 </span>
               </figcaption>
             </figure>

@@ -8,19 +8,19 @@ export function Logo({
   className?: string;
   variant?: "dark" | "light";
 }) {
-  // "dark" variant = dark logo on light bg (navbar); "light" variant = light logo on dark bg (footer)
+  // "dark" variant = full-color logo on light bg (navbar); "light" variant = white logo on dark bg (footer)
   const src = variant === "light"
-    ? "/soch-logo-dark.png"
-    : "/soch-logo-light.png";
+    ? "/signal-house-logo-white.png"
+    : "/signal-house-logo.png";
 
   return (
-    <Link href="/" aria-label="Soch Catalyst home" className={`inline-flex items-center ${className}`}>
+    <Link href="/" aria-label="Signal House home" className={`inline-flex items-center ${className}`}>
       <Image
         src={src}
-        alt="Soch Catalyst"
-        width={160}
-        height={52}
-        className="h-[52px] w-auto object-contain rounded-none bg-transparent"
+        alt="Signal House"
+        width={708}
+        height={279}
+        className="h-11 w-auto object-contain rounded-none bg-transparent"
         priority
       />
     </Link>

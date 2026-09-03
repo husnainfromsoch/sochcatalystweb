@@ -12,7 +12,7 @@ Next.js tooling; leave it intact.
 
 ## What this is
 
-A static marketing site for **Soch Catalyst**, a LinkedIn growth agency for B2B
+A static marketing site for **Signal House**, a LinkedIn growth agency for B2B
 founders & CEOs. No backend, database, or auth, just content-driven pages.
 **Stack:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Motion
 (on-scroll reveals).

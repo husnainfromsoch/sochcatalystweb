@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-//  Soch Catalyst - single source of content & config.
+//  Signal House - single source of content & config.
 //  Copy, services, process, proof and the scheduler link all live here
 //  so the client can update everything from one file.
 // ------------------------------------------------------------------
@@ -13,7 +13,7 @@ export const HERO = {
 };
 
 export const SITE = {
-  name: "Soch Catalyst",
+  name: "Signal House",
   tagline: "LinkedIn growth for founders and senior executives.",
   email: "umair@sochcatalyst.com",
   linkedin: "https://www.linkedin.com/in/consult-with-umair/",
@@ -93,7 +93,7 @@ export const SERVICES: Service[] = [
     title: "Personal Branding Strategy",
     hook: "Be the name your market already trusts.",
     description:
-      "Before we write anything, we establish what you stand for and who needs to hear it. Your narrative strategy, content pillars, and messaging framework become the foundation that every post, outreach message, and conversation builds on. This is the work most services skip. It is the reason Soch results compound.",
+      "Before we write anything, we establish what you stand for and who needs to hear it. Your narrative strategy, content pillars, and messaging framework become the foundation that every post, outreach message, and conversation builds on. This is the work most services skip. It is the reason Signal House results compound.",
     points: [
       "Positioning & messaging pillars",
       "A point of view you own",
@@ -119,7 +119,7 @@ export const SERVICES: Service[] = [
     title: "LinkedIn Growth Audit",
     hook: "Know exactly what is holding you back.",
     description:
-      "A straight read on your profile, content and outreach. We show you what is working, what is not, and the moves that matter most over the next 90 days. Every engagement with Soch begins with a version of this audit.",
+      "A straight read on your profile, content and outreach. We show you what is working, what is not, and the moves that matter most over the next 90 days. Every engagement with Signal House begins with a version of this audit.",
     points: [
       "Profile & content teardown",
       "Competitor & positioning gaps",
@@ -211,7 +211,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: "1.5 hrs", label: "Founder time on content/week (from 5)" },
     ],
     quote:
-      "Soch didn't just help us post more consistently, they helped us figure out what Byzantine actually stands for in the market.",
+      "Signal House didn't just help us post more consistently, they helped us figure out what Byzantine actually stands for in the market.",
     author: "Gaia Ferrero",
     authorRole: "Founder & CEO, Byzantine",
     accent: "#0a3d6b",
@@ -232,7 +232,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: "6", label: "Formal proposals sent in 6 weeks" },
     ],
     quote:
-      "Before Soch, I was having a lot of conversations that went nowhere. Now every conversation starts from a position of credibility.",
+      "Before Signal House, I was having a lot of conversations that went nowhere. Now every conversation starts from a position of credibility.",
     author: "Biola Babawale",
     authorRole: "Founder & CEO, Cycle Together",
     accent: "#1a6b3c",
@@ -274,7 +274,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: "100%", label: "Posting consistency maintained" },
     ],
     quote:
-      "Soch fixed that. And they did it without changing what Brenna and Co. is. They just made it visible to the right people at the right moment.",
+      "Signal House fixed that. And they did it without changing what Brenna and Co. is. They just made it visible to the right people at the right moment.",
     author: "Kaitlin Malaspina",
     authorRole: "Principal & Founder, Brenna & Co.",
     accent: "#4a2c6e",

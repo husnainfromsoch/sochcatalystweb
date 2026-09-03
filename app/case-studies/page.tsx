@@ -7,9 +7,9 @@ import { CTAS } from "@/lib/content";
 import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
-  title: "Case Studies: Client Results | Soch Catalyst",
+  title: "Case Studies: Client Results | Signal House",
   description:
-    "Real results from Soch Catalyst client engagements across LinkedIn strategy, personal branding, and go-to-market positioning.",
+    "Real results from Signal House client engagements across LinkedIn strategy, personal branding, and go-to-market positioning.",
 };
 
 const CARDS = [

@@ -28,11 +28,11 @@ const SITE_URL = "https://sochcatalyst.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Soch Catalyst: LinkedIn Growth for Founders & CEOs",
-    template: "%s · Soch Catalyst",
+    default: "Signal House: LinkedIn Growth for Founders & CEOs",
+    template: "%s · Signal House",
   },
   description:
-    "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
+    "Signal House is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
   keywords: [
     "LinkedIn growth agency",
     "personal branding for founders",
@@ -41,18 +41,18 @@ export const metadata: Metadata = {
     "LinkedIn profile optimisation",
   ],
   openGraph: {
-    title: "Soch Catalyst: LinkedIn Growth for Founders & CEOs",
+    title: "Signal House: LinkedIn Growth for Founders & CEOs",
     description:
-      "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
+      "Signal House is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
     url: SITE_URL,
-    siteName: "Soch Catalyst",
+    siteName: "Signal House",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soch Catalyst: LinkedIn Growth for Founders & CEOs",
+    title: "Signal House: LinkedIn Growth for Founders & CEOs",
     description:
-      "Soch is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
+      "Signal House is a LinkedIn positioning agency for founders and senior executives. We build the narrative strategy, content system, and outreach engine that makes you the most credible voice in your space.",
   },
 };
 

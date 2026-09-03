@@ -5,7 +5,7 @@ export default function ServicesVenn() {
       role="img"
       className="w-full max-w-[520px] h-auto"
       style={{ background: 'transparent' }}
-      aria-label="Soch Catalyst services diagram">
+      aria-label="Signal House services diagram">
 
       <style>{`
         .promise {

@@ -236,7 +236,7 @@ export function AuditModal() {
                   />
                   <label htmlFor="audit-consent" className="cursor-pointer text-xs leading-relaxed text-slate">
                     By checking this box, I consent to receive communications from{" "}
-                    <span className="font-semibold text-ink">Soch Catalyst</span> about LinkedIn Audit,
+                    <span className="font-semibold text-ink">Signal House</span> about LinkedIn Audit,
                     Strategy Call booking and other relevant updates.
                   </label>
                 </div>

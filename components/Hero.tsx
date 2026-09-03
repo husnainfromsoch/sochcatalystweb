@@ -17,7 +17,7 @@ export function Hero() {
           </h1>
 
           <p className="lead text-[clamp(0.95rem,0.88rem+0.28vw,1.1rem)] mt-5 animate-fade-up [animation-delay:160ms]">
-            Soch Catalyst is a LinkedIn agency for founders and senior executives. We handle
+            Signal House is a LinkedIn agency for founders and senior executives. We handle
             your profile, content and outreach, so you get inbound, booked calls, and
             a name people trust. We do the work. You approve it.
           </p>
