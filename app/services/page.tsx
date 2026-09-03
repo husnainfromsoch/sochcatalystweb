@@ -6,7 +6,7 @@ import AnimateIn from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Services. LinkedIn Growth, End to End",
   description:
-    "Profile optimisation, content, lead generation, personal branding, coaching and audits. The full Soch Catalyst LinkedIn system for founders and senior executives.",
+    "Profile optimisation, content, lead generation, personal branding, coaching and audits. The full Signal House LinkedIn system for founders and senior executives.",
 };
 
 export default function ServicesPage() {
@@ -18,7 +18,7 @@ export default function ServicesPage() {
             <div className="min-w-0 md:[flex:0_0_45%] md:pr-10">
               <AnimateIn delay={0}>
                 <h1 className="text-display text-[clamp(2.5rem,1.5rem+3.2vw,3.9rem)]">
-                  Every service Soch Catalyst offers. Take the full system or start with the piece you need most.
+                  Every service Signal House offers. Take the full system or start with the piece you need most.
                 </h1>
               </AnimateIn>
               <AnimateIn delay={100}>

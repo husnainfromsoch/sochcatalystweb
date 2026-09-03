@@ -52,7 +52,7 @@ export function Footer() {
               href={SITE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Soch Catalyst on LinkedIn"
+              aria-label="Signal House on LinkedIn"
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl ring-1 ring-white/15 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Icon name="linkedin" className="h-5 w-5" />

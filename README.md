@@ -1,6 +1,6 @@
-# Soch Catalyst - Website
+# Signal House - Website
 
-Marketing site for **Soch Catalyst**, a LinkedIn growth agency for B2B founders & CEOs.
+Marketing site for **Signal House**, a LinkedIn growth agency for B2B founders & CEOs.
 
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Motion.
 
